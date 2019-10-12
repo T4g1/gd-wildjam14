@@ -11,6 +11,10 @@ var patch : NinePatchRect
 var label : Label
 
 
+func set_name(text: String):
+	$NinePatchRect/Name.text = text
+
+
 func say(text: String):
 	# TODO: Set style plain
 	set_text(text)
@@ -49,6 +53,12 @@ func display():
 	
 	$Tween.interpolate_property(self, "rect_scale", Vector2(0.0, 0.0), Vector2(1.0, 1.0), 0.1, Tween.TRANS_LINEAR, 0)
 	$Tween.start()
+
+	$ActionIndicators/CloseSquare.visible = is_last_line_shown()
+	$ActionIndicators/ContinueArrow.visible = not is_last_line_shown()
+	
+	$ActionTween.interpolate_property($ActionIndicators, "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), 1, Tween.TRANS_LINEAR, 0)
+	$ActionTween.start()
 	
 	visible = true
 
@@ -66,6 +76,7 @@ func on_action():
 	
 	if not is_last_line_shown():
 		label.lines_skipped += label.max_lines_visible
+				
 		display()
 	else:
 		hide()

@@ -1,14 +1,18 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://nodes/SpeechBubble/SpeechBubble.gd" type="Script" id=1]
 [ext_resource path="res://assets/dialog_test.png" type="Texture" id=2]
 [ext_resource path="res://assets/fonts/MonospaceTypewriter.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/dialog_close.png" type="Texture" id=4]
+[ext_resource path="res://assets/dialog_arrow.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 3 )
 
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 3 )
+
 [node name="SpeechBubble" type="Control"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -1024.0
@@ -46,3 +50,51 @@ align = 1
 valign = 1
 autowrap = true
 max_lines_visible = 5
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+self_modulate = Color( 0.588235, 0.588235, 0.588235, 1 )
+margin_left = 18.0
+margin_top = -24.0
+margin_right = 229.0
+margin_bottom = 16.0
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 60, 60 )
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="Name" type="Label" parent="NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Jonh"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="ActionTween" type="Tween" parent="."]
+repeat = true
+playback/repeat = true
+
+[node name="ActionIndicators" type="Node2D" parent="."]
+
+[node name="CloseSquare" type="TextureRect" parent="ActionIndicators"]
+visible = false
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 461.345
+margin_top = 138.763
+margin_right = 481.345
+margin_bottom = 158.763
+texture = ExtResource( 4 )
+
+[node name="ContinueArrow" type="TextureRect" parent="ActionIndicators"]
+visible = false
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 461.345
+margin_top = 138.763
+margin_right = 481.345
+margin_bottom = 158.763
+texture = ExtResource( 5 )
+stretch_mode = 3

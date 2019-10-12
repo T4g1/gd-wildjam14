@@ -8,6 +8,8 @@ script = ExtResource( 1 )
 
 [node name="Character" parent="." instance=ExtResource( 2 )]
 position = Vector2( 59.095, 266.923 )
+firstname = "Moriarty's Shadow"
 
 [node name="Character2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 237.44, 272.092 )
+firstname = "Moriarty"
