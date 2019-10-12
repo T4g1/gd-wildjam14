@@ -8,15 +8,31 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "Dialog",
+"language": "GDScript",
+"path": "res://nodes/Dialog/Dialog.gd"
+}, {
+"base": "Control",
+"class": "SpeechBubble",
+"language": "GDScript",
+"path": "res://nodes/SpeechBubble/SpeechBubble.gd"
+} ]
 _global_script_class_icons={
-
+"Dialog": "",
+"SpeechBubble": ""
 }
 
 [application]
 
 config/name="gd-wildjam14"
+run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Dialog="*res://nodes/Dialog/Dialog.tscn"
 
 [rendering]
 
