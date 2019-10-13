@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "Character",
+"language": "GDScript",
+"path": "res://nodes/Character/Character.gd"
+}, {
 "base": "Label",
 "class": "Choice",
 "language": "GDScript",
@@ -24,15 +29,22 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://nodes/Dialog/Dialog.gd"
 }, {
+"base": "Node2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://nodes/Player/Player.gd"
+}, {
 "base": "Control",
 "class": "SpeechBubble",
 "language": "GDScript",
 "path": "res://nodes/SpeechBubble/SpeechBubble.gd"
 } ]
 _global_script_class_icons={
+"Character": "",
 "Choice": "",
 "ChoiceBubble": "",
 "Dialog": "",
+"Player": "",
 "SpeechBubble": ""
 }
 
@@ -41,6 +53,11 @@ _global_script_class_icons={
 config/name="gd-wildjam14"
 run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+__InkRuntime="*res://addons/inkgd/runtime/static/ink_runtime.gd"
+Utils="*res://scripts/Utils.gd"
 
 [editor_plugins]
 

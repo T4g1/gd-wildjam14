@@ -1,6 +1,4 @@
-VAR character_name = "Moriarty"
-VAR character_mood = "normal"
-
+INCLUDE common.ink
 
 ~ who("Moriarty")
 ~ mood("think")
@@ -44,12 +42,3 @@ See you soon
 
 
 -> END
-
-
-=== function who(value) ===
-	~ character_mood = "normal"
-	~ character_name = value
-
-
-=== function mood(value)
-	~ character_mood = value
