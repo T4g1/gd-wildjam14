@@ -1,0 +1,5 @@
+- Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! # Moriarty's Shadow
+- Oh nose I broke the world	# Moriarty
+- I will now go to the end of the game, have fun to find me # Moriarty's Shadow
+- Damn, I need to play this game to find you du coup # Moriarty
+-> END

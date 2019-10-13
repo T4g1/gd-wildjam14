@@ -20,4 +20,4 @@ func say(text: String):
 
 
 func think(text: String):
-	speech_bubble.say(text)
+	speech_bubble.think(text)

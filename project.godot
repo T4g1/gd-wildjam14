@@ -30,9 +30,9 @@ config/name="gd-wildjam14"
 run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
 
-[autoload]
+[editor_plugins]
 
-Dialog="*res://nodes/Dialog/Dialog.tscn"
+enabled=PoolStringArray( "inkgd" )
 
 [rendering]
 
