@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://nodes/Character/Character.gd" type="Script" id=1]
 [ext_resource path="res://nodes/SpeechBubble/SpeechBubble.tscn" type="PackedScene" id=2]
+[ext_resource path="res://nodes/ChoiceBubble/ChoiceBubble.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 20.4633
@@ -14,7 +15,15 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="SpeechBubble" parent="." instance=ExtResource( 2 )]
+visible = true
 margin_left = 21.6659
 margin_top = -201.957
 margin_right = 21.6659
 margin_bottom = -201.957
+
+[node name="ChoiceBubble" parent="." instance=ExtResource( 3 )]
+margin_left = 42.2393
+margin_top = -44.2043
+margin_right = 42.2393
+margin_bottom = -44.2043
+[connection signal="choice_done" from="ChoiceBubble" to="." method="_on_choice_done"]

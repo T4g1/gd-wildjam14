@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Label",
+"class": "Choice",
+"language": "GDScript",
+"path": "res://nodes/ChoiceBubble/Choice.gd"
+}, {
+"base": "Control",
+"class": "ChoiceBubble",
+"language": "GDScript",
+"path": "res://nodes/ChoiceBubble/ChoiceBubble.gd"
+}, {
 "base": "Node",
 "class": "Dialog",
 "language": "GDScript",
@@ -20,6 +30,8 @@ _global_script_classes=[ {
 "path": "res://nodes/SpeechBubble/SpeechBubble.gd"
 } ]
 _global_script_class_icons={
+"Choice": "",
+"ChoiceBubble": "",
 "Dialog": "",
 "SpeechBubble": ""
 }

@@ -21,18 +21,36 @@ func start_story(_characters):
 func continue_story():
 	while story.can_continue:
 		var text = story.continue()
-		var tags = story.get_current_tags()
-		var character_name = tags[0]
-		var character = get_character(character_name)
 		
-		character.say(text)
-		yield(character.speech_bubble, "speech_over")
+		var character = get_character()
+		var mood = story.variables_state.get("mood")
+		if mood == "think":
+			character.think(text)
+		else:
+			character.say(text)
+	
+		if story.current_choices.size() <= 0:
+			yield(character.speech_bubble, "speech_over")
+		else:
+			character.speech_bubble.disable_close()
+	
+	if story.current_choices.size() > 0:
+		var character = get_character() # Only/Always player?
+		character.prompt(story.current_choices)
+		character.choice_bubble.connect("choice_done", self, "_choice_done")
 
 
-func get_character(character_name: String):
+func _choice_done(index):
+	story.choose_choice_index(index)
+	continue_story()
+
+
+func get_character():
 	"""
-	Get a character from the protagonists list given from its name
+	Get a character from the protagonists list given
 	"""
+	var character_name = story.variables_state.get("character_name")
+	
 	for character in characters:
 		if character.firstname == character_name:
 			return character

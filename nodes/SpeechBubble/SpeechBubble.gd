@@ -7,6 +7,7 @@ TODO: Think style
 
 signal speech_over
 
+var can_close = true
 var patch : NinePatchRect
 var label : Label
 
@@ -60,6 +61,7 @@ func display():
 	$ActionTween.interpolate_property($ActionIndicators, "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), 1, Tween.TRANS_LINEAR, 0)
 	$ActionTween.start()
 	
+	can_close = true
 	visible = true
 
 
@@ -78,9 +80,13 @@ func on_action():
 		label.lines_skipped += label.max_lines_visible
 				
 		display()
-	else:
+	elif can_close:
 		hide()
 		emit_signal("speech_over")
+
+
+func disable_close():
+	can_close = false
 
 
 func is_shown():
