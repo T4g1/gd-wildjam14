@@ -24,6 +24,11 @@ func continue_story():
 	while story.can_continue:
 		var text = story.continue()
 		character = get_character_from_story()
+		
+		var zoom_targets = story.get_current_tags()
+		if zoom_targets.size() > 0:
+			Utils.zoom_on(zoom_targets)
+		
 		print(text)
 		
 		var mood = story.variables_state.get("character_mood")

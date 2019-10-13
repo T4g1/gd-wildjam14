@@ -11,4 +11,14 @@ firstname = "Moriarty's Shadow"
 path_story = "res://assets/dialogs/MoriartysShadow.json"
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 149.584, 268.144 )
+position = Vector2( 182.825, 269.252 )
+
+[node name="Jonh" parent="." instance=ExtResource( 1 )]
+position = Vector2( 756.695, 440.224 )
+firstname = "Jonh"
+path_story = "res://assets/dialogs/Jonh.json"
+
+[node name="Camera2D" type="Camera2D" parent="." groups=[
+"camera",
+]]
+current = true

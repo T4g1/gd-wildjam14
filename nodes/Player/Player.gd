@@ -11,5 +11,5 @@ func _input(event):
 		in_dialog = true
 	
 	if event.is_action_pressed("ui_left") and not in_dialog:
-		Utils.get_character("Moriarty's Shadow").continue_story()
+		Utils.get_character("Jonh").continue_story()
 		in_dialog = true

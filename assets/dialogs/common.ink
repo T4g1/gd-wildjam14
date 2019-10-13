@@ -7,5 +7,5 @@ VAR character_mood = "normal"
     ~ character_name = value
 
 
-=== function mood(value)
+=== function mood(value) ===
     ~ character_mood = value

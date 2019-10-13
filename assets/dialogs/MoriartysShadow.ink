@@ -1,35 +1,33 @@
 INCLUDE common.ink
 
+# Moriarty # Moriarty's Shadow
+
+
 ~ who("Moriarty")
 ~ mood("think")
 What the hell happenned?
+	* [Ask my shadow]
+		~ who("Moriarty's Shadow")
+		Get lost looser!
 
-~ mood("think")
-* [Ask my shadow]
-	~ who("Moriarty's Shadow")
-	Get lost looser!
+		* * [Get lost]
+			~ who("Moriarty")
+			Let's go then
 
-	* * [Get lost]
+		* * [Don't]
+			~ who("Moriarty")
+			You go!
+
+			~ who("Moriarty")
+			~ mood("think")
+			Well...
+
+	* [Figure it out myself]
 		~ who("Moriarty")
-		Let's go then
-		-> after_though
+		I screwed up again didnt I?
 
-	* * [Don't]
-		~ who("Moriarty")
-		You go!
 
-		~ who("Moriarty")
-		~ mood("think")
-		Well...
-		-> after_though
-
-* [Figure it out myself]
-	~ who("Moriarty")
-	I screwed up again didnt I?
-	-> after_though
-
-= after_though
-
+-
 ~ who("Moriarty's Shadow")
 k thx bye
 
@@ -39,6 +37,11 @@ Dumbass
 
 ~ who("Moriarty")
 See you soon
+
+# Moriarty # Moriarty's Shadow # Jonh
+
+~ who("Jonh")
+Hello you two!
 
 
 -> END
