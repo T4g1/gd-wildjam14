@@ -33,5 +33,4 @@ func prompt(choices: Array):
 
 
 func _on_choice_done(index):
-	speech_bubble.hide()
 	emit_signal("choice_done", index)

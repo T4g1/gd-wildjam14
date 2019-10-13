@@ -19,38 +19,50 @@ func start_story(_characters):
 
 
 func continue_story():
+	var character
+	
 	while story.can_continue:
 		var text = story.continue()
+		character = get_character_from_story()
+		print(text)
 		
-		var character = get_character()
-		var mood = story.variables_state.get("mood")
+		var mood = story.variables_state.get("character_mood")
 		if mood == "think":
 			character.think(text)
 		else:
 			character.say(text)
 	
 		if story.current_choices.size() <= 0:
+			character.speech_bubble.set_close_action(true)
 			yield(character.speech_bubble, "speech_over")
-		else:
-			character.speech_bubble.disable_close()
 	
 	if story.current_choices.size() > 0:
-		var character = get_character() # Only/Always player?
+		character.speech_bubble.set_close_action(false)
+		character = get_character("Moriarty")
 		character.prompt(story.current_choices)
 		character.choice_bubble.connect("choice_done", self, "_choice_done")
 
 
 func _choice_done(index):
+	yield(get_tree(), "idle_frame")
 	story.choose_choice_index(index)
+	
+	for character in characters:
+		character.speech_bubble.hide()
+	
 	continue_story()
 
 
-func get_character():
+func get_character_from_story():
+	var character_name = story.variables_state.get("character_name")
+	return get_character(character_name)
+
+
+func get_character(character_name: String):
 	"""
 	Get a character from the protagonists list given
 	"""
-	var character_name = story.variables_state.get("character_name")
-	
+	print("===", character_name, "===")
 	for character in characters:
 		if character.firstname == character_name:
 			return character

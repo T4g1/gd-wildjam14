@@ -7,6 +7,9 @@ TODO: Think style
 
 signal speech_over
 
+var normal_bubble = load("res://assets/normal_bubble.png")
+var think_bubble = load("res://assets/think_bubble.png")
+
 var can_close = true
 var patch : NinePatchRect
 var label : Label
@@ -17,12 +20,14 @@ func set_name(text: String):
 
 
 func say(text: String):
-	# TODO: Set style plain
+	$Background.texture = normal_bubble
+	$Background.region_rect = Rect2(0, 0, 60, 60)
 	set_text(text)
 
 
 func think(text: String):
-	# TODO: Set style thought
+	$Background.texture = think_bubble
+	$Background.region_rect = Rect2(0, 0, 200, 100)
 	set_text(text)
 
 
@@ -55,13 +60,12 @@ func display():
 	$Tween.interpolate_property(self, "rect_scale", Vector2(0.0, 0.0), Vector2(1.0, 1.0), 0.1, Tween.TRANS_LINEAR, 0)
 	$Tween.start()
 
-	$ActionIndicators/CloseSquare.visible = is_last_line_shown()
+	$ActionIndicators/CloseSquare.visible = is_last_line_shown() and can_close
 	$ActionIndicators/ContinueArrow.visible = not is_last_line_shown()
 	
 	$ActionTween.interpolate_property($ActionIndicators, "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), 1, Tween.TRANS_LINEAR, 0)
 	$ActionTween.start()
 	
-	can_close = true
 	visible = true
 
 
@@ -85,8 +89,9 @@ func on_action():
 		emit_signal("speech_over")
 
 
-func disable_close():
-	can_close = false
+func set_close_action(value):
+	can_close = value
+	$ActionIndicators/CloseSquare.visible = can_close
 
 
 func is_shown():

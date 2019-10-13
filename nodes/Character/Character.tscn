@@ -15,13 +15,14 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="SpeechBubble" parent="." instance=ExtResource( 2 )]
-visible = true
+visible = false
 margin_left = 21.6659
 margin_top = -201.957
 margin_right = 21.6659
 margin_bottom = -201.957
 
 [node name="ChoiceBubble" parent="." instance=ExtResource( 3 )]
+visible = false
 margin_left = 42.2393
 margin_top = -44.2043
 margin_right = 42.2393

@@ -1,39 +1,33 @@
-LIST Moods = normal, think
-
 VAR character_name = "Moriarty"
-VAR character_mood = normal
+VAR character_mood = "normal"
 
 
 ~ who("Moriarty")
-~ mood(think)
+~ mood("think")
 What the hell happenned?
 
-~ who("Moriarty's Shadow")
-Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! 
-Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! 
-Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! 
-Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! 
-Get lost looser! Get lost looser! Get lost looser! Get lost looser! Get lost looser! 
-Get lost looser! Get lost looser!
-
-~ who("Moriarty")
-Oh nose I broke the world	 
-
-~ who("Moriarty's Shadow")
-I will now go to the end of the game, have fun to find me 
-
-~ who("Moriarty")
-Damn, I need to play this game to find you du coup 
-
-~ mood(think)
-* [I remember...]
+~ mood("think")
+* [Ask my shadow]
 	~ who("Moriarty's Shadow")
-	Do you even listen to me?
-	-> after_though
-	
-* [omagad i can think]
+	Get lost looser!
+
+	* * [Get lost]
+		~ who("Moriarty")
+		Let's go then
+		-> after_though
+
+	* * [Don't]
+		~ who("Moriarty")
+		You go!
+
+		~ who("Moriarty")
+		~ mood("think")
+		Well...
+		-> after_though
+
+* [Figure it out myself]
 	~ who("Moriarty")
-	AH AH I CAN THINK
+	I screwed up again didnt I?
 	-> after_though
 
 = after_though
@@ -42,14 +36,18 @@ Damn, I need to play this game to find you du coup
 k thx bye
 
 ~ who("Moriarty's Shadow")
-bug?
+~ mood("think")
+Dumbass
+
+~ who("Moriarty")
+See you soon
 
 
 -> END
 
 
 === function who(value) ===
-	~ character_mood = normal
+	~ character_mood = "normal"
 	~ character_name = value
 
 

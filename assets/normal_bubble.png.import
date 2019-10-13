@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dialog_test.jpg-25b8e680731927434f72a2f3c91de813.stex"
+path="res://.import/normal_bubble.png-ffbd49e18f14510ab5e35744a85417ef.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/dialog_test.jpg"
-dest_files=[ "res://.import/dialog_test.jpg-25b8e680731927434f72a2f3c91de813.stex" ]
+source_file="res://assets/normal_bubble.png"
+dest_files=[ "res://.import/normal_bubble.png-ffbd49e18f14510ab5e35744a85417ef.stex" ]
 
 [params]
 

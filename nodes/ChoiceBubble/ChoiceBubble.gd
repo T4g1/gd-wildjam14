@@ -7,9 +7,9 @@ Present choice to the player
 signal choice_done
 
 var Choice = preload("res://nodes/ChoiceBubble/Choice.tscn")
-var choices_container
-var choices_labels = []
-var selected_choice = 0
+var choices_container	# Node with all choice children
+var choices_labels = [] # Current choice possible
+var selected_choice = 0 # Currently selected option
 
 
 func _ready():
@@ -46,9 +46,10 @@ func _input(event):
 		change_selection(1)
 	if event.is_action_pressed("ui_up"):
 		change_selection(-1)
-	if event.is_action_pressed("ui_accept"):
-		emit_signal("choice_done", selected_choice)
+	if Input.is_action_just_pressed("ui_accept"):
+		print("accept")
 		hide()
+		emit_signal("choice_done", selected_choice)
 
 
 func change_selection(offset):
