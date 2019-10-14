@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://nodes/Character/Character.gd"
 }, {
-"base": "Label",
+"base": "Control",
 "class": "Choice",
 "language": "GDScript",
 "path": "res://nodes/ChoiceBubble/Choice.gd"

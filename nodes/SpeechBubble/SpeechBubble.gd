@@ -10,6 +10,10 @@ signal speech_over
 var normal_bubble = load("res://assets/normal_bubble.png")
 var think_bubble = load("res://assets/think_bubble.png")
 
+onready var action_indicators = $Background/ActionIndicators
+onready var close_square = $Background/ActionIndicators/CloseSquare
+onready var continue_arrow = $Background/ActionIndicators/ContinueArrow
+
 var can_close = true
 var patch : NinePatchRect
 var label : Label
@@ -59,11 +63,11 @@ func display():
 	
 	$Tween.interpolate_property(self, "rect_scale", Vector2(0.0, 0.0), Vector2(1.0, 1.0), 0.1, Tween.TRANS_LINEAR, 0)
 	$Tween.start()
-
-	$ActionIndicators/CloseSquare.visible = is_last_line_shown() and can_close
-	$ActionIndicators/ContinueArrow.visible = not is_last_line_shown()
 	
-	$ActionTween.interpolate_property($ActionIndicators, "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), 1, Tween.TRANS_LINEAR, 0)
+	close_square.visible = is_last_line_shown() and can_close
+	continue_arrow.visible = not is_last_line_shown()
+	
+	$ActionTween.interpolate_property(action_indicators, "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), 1, Tween.TRANS_LINEAR, 0)
 	$ActionTween.start()
 	
 	visible = true
@@ -91,7 +95,7 @@ func on_action():
 
 func set_close_action(value):
 	can_close = value
-	$ActionIndicators/CloseSquare.visible = can_close
+	close_square.visible = can_close
 
 
 func is_shown():

@@ -8,6 +8,13 @@ INCLUDE common.ink
 ~ who("Moriarty")
 ~ pause_after()
 Greetings stranger
+	* A
+	* B
+	* C
+	* D
+	* E
+
+-
 
 ~ who("Moriarty's Shadow")
 ~ pause_after()

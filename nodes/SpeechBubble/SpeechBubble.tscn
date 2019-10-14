@@ -82,30 +82,30 @@ align = 1
 valign = 1
 uppercase = true
 
-[node name="ActionTween" type="Tween" parent="."]
-repeat = true
-playback/repeat = true
-
-[node name="ActionIndicators" type="Control" parent="."]
-margin_left = 205.053
-margin_top = 64.9979
-margin_right = 205.053
-margin_bottom = 64.9979
+[node name="ActionIndicators" type="Control" parent="Background"]
+margin_left = 455.827
+margin_top = 139.998
+margin_right = 455.827
+margin_bottom = 139.998
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CloseSquare" type="TextureRect" parent="ActionIndicators"]
+[node name="CloseSquare" type="TextureRect" parent="Background/ActionIndicators"]
 visible = false
 self_modulate = Color( 0, 0, 0, 1 )
 margin_right = 20.0
 margin_bottom = 20.0
 texture = ExtResource( 4 )
 
-[node name="ContinueArrow" type="TextureRect" parent="ActionIndicators"]
+[node name="ContinueArrow" type="TextureRect" parent="Background/ActionIndicators"]
 visible = false
 self_modulate = Color( 0, 0, 0, 1 )
 margin_right = 20.0
 margin_bottom = 20.0
 texture = ExtResource( 5 )
 stretch_mode = 3
+
+[node name="ActionTween" type="Tween" parent="."]
+repeat = true
+playback/repeat = true
