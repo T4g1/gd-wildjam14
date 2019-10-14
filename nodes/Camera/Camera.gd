@@ -26,7 +26,7 @@ func move(movement: Vector3):
 	# Do not move on the fixed axis
 	movement.z = 0.0
 	
-	#transform.origin += movement * speed
+	global_transform.origin += movement * speed
 
 
 func zoom_on(targets: Array):
@@ -37,19 +37,27 @@ func zoom_on(targets: Array):
 		return
 	
 	var first_character = targets.pop_front()
-	var upper_left = first_character.transform.origin
-	var lower_right = first_character.transform.origin
+	var upper_left = first_character.get_global_transform().origin
+	var lower_right = first_character.get_global_transform().origin
+	print(upper_left)
+	print(lower_right)
 	
 	for target in targets:
-		var position = target.transform.origin
+		var position = target.get_global_transform().origin
+		print(position)
 		if position.x < upper_left.x:
 			upper_left.x = position.x
 		if position.y < upper_left.y:
 			upper_left.y = position.y
 		
-		if position.x + 500 > lower_right.x:
-			lower_right.x = position.x + 500
+		if position.x > lower_right.x:
+			lower_right.x = position.x
 		if position.y > lower_right.y:
 			lower_right.y = position.y
+	print(upper_left, lower_right)
+	set_position(upper_left + (lower_right - upper_left) / 2)
 
-	#transform.origin = upper_left + (lower_right - upper_left) / 2
+
+func set_position(position: Vector3):
+	position.z = global_transform.origin.z
+	global_transform.origin = position
