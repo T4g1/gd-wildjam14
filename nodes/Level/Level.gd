@@ -8,27 +8,45 @@ Base for every level
 enum Realms {REAL, SHADOW}
 export (Realms) var start_realm
 
-var node_realms: Dictionary
-var current_realm: Node
+var realm_nodes: Dictionary
+var current_realm = Realms.REAL
 
 
 func _ready():
-	node_realms = {
+	realm_nodes = {
 		Realms.REAL: $RealWorld,
 		Realms.SHADOW: $ShadowRealm
 	}
 	
-	for realm in node_realms.values():
-		realm.visible = false
+	for realm_node in realm_nodes.values():
+		realm_node.visible = false
 	
-	change_plan(node_realms[start_realm])
+	change_realm(start_realm)
 
 
-func change_plan(realm: Node):
-	print(realm)
-	if current_realm:
-		current_realm.visible = false
+func _input(event):
+	if event.is_action_pressed("ui_select") and can_change_realm():
+		var realm = Realms.REAL
+		if current_realm == Realms.REAL:
+			realm = Realms.SHADOW
+		
+		change_realm(realm)
+	
+
+func can_change_realm():
+	"""
+	Returns wether or not condition to change realm are fulfilled
+	"""
+	# TODO: Implement me
+	return true
+
+
+func change_realm(realm):
+	var current_realm_node = realm_nodes[current_realm]
+	var realm_node = realm_nodes[realm]
+	
+	#TODO: Transition
+	current_realm_node.visible = false
+	realm_node.visible = true
 	
 	current_realm = realm
-	
-	current_realm.visible = true

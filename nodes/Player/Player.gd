@@ -1,6 +1,8 @@
 extends "res://nodes/Character/Character.gd"
 class_name Player
 
+
+
 var in_dialog = false
 
 

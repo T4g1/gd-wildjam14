@@ -8,7 +8,7 @@
 
 [sub_resource type="CapsuleMesh" id=1]
 
-[node name="Level1" index="0" instance=ExtResource( 1 )]
+[node name="Level1" instance=ExtResource( 1 )]
 
 [node name="MeshInstance" type="MeshInstance" parent="ShadowRealm" index="0"]
 mesh = SubResource( 2 )
