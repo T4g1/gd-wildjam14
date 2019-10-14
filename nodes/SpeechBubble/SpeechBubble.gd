@@ -16,18 +16,18 @@ var label : Label
 
 
 func set_name(text: String):
-	$NinePatchRect/Name.text = text
+	$Background/NinePatchRect/Name.text = text
 
 
 func say(text: String):
-	$Background.texture = normal_bubble
-	$Background.region_rect = Rect2(0, 0, 60, 60)
+	patch.texture = normal_bubble
+	patch.region_rect = Rect2(0, 0, 60, 60)
 	set_text(text)
 
 
 func think(text: String):
-	$Background.texture = think_bubble
-	$Background.region_rect = Rect2(0, 0, 200, 100)
+	patch.texture = think_bubble
+	patch.region_rect = Rect2(0, 0, 200, 100)
 	set_text(text)
 
 
