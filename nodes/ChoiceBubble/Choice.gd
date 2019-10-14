@@ -10,7 +10,7 @@ var selection_id: int
 
 
 func init(text: String, _selection_id: int):
-	$Choice.text = text
+	$Label.text = text
 	selection_id = _selection_id
 
 
