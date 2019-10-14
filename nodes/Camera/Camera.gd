@@ -2,12 +2,39 @@ extends Camera
 """
 Camera user controlled that can be fixed for dialogs, events, ...
 """
+signal shutter_visible
+signal shutter_hidden
 
 export (float) var speed = 5.0
 var user_controlled = true
 
 
+func _ready():
+	$Shutter.modulate = Color(1, 1, 1, 0)
+
+
+func fade_out():
+	$FadeTween.interpolate_property($Shutter, "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), 0.5, Tween.TRANS_LINEAR, 0)
+	$FadeTween.start()
+	
+	yield($FadeTween, "tween_all_completed")
+	print("shutter visible")
+	emit_signal("shutter_visible")
+
+
+func fade_in():
+	$FadeTween.interpolate_property($Shutter, "modulate", Color(1, 1, 1, 1), Color(1, 1, 1, 0), 0.5, Tween.TRANS_LINEAR, 0)
+	$FadeTween.start()
+	
+	yield($FadeTween, "tween_all_completed")
+	print("shutter hidden")
+	emit_signal("shutter_hidden")
+
+
 func _process(delta):
+	if not Utils.get_game().user_has_control:
+		return
+	
 	var direction = Vector3(0, 0, 0)
 	if Input.is_action_pressed("ui_left"):
 		direction.x -= 1

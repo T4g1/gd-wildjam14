@@ -5,6 +5,9 @@ Handle the game flow: load levels and shit
 """
 
 
+var user_has_control = true
+
+
 func on_dialog_start():
 	print("starting dialog")
 	Utils.get_player().in_dialog = true

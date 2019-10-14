@@ -25,6 +25,9 @@ func _ready():
 
 
 func _input(event):
+	if not Utils.get_game().user_has_control:
+		return
+	
 	if event.is_action_pressed("ui_select") and can_change_realm():
 		var realm = Realms.REAL
 		if current_realm == Realms.REAL:
@@ -42,11 +45,22 @@ func can_change_realm():
 
 
 func change_realm(realm):
+	Utils.get_game().user_has_control = false
+	
 	var current_realm_node = realm_nodes[current_realm]
 	var realm_node = realm_nodes[realm]
 	
-	#TODO: Transition
+	var camera = Utils.get_camera()
+	
+	camera.fade_out()
+	yield(camera, "shutter_visible")
+	
 	current_realm_node.visible = false
 	realm_node.visible = true
 	
 	current_realm = realm
+	
+	camera.fade_in()
+	yield(camera, "shutter_hidden")
+	
+	Utils.get_game().user_has_control= true
