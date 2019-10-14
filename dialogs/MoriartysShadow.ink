@@ -2,6 +2,26 @@ INCLUDE common.ink
 
 # Moriarty # Moriarty's Shadow
 
+-> greetings
+=== greetings ===
+
+~ who("Moriarty")
+~ pause_after()
+Greetings stranger
+
+~ who("Moriarty's Shadow")
+~ pause_after()
+Pause quand je me tait
+
+~ who("Moriarty")
+Rebonjour
+
+~ who("Moriarty's Shadow")
+~ pause_after()
+Ok ta mére
+
+-> greetings
+
 
 ~ who("Moriarty")
 ~ mood("think")

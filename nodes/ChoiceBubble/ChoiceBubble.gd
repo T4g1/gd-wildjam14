@@ -50,6 +50,7 @@ func _input(event):
 		print("accept")
 		hide()
 		emit_signal("choice_done", selected_choice)
+		accept_event()
 
 
 func change_selection(offset):

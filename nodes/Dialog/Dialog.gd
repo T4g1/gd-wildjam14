@@ -28,10 +28,12 @@ func load_story(ink_story_path):
 func continue_story():
 	emit_signal("dialog_start")
 	
+	story.variables_state.set("paused", 0)
+	
 	var player = Utils.get_player()
 	var character
 	
-	while story.can_continue:
+	while story.can_continue and story.variables_state.get("paused") == 0:
 		var text = story.continue()
 		character = get_character_from_story()
 		
