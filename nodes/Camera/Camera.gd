@@ -39,12 +39,9 @@ func zoom_on(targets: Array):
 	var first_character = targets.pop_front()
 	var upper_left = first_character.get_global_transform().origin
 	var lower_right = first_character.get_global_transform().origin
-	print(upper_left)
-	print(lower_right)
 	
 	for target in targets:
 		var position = target.get_global_transform().origin
-		print(position)
 		if position.x < upper_left.x:
 			upper_left.x = position.x
 		if position.y < upper_left.y:
@@ -54,7 +51,7 @@ func zoom_on(targets: Array):
 			lower_right.x = position.x
 		if position.y > lower_right.y:
 			lower_right.y = position.y
-	print(upper_left, lower_right)
+	
 	set_position(upper_left + (lower_right - upper_left) / 2)
 
 

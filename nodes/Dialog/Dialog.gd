@@ -4,8 +4,16 @@ class_name Dialog
 Given some charcters, start dialog based on them
 """
 
+signal dialog_start
+signal dialog_end
+
 var Story = load("res://addons/inkgd/runtime/story.gd")
 var story
+
+
+func _ready():
+	connect("dialog_start", Utils.get_game(), "on_dialog_start")
+	connect("dialog_end", Utils.get_game(), "on_dialog_end")
 
 
 func load_story(ink_story_path):
@@ -18,6 +26,8 @@ func load_story(ink_story_path):
 
 
 func continue_story():
+	emit_signal("dialog_start")
+	
 	var player = Utils.get_player()
 	var character
 	
@@ -45,6 +55,8 @@ func continue_story():
 		character.speech_bubble.set_close_action(false)
 		player.prompt(story.current_choices)
 		player.choice_bubble.connect("choice_done", self, "_choice_done")
+	else:
+		emit_signal("dialog_end")
 
 
 func _choice_done(index):

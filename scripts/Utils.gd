@@ -9,6 +9,10 @@ func get_camera() -> Camera2D:
 	return get_tree().get_nodes_in_group("camera").front()
 
 
+func get_game():
+	return get_tree().get_root().get_node("main/Game")
+
+
 func get_character(character_name: String):
 	"""
 	Get a character from the protagonists list given

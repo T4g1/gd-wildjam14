@@ -30,6 +30,11 @@ _global_script_classes=[ {
 "path": "res://nodes/Dialog/Dialog.gd"
 }, {
 "base": "Spatial",
+"class": "Game",
+"language": "GDScript",
+"path": "res://scenes/Game.gd"
+}, {
+"base": "Spatial",
 "class": "Level",
 "language": "GDScript",
 "path": "res://nodes/Level/Level.gd"
@@ -49,6 +54,7 @@ _global_script_class_icons={
 "Choice": "",
 "ChoiceBubble": "",
 "Dialog": "",
+"Game": "",
 "Level": "",
 "Player": "",
 "SpeechBubble": ""
@@ -57,7 +63,7 @@ _global_script_class_icons={
 [application]
 
 config/name="gd-wildjam14"
-run/main_scene="res://scenes/Game.tscn"
+run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
