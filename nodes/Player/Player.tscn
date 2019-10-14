@@ -8,4 +8,4 @@
 ] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 firstname = "Moriarty"
-path_story = "res://assets/dialogs/Moriarty.json"
+path_story = "res://dialogs/Moriarty.json"

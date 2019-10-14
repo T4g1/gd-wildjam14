@@ -33,26 +33,4 @@ func zoom_on(targets):
 		if character != null:
 			characters.append(character)
 		
-	if characters.size() <= 0:
-		return
-	
-	# Compute bounding rect
-	var first_character = characters.pop_front()
-	var upper_left = first_character.position
-	var lower_right = first_character.position
-	
-	for character in characters:
-		var position = character.position
-		if position.x < upper_left.x:
-			upper_left.x = position.x
-		if position.y < upper_left.y:
-			upper_left.y = position.y
-		
-		if position.x + 500 > lower_right.x:
-			lower_right.x = position.x + 500
-		if position.y > lower_right.y:
-			lower_right.y = position.y
-
-	var middle_point = upper_left + (lower_right - upper_left) / 2
-	print(middle_point)
-	get_camera().position = middle_point
+	get_camera().zoom_on(characters)

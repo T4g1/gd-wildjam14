@@ -1,36 +1,42 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://nodes/Character/Character.gd" type="Script" id=1]
-[ext_resource path="res://nodes/SpeechBubble/SpeechBubble.tscn" type="PackedScene" id=2]
-[ext_resource path="res://nodes/ChoiceBubble/ChoiceBubble.tscn" type="PackedScene" id=3]
-[ext_resource path="res://nodes/Dialog/Dialog.tscn" type="PackedScene" id=4]
+[ext_resource path="res://nodes/Character/UI.gd" type="Script" id=2]
+[ext_resource path="res://nodes/SpeechBubble/SpeechBubble.tscn" type="PackedScene" id=3]
+[ext_resource path="res://nodes/ChoiceBubble/ChoiceBubble.tscn" type="PackedScene" id=4]
+[ext_resource path="res://nodes/Dialog/Dialog.tscn" type="PackedScene" id=5]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 20.4633
-height = 54.3594
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.352844
+height = 0.413166
 
-[node name="Character" type="KinematicBody2D" groups=[
+[node name="Character" type="KinematicBody" groups=[
 "characters",
 ]]
 script = ExtResource( 1 )
 firstname = "SET ME"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
 
-[node name="SpeechBubble" parent="." instance=ExtResource( 2 )]
+[node name="UI" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+
+[node name="SpeechBubble" parent="UI" instance=ExtResource( 3 )]
 visible = false
 margin_left = 21.6659
 margin_top = -201.957
 margin_right = 21.6659
 margin_bottom = -201.957
 
-[node name="ChoiceBubble" parent="." instance=ExtResource( 3 )]
+[node name="ChoiceBubble" parent="UI" instance=ExtResource( 4 )]
 visible = false
 margin_left = 42.2393
 margin_top = -44.2043
 margin_right = 42.2393
 margin_bottom = -44.2043
 
-[node name="Dialog" parent="." instance=ExtResource( 4 )]
-[connection signal="choice_done" from="ChoiceBubble" to="." method="_on_choice_done"]
+[node name="Dialog" parent="." instance=ExtResource( 5 )]
+[connection signal="choice_done" from="UI/ChoiceBubble" to="." method="_on_choice_done"]

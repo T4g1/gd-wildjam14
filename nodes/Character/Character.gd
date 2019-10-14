@@ -1,4 +1,4 @@
-extends Node2D
+extends Spatial
 class_name Character
 """
 Base class for NPC and Player
@@ -22,10 +22,10 @@ func _ready():
 	dialog = $Dialog
 	dialog.load_story(path_story)
 	
-	speech_bubble = $SpeechBubble
+	speech_bubble = $UI/SpeechBubble
 	speech_bubble.set_name(firstname)
 	
-	choice_bubble = $ChoiceBubble
+	choice_bubble = $UI/ChoiceBubble
 
 
 func say(text: String):
