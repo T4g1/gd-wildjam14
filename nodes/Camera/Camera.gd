@@ -5,7 +5,13 @@ Camera user controlled that can be fixed for dialogs, events, ...
 signal shutter_visible
 signal shutter_hidden
 
+const TRANSPARENT = Color(1, 1, 1, 0)
+const OPAQUE = Color(1, 1, 1, 1)
+
+export (float) var speed_show_shutter = 0.5
+export (float) var speed_hide_shutter = 0.2
 export (float) var speed = 5.0
+
 var user_controlled = true
 
 
@@ -13,21 +19,33 @@ func _ready():
 	$Shutter.modulate = Color(1, 1, 1, 0)
 
 
-func fade_out():
-	$FadeTween.interpolate_property($Shutter, "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), 0.5, Tween.TRANS_LINEAR, 0)
+func show_shutter():
+	"""
+	Fade the shutter to display it
+	"""
+	$FadeTween.interpolate_property($Shutter, "modulate", 
+		TRANSPARENT, OPAQUE, 
+		speed_show_shutter, 
+		Tween.TRANS_LINEAR, 0
+	)
 	$FadeTween.start()
 	
 	yield($FadeTween, "tween_all_completed")
-	print("shutter visible")
 	emit_signal("shutter_visible")
 
 
-func fade_in():
-	$FadeTween.interpolate_property($Shutter, "modulate", Color(1, 1, 1, 1), Color(1, 1, 1, 0), 0.5, Tween.TRANS_LINEAR, 0)
+func hide_shutter():
+	"""
+	Fade the shutter to hide it
+	"""
+	$FadeTween.interpolate_property($Shutter, "modulate", 
+		OPAQUE, TRANSPARENT, 
+		speed_hide_shutter, 
+		Tween.TRANS_LINEAR, 0
+	)
 	$FadeTween.start()
 	
 	yield($FadeTween, "tween_all_completed")
-	print("shutter hidden")
 	emit_signal("shutter_hidden")
 
 

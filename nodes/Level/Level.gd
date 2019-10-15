@@ -21,14 +21,14 @@ func _ready():
 	for realm_node in realm_nodes.values():
 		realm_node.visible = false
 	
-	change_realm(start_realm)
+	set_realm(start_realm)
 
 
 func _input(event):
 	if not Utils.get_game().user_has_control:
 		return
 	
-	if event.is_action_pressed("ui_select") and can_change_realm():
+	if event.is_action_pressed("ui_select"):
 		var realm = Realms.REAL
 		if current_realm == Realms.REAL:
 			realm = Realms.SHADOW
@@ -44,9 +44,9 @@ func can_change_realm():
 	return true
 
 
-func change_realm(realm):
+func set_realm(realm):
 	"""
-	Immediate change of realm
+	Immediate and unconditionnal change of realm
 	"""
 	var current_realm_node = realm_nodes[current_realm]
 	var realm_node = realm_nodes[realm]
@@ -58,17 +58,20 @@ func change_realm(realm):
 
 func fade_realm(realm):
 	"""
-	Fade animation to the new realm
+	Fade animation to the new realm if it is possible right now
 	"""
+	if not can_change_realm():
+		return
+	
 	Utils.get_game().user_has_control = false
 	var camera = Utils.get_camera()
 	
-	camera.fade_out()
+	camera.show_shutter()
 	yield(camera, "shutter_visible")
 	
-	change_realm(realm)
+	set_realm(realm)
 	
-	camera.fade_in()
+	camera.hide_shutter()
 	yield(camera, "shutter_hidden")
 	
 	Utils.get_game().user_has_control= true
