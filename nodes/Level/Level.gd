@@ -33,7 +33,7 @@ func _input(event):
 		if current_realm == Realms.REAL:
 			realm = Realms.SHADOW
 		
-		change_realm(realm)
+		fade_realm(realm)
 	
 
 func can_change_realm():
@@ -45,20 +45,28 @@ func can_change_realm():
 
 
 func change_realm(realm):
-	Utils.get_game().user_has_control = false
-	
+	"""
+	Immediate change of realm
+	"""
 	var current_realm_node = realm_nodes[current_realm]
 	var realm_node = realm_nodes[realm]
+	current_realm_node.visible = false
+	realm_node.visible = true
 	
+	current_realm = realm
+
+
+func fade_realm(realm):
+	"""
+	Fade animation to the new realm
+	"""
+	Utils.get_game().user_has_control = false
 	var camera = Utils.get_camera()
 	
 	camera.fade_out()
 	yield(camera, "shutter_visible")
 	
-	current_realm_node.visible = false
-	realm_node.visible = true
-	
-	current_realm = realm
+	change_realm(realm)
 	
 	camera.fade_in()
 	yield(camera, "shutter_hidden")
