@@ -1,4 +1,3 @@
-tool
 extends PhysicsBody
 class_name Item
 """
@@ -14,17 +13,18 @@ var normal_material: SpatialMaterial
 
 
 func _ready():
-	outline_material.shader.shader_params.texturemap = texture
+	print(outline_material)
+	outline_material = load("res://shader/outline_shadermaterial.tres")
+	outline_material = outline_material.duplicate()
+	outline_material.set_shader_param("texturemap", texture)
 	
-	normal_material = sprite.material
+	normal_material = sprite.mesh.material
 	normal_material.albedo_texture = texture
 
 
 func _on_mouse_hover():
-	print("show outline")
-	sprite.material = outline_material
+	sprite.material_override = outline_material
 
 
 func _on_mouse_exit():
-	print("hide outline")
-	sprite.material = normal_material
+	sprite.material_override = normal_material
