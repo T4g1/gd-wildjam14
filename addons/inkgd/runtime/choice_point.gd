@@ -39,6 +39,7 @@ func get_choice_target():
 
 # () -> String
 # (String) -> void
+# warning-ignore:unused_class_variable
 var path_string_on_choice setget set_path_string_on_choice, get_path_string_on_choice
 func get_path_string_on_choice():
     return compact_path_string(self.path_on_choice)
@@ -57,6 +58,7 @@ var is_invisible_default # bool
 
 # () -> int
 # (int) -> void
+# warning-ignore:unused_class_variable
 var flags setget set_flags, get_flags
 
 func get_flags() -> int:

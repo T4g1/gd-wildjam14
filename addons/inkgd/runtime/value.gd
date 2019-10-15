@@ -29,6 +29,7 @@ class Value extends "res://addons/inkgd/runtime/ink_object.gd":
     # IMPORTS
     # ######################################################################## #
 
+# warning-ignore:unused_class_variable
     var InkList = load("res://addons/inkgd/runtime/ink_list.gd")
 
     # ######################################################################## #
@@ -39,6 +40,7 @@ class Value extends "res://addons/inkgd/runtime/ink_object.gd":
     func get_value_type():
         return -1
 
+# warning-ignore:unused_class_variable
     var is_truthy setget , get_is_truthy # bool
     func get_is_truthy():
         return false
@@ -46,6 +48,7 @@ class Value extends "res://addons/inkgd/runtime/ink_object.gd":
     # ######################################################################### #
 
     # (ValueType) -> ValueType
+# warning-ignore:unused_argument
     func cast(new_type):
         pass
 
@@ -198,6 +201,7 @@ class StringValue extends Value:
 
     var is_newline # bool
     var is_inline_whitespace # bool
+# warning-ignore:unused_class_variable
     var is_non_whitespace setget , get_is_non_whitespace # bool
     func get_is_non_whitespace():
         return !is_newline && !is_inline_whitespace

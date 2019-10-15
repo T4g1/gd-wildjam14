@@ -13,6 +13,7 @@
 
 var _start_time = null
 
+# warning-ignore:unused_class_variable
 var elapsed_milliseconds setget , get_elapsed_milliseconds
 func get_elapsed_milliseconds():
     if _start_time == null:

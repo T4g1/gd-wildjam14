@@ -13,6 +13,7 @@ extends Reference
 # Imports
 # ############################################################################ #
 
+# warning-ignore:unused_class_variable
 var Utils = load("res://addons/inkgd/runtime/extra/utils.gd")
 var Ink = load("res://addons/inkgd/runtime/value.gd")
 var NativeFunctionCall = load("res://addons/inkgd/runtime/native_function_call.gd")

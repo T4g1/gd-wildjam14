@@ -24,10 +24,12 @@ var SearchResult = weakref(load("res://addons/inkgd/runtime/search_result.gd"))
 var obj = null # InkObject
 var approximate = false # bool
 
+# warning-ignore:unused_class_variable
 var correct_obj setget , get_correct_obj # InkObject
 func get_correct_obj():
     return null if approximate else obj
 
+# warning-ignore:unused_class_variable
 var container setget , get_container # Container
 func get_container():
     return Utils.as_or_null(obj, "InkContainer")

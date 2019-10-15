@@ -13,12 +13,14 @@ extends "res://addons/inkgd/runtime/ink_object.gd"
 # Self-reference
 # ############################################################################ #
 
+# warning-ignore:unused_class_variable
 var VariableAssignment = weakref(load("res://addons/inkgd/runtime/variable_assignment.gd"))
 
 # ############################################################################ #
 
 var variable_name = null # String
 var is_new_declaration = false # bool
+# warning-ignore:unused_class_variable
 var is_global = false # bool
 
 func _init():

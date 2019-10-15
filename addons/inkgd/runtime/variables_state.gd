@@ -41,6 +41,7 @@ func set_batch_observing_variable_changes(value):
 
 var _batch_observing_variable_changes # bool
 
+# warning-ignore:unused_class_variable
 var call_stack setget set_call_stack, get_call_stack
 func get_call_stack():
         return _call_stack
@@ -92,6 +93,7 @@ func copy_from(to_copy):
     _default_global_variables = to_copy._default_global_variables
 
     for connected_signal in to_copy.get_signal_connection_list("variable_changed"):
+# warning-ignore:return_value_discarded
         self.connect("variable_changed", connected_signal["target"], connected_signal["method"])
 
     if to_copy.batch_observing_variable_changes != self.batch_observing_variable_changes:
@@ -102,6 +104,7 @@ func copy_from(to_copy):
             _batch_observing_variable_changes = false
             _changed_variables = null
 
+# warning-ignore:unused_class_variable
 var json_token setget set_json_token, get_json_token # Dictionary<String, Variant>
 func get_json_token():
     return Json.dictionary_runtime_objs_to_jobject(_global_variables)

@@ -86,6 +86,7 @@ func contains_item_named(item_name):
     return false
 
 var origins = null # Array<ListDefinition>
+# warning-ignore:unused_class_variable
 var origin_of_max_item setget , get_origin_of_max_item # ListDefinition
 func get_origin_of_max_item():
     if origins == null: return null
@@ -141,6 +142,7 @@ func get_min_item():
 
     return _min_item
 
+# warning-ignore:unused_class_variable
 var inverse setget , get_inverse # InkList
 func get_inverse():
     var list = InkList().new()
@@ -152,6 +154,7 @@ func get_inverse():
 
     return list
 
+# warning-ignore:unused_class_variable
 var all setget , get_all # InkList
 func get_all():
     var list = InkList().new()

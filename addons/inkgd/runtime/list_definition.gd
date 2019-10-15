@@ -22,6 +22,7 @@ var name setget , get_name # String
 func get_name():
     return _name
 
+# warning-ignore:unused_class_variable
 var items setget , get_items # Dictionary<InkListItem, int>
 func get_items():            # Note: InkListItem should be serialized into a String.
     if _items == null:

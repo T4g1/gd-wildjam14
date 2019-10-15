@@ -48,6 +48,7 @@ func get_is_null():
 # ############################################################################ #
 
 # () -> InkPath
+# warning-ignore:unused_class_variable
 var path setget , get_path
 func get_path():
     if self.is_null: return null

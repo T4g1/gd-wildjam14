@@ -12,7 +12,9 @@ var story
 
 
 func _ready():
+# warning-ignore:return_value_discarded
 	connect("dialog_start", Utils.get_game(), "on_dialog_start")
+# warning-ignore:return_value_discarded
 	connect("dialog_end", Utils.get_game(), "on_dialog_end")
 
 

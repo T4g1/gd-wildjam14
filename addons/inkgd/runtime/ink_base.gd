@@ -13,11 +13,12 @@ extends Reference
 # Imports
 # ############################################################################ #
 
+# warning-ignore:unused_class_variable
 var Utils = preload("res://addons/inkgd/runtime/extra/utils.gd")
 
 # ############################################################################ #
 
-func equals(ink_base) -> bool:
+func equals(_ink_base) -> bool:
     return false
 
 func to_string() -> String:

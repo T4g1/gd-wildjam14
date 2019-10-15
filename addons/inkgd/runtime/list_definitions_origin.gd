@@ -19,6 +19,7 @@ var InkListItem = load("res://addons/inkgd/runtime/ink_list_item.gd")
 
 # ############################################################################ #
 
+# warning-ignore:unused_class_variable
 var lists setget , get_lists # Array<InkListDefinition>
 func get_lists():
     var list_of_lists = [] # Array<InkListDefinition>

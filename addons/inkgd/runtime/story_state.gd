@@ -48,6 +48,7 @@ func visit_count_at_path_string(path_string):
 
     return 0
 
+# warning-ignore:unused_class_variable
 var callstack_depth setget , get_callstack_depth # int
 func get_callstack_depth():
     return self.callstack.depth
@@ -56,11 +57,13 @@ var output_stream setget , get_output_stream # Array<InkObject>
 func get_output_stream():
     return self._output_stream
 
+# warning-ignore:unused_class_variable
 var current_choices setget , get_current_choices # Array<Choice>
 func get_current_choices():
     if self.can_continue: return []
     return self._current_choices
 
+# warning-ignore:unused_class_variable
 var generated_choices setget , get_generated_choices # Array<Choice>
 func get_generated_choices():
     return self._current_choices
@@ -80,6 +83,7 @@ var did_safe_exit = false # bool
 
 var story = null # WeakRef<Story>
 
+# warning-ignore:unused_class_variable
 var current_path_string setget , get_current_path_string # String
 func get_current_path_string():
     var pointer = self.current_pointer
@@ -90,6 +94,7 @@ func get_current_path_string():
 
 var current_pointer setget set_current_pointer, get_current_pointer # Pointer
 func get_current_pointer():
+# warning-ignore:unused_variable
     var pointer = self.callstack.current_element.current_pointer
     return self.callstack.current_element.current_pointer.duplicate()
 
@@ -117,6 +122,7 @@ var has_warning setget , get_has_warning # bool
 func get_has_warning():
     return self.current_warnings != null && self.current_warnings.size() > 0
 
+# warning-ignore:unused_class_variable
 var current_text setget , get_current_text # String
 func get_current_text():
     if self._output_stream_text_dirty:
@@ -168,6 +174,7 @@ func clean_output_whitespace(str_to_clean):
 
     return _str
 
+# warning-ignore:unused_class_variable
 var current_tags setget , get_current_tags # Array<String>
 func get_current_tags():
     if self._output_stream_tags_dirty:
@@ -184,6 +191,7 @@ func get_current_tags():
 
 var _current_tags # Array<String>
 
+# warning-ignore:unused_class_variable
 var in_expression_evaluation setget set_in_expression_evaluation, get_in_expression_evaluation # bool
 func get_in_expression_evaluation():
     return self.callstack.current_element.in_expression_evaluation
@@ -595,6 +603,7 @@ func get_output_stream_contains_content():
 
     return false
 
+# warning-ignore:unused_class_variable
 var in_string_evaluation setget , get_in_string_evaluation # bool
 func get_in_string_evaluation():
     var i = self._output_stream.size() - 1

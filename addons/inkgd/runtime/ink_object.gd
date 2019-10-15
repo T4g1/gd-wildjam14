@@ -22,6 +22,7 @@ var parent = null # InkObject
 # ############################################################################ #
 
 # () -> InkDebugMetadata
+# warning-ignore:unused_class_variable
 var debug_metadata setget set_debug_metadata, get_debug_metadata
 func get_debug_metadata():
     if _debug_metadata == null:
@@ -38,6 +39,7 @@ var _debug_metadata = null # InkDebugMetadata
 # ############################################################################ #
 
 # () -> InkDebugMetadata
+# warning-ignore:unused_class_variable
 var own_debug_metadata setget , get_own_debug_metadata
 func get_own_debug_metadata():
     return _debug_metadata

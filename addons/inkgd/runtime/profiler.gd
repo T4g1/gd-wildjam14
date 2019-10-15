@@ -29,6 +29,7 @@ func pre_step():
     pass
 
 # (CallStack) -> void
+# warning-ignore:unused_argument
 func step(callstack):
     pass
 
@@ -53,9 +54,11 @@ func post_snapshot():
     pass
 
 # (Stopwatch) -> float
+# warning-ignore:unused_argument
 func millisecs(watch):
     pass
 
 # (float) -> String
+# warning-ignore:unused_argument
 static func format_millisecs(num):
     return ""

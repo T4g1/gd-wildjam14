@@ -21,8 +21,10 @@ var StaticNativeFunctionCall = load("res://addons/inkgd/runtime/static/native_fu
 # ############################################################################ #
 
 var native_function_call = StaticNativeFunctionCall.new()
+# warning-ignore:unused_class_variable
 var json = StaticJson.new(native_function_call)
 
+# warning-ignore:unused_class_variable
 var should_interrupt = false
 
 func _init():

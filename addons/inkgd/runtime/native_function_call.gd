@@ -125,6 +125,7 @@ func call_binary_list_operation(parameters):
     if ((self.name == "&&" || self.name == "||") &&
         (v1.value_type != Ink.ValueType.LIST || v2.value_type != Ink.ValueType.LIST)
     ):
+# warning-ignore:unused_variable
         var op = _operation_funcs[Ink.ValueType.INT]
         var result = int(InkRuntimeNativeFunctions.call(
             "op_for_type",

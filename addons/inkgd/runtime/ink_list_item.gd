@@ -37,6 +37,7 @@ static func null():
 
 # ############################################################################ #
 
+# warning-ignore:unused_class_variable
 var is_null setget , get_is_null # bool
 func get_is_null():
     return origin_name == null && item_name == null

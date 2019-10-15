@@ -68,7 +68,9 @@ func get_has_variable_target(): return self.variable_divert_name != null
 var pushes_to_stack = false # bool
 var stack_push_type = 0 # PushPopType
 
+# warning-ignore:unused_class_variable
 var is_external = false # bool
+# warning-ignore:unused_class_variable
 var external_args = 0 # int
 
 var is_conditional = false # bool

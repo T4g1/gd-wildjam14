@@ -5,6 +5,7 @@ Handle the game flow: load levels and shit
 """
 
 
+# warning-ignore:unused_class_variable
 var user_has_control = true
 
 

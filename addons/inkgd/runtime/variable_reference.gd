@@ -14,6 +14,7 @@ extends "res://addons/inkgd/runtime/ink_object.gd"
 var name = null # String
 var path_for_count = null # InkPath
 
+# warning-ignore:unused_class_variable
 var container_for_count setget , get_container_for_count # Container
 func get_container_for_count():
     return self.resolve_path(path_for_count).container

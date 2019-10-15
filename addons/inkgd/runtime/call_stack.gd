@@ -138,6 +138,7 @@ class InkThread extends "res://addons/inkgd/runtime/ink_base.gd":
         return copy
 
     # () -> # Dictionary<String, object>
+# warning-ignore:unused_class_variable
     var json_token setget , get_json_token
     func get_json_token():
         var thread_jobj = {} # Dictionary<string, object>
@@ -197,6 +198,7 @@ func get_elements():
     return self.callstack
 
 # () -> int
+# warning-ignore:unused_class_variable
 var depth setget , get_depth
 func get_depth():
     return self.elements.size()
@@ -388,6 +390,7 @@ var callstack setget , get_callstack
 func get_callstack():
     return self.current_thread.callstack
 
+# warning-ignore:unused_class_variable
 var callstack_trace setget , get_callstack_trace
 func get_callstack_trace():
     var sb = ""

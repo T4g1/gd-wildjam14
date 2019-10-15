@@ -227,6 +227,7 @@ class Reader:
 
 
     # (bool | String, String) -> bool
+# warning-ignore:unused_argument
     func expect(condition_or_expected_str, message = null):
         var _condition = false
 

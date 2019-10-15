@@ -22,6 +22,7 @@ class Component extends "res://addons/inkgd/runtime/ink_base.gd":
     var is_index setget , get_is_index # bool
     func get_is_index(): return index >= 0
 
+# warning-ignore:unused_class_variable
     var is_parent setget , get_is_parent # bool
     func get_is_parent():
         return name == parent_id
@@ -82,6 +83,7 @@ func get_component(index):
 
 var is_relative = false # bool
 
+# warning-ignore:unused_class_variable
 var head setget , get_head # Component
 func get_head():
     if _components.size() > 0:
@@ -99,10 +101,12 @@ func get_tail():
     else:
         return InkPath().self()
 
+# warning-ignore:unused_class_variable
 var length setget , get_length # int
 func get_length():
     return _components.size()
 
+# warning-ignore:unused_class_variable
 var last_component setget , get_last_component # Component
 func get_last_component():
     if _components.size() > 0:
@@ -110,6 +114,7 @@ func get_last_component():
     else:
         return null
 
+# warning-ignore:unused_class_variable
 var contains_named_component setget , get_contains_named_component # bool
 func get_contains_named_component():
     for comp in _components:
@@ -121,6 +126,7 @@ func get_contains_named_component():
 func _init():
     self._components = []
 
+# warning-ignore:unused_argument
 func _init_with_head_tail(head, tail):
     self._components = []
     self._components.append(head)

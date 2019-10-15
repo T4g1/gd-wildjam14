@@ -70,6 +70,7 @@ enum CountFlags {
     COUNT_START_ONLY = 4
 }
 
+# warning-ignore:unused_class_variable
 var count_flags setget set_count_flags, get_count_flags # CountFlags
 func get_count_flags():
     var flags = 0
@@ -94,6 +95,7 @@ func get_has_valid_name():
     return self.name != null && self.name.length() > 0
 
 # () -> InkPath
+# warning-ignore:unused_class_variable
 var path_to_first_leaf_content setget , get_path_to_first_leaf_content
 func get_path_to_first_leaf_content():
     if self._path_to_first_leaf_content == null:
@@ -290,6 +292,7 @@ func build_string_of_hierarchy(existing_hierarchy, indentation, pointed_obj):
 func build_full_string_of_hierarchy():
     return build_string_of_hierarchy("", 0, null)
 
+# warning-ignore:unused_argument
 func _append_indentation(string, indentation):
     var spaces_per_indent = 4
     var i = 0
