@@ -9,14 +9,17 @@ signal speech_over
 
 export (Texture) var normal_bubble
 export (Texture) var think_bubble
+export (Texture) var normal_arrow
+export (Texture) var think_arrow
 
 onready var action_indicators = $Background/ActionIndicators
 onready var close_square = $Background/ActionIndicators/CloseSquare
 onready var continue_arrow = $Background/ActionIndicators/ContinueArrow
+onready var arrow = $Arrow
+onready var patch = $Background
+onready var label = $Background/Text
 
 var can_close = true
-var patch : NinePatchRect
-var label : Label
 
 
 func set_name(text: String):
@@ -25,21 +28,20 @@ func set_name(text: String):
 
 func say(text: String):
 	patch.texture = normal_bubble
+	arrow.texture = normal_arrow
 	patch.region_rect = Rect2(0, 0, 60, 60)
 	set_text(text)
 
 
 func think(text: String):
 	patch.texture = think_bubble
+	arrow.texture = think_arrow
 	patch.region_rect = Rect2(0, 0, 200, 100)
 	set_text(text)
 
 
 func _ready():
 	hide()
-	
-	patch = $Background
-	label = $Background/Text
 	
 	# This variables helps determining when the speech is over, be sure to set a reasonable value
 	assert(label.max_lines_visible > 0)

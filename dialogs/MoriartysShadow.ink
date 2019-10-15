@@ -7,6 +7,7 @@ INCLUDE common.ink
 
 # Moriarty # Moriarty's Shadow
 ~ who("Moriarty")
+~ mood("think")
 ~ pause_after()
 Greetings stranger
 	* A

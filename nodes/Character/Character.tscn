@@ -25,16 +25,16 @@ margin_bottom = 40.0
 script = ExtResource( 2 )
 
 [node name="SpeechBubble" parent="UI" instance=ExtResource( 3 )]
-margin_left = 282.718
-margin_top = -140.905
-margin_right = 282.718
-margin_bottom = -140.905
+margin_left = 265.876
+margin_top = -198.8
+margin_right = 265.876
+margin_bottom = -198.8
 
 [node name="ChoiceBubble" parent="UI" instance=ExtResource( 4 )]
-margin_left = 234.87
-margin_top = 76.8479
-margin_right = 234.87
-margin_bottom = 76.8479
+margin_left = 264.344
+margin_top = 5.2692
+margin_right = 264.344
+margin_bottom = 5.2692
 
 [node name="Dialog" parent="." instance=ExtResource( 5 )]
 [connection signal="choice_done" from="UI/ChoiceBubble" to="." method="_on_choice_done"]
