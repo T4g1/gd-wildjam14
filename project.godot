@@ -34,6 +34,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/Game.gd"
 }, {
+"base": "AnimatedSprite3D",
+"class": "Item",
+"language": "GDScript",
+"path": "res://nodes/Item/Item.gd"
+}, {
 "base": "Spatial",
 "class": "Level",
 "language": "GDScript",
@@ -55,6 +60,7 @@ _global_script_class_icons={
 "ChoiceBubble": "",
 "Dialog": "",
 "Game": "",
+"Item": "",
 "Level": "",
 "Player": "",
 "SpeechBubble": ""

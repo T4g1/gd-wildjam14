@@ -7,8 +7,8 @@ TODO: Think style
 
 signal speech_over
 
-var normal_bubble = load("res://assets/normal_bubble.png")
-var think_bubble = load("res://assets/think_bubble.png")
+export (Texture) var normal_bubble
+export (Texture) var think_bubble
 
 onready var action_indicators = $Background/ActionIndicators
 onready var close_square = $Background/ActionIndicators/CloseSquare

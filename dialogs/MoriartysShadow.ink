@@ -5,6 +5,7 @@ INCLUDE common.ink
 -> greetings
 === greetings ===
 
+# Moriarty # Moriarty's Shadow
 ~ who("Moriarty")
 ~ pause_after()
 Greetings stranger
@@ -16,13 +17,16 @@ Greetings stranger
 
 -
 
+# Moriarty's Shadow
 ~ who("Moriarty's Shadow")
 ~ pause_after()
 Pause quand je me tait
 
+# Moriarty
 ~ who("Moriarty")
 Rebonjour
 
+# Moriarty's Shadow # Moriarty
 ~ who("Moriarty's Shadow")
 ~ pause_after()
 Ok ta mére

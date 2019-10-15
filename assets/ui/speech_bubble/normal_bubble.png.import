@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/choice_bubble_iddle.png-dd2f00e478434d5436c0964159341853.stex"
+path="res://.import/normal_bubble.png-e212ca0cbd39e6caa711ca2870ff9f64.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/button/choice_bubble_iddle.png"
-dest_files=[ "res://.import/choice_bubble_iddle.png-dd2f00e478434d5436c0964159341853.stex" ]
+source_file="res://assets/ui/speech_bubble/normal_bubble.png"
+dest_files=[ "res://.import/normal_bubble.png-e212ca0cbd39e6caa711ca2870ff9f64.stex" ]
 
 [params]
 
