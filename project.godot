@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Control",
+"class": "ActionButton",
+"language": "GDScript",
+"path": "res://nodes/UI/ActionButton/ActionButton.gd"
+}, {
 "base": "Spatial",
 "class": "Character",
 "language": "GDScript",
@@ -17,12 +22,12 @@ _global_script_classes=[ {
 "base": "Control",
 "class": "Choice",
 "language": "GDScript",
-"path": "res://nodes/ChoiceBubble/Choice.gd"
+"path": "res://nodes/UI/ChoiceBubble/Choice.gd"
 }, {
 "base": "Control",
 "class": "ChoiceBubble",
 "language": "GDScript",
-"path": "res://nodes/ChoiceBubble/ChoiceBubble.gd"
+"path": "res://nodes/UI/ChoiceBubble/ChoiceBubble.gd"
 }, {
 "base": "Node",
 "class": "Dialog",
@@ -52,9 +57,10 @@ _global_script_classes=[ {
 "base": "Control",
 "class": "SpeechBubble",
 "language": "GDScript",
-"path": "res://nodes/SpeechBubble/SpeechBubble.gd"
+"path": "res://nodes/UI/SpeechBubble/SpeechBubble.gd"
 } ]
 _global_script_class_icons={
+"ActionButton": "",
 "Character": "",
 "Choice": "",
 "ChoiceBubble": "",

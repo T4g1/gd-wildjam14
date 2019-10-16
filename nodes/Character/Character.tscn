@@ -2,8 +2,8 @@
 
 [ext_resource path="res://nodes/Character/Character.gd" type="Script" id=1]
 [ext_resource path="res://nodes/Character/UI.gd" type="Script" id=2]
-[ext_resource path="res://nodes/SpeechBubble/SpeechBubble.tscn" type="PackedScene" id=3]
-[ext_resource path="res://nodes/ChoiceBubble/ChoiceBubble.tscn" type="PackedScene" id=4]
+[ext_resource path="res://nodes/UI/SpeechBubble/SpeechBubble.tscn" type="PackedScene" id=3]
+[ext_resource path="res://nodes/UI/ChoiceBubble/ChoiceBubble.tscn" type="PackedScene" id=4]
 [ext_resource path="res://nodes/Dialog/Dialog.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CapsuleShape" id=1]

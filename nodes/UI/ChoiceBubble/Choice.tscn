@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://nodes/ChoiceBubble/button_active.tres" type="StyleBox" id=1]
-[ext_resource path="res://nodes/ChoiceBubble/button_normal.tres" type="StyleBox" id=2]
+[ext_resource path="res://nodes/UI/button_active.tres" type="StyleBox" id=1]
+[ext_resource path="res://nodes/UI/button_normal.tres" type="StyleBox" id=2]
 [ext_resource path="res://assets/ui/choice_bubble/ChoiceBubbleGroup.tres" type="ButtonGroup" id=3]
-[ext_resource path="res://nodes/ChoiceBubble/Choice.gd" type="Script" id=4]
+[ext_resource path="res://nodes/UI/ChoiceBubble/Choice.gd" type="Script" id=4]
 [ext_resource path="res://assets/fonts/MonospaceTypewriter.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="DynamicFont" id=1]

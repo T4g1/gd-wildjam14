@@ -6,7 +6,7 @@ Present choice to the player
 
 signal choice_done
 
-var Choice = preload("res://nodes/ChoiceBubble/Choice.tscn")
+export (Resource) var ChoiceScene
 onready var choices_container = $NinePatchRect/MarginContainer/VBoxContainer
 
 
@@ -24,7 +24,7 @@ func prompt(choices_ink: Array):
 	
 	for selection_id in range(choices_ink.size()):
 		var choice = choices_ink[selection_id]
-		var choice_label = Choice.instance()
+		var choice_label = ChoiceScene.instance()
 		choice_label.init(choice.text, selection_id)
 		choice_label.connect("choice_done", self, "_on_choice_done")
 		choices_container.add_child(choice_label)

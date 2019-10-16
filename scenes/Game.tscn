@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/Game.gd" type="Script" id=1]
 [ext_resource path="res://levels/Level1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://nodes/Camera/Camera.tscn" type="PackedScene" id=3]
 [ext_resource path="res://nodes/Item/Gun/Gun.tscn" type="PackedScene" id=4]
+[ext_resource path="res://nodes/UI/ActionButton/ActionButton.tscn" type="PackedScene" id=5]
 
 [node name="Game" type="Spatial"]
 script = ExtResource( 1 )
@@ -24,3 +25,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.923, -1.132, 1.5 )
 axis_lock_linear_z = false
 axis_lock_angular_x = false
 axis_lock_angular_y = false
+
+[node name="ActionButton" parent="." instance=ExtResource( 5 )]
+margin_left = -50.6483
+margin_top = 216.23
+margin_right = -50.6483
+margin_bottom = 216.23
