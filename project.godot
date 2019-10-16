@@ -49,6 +49,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/Game.gd"
 }, {
+"base": "Control",
+"class": "Inventory",
+"language": "GDScript",
+"path": "res://nodes/UI/Inventory/Inventory.gd"
+}, {
+"base": "Control",
+"class": "InventoryItem",
+"language": "GDScript",
+"path": "res://nodes/UI/Inventory/InventoryItem.gd"
+}, {
 "base": "PhysicsBody",
 "class": "Item",
 "language": "GDScript",
@@ -78,6 +88,8 @@ _global_script_class_icons={
 "Dialog": "",
 "FixedPosition": "",
 "Game": "",
+"Inventory": "",
+"InventoryItem": "",
 "Item": "",
 "Level": "",
 "Player": "",

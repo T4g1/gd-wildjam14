@@ -37,7 +37,7 @@ func _on_mouse_exit():
 	sprite.material_override = normal_material
 
 
-func _on_event(camera, event, click_position, click_normal, shape_idx):
+func _on_event(_camera, event, _click_position, _click_normal, _shape_idx):
 	if event.is_action_released("ui_context"):
 		if not context_menu.visible:
 			context_menu.show()
