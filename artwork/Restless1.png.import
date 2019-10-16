@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/think_arrow.png-448dd7fe7523476bf59cc253b4442ba3.stex"
+path="res://.import/Restless1.png-fb9ae1b7249be8504eeb91ae187c9f9f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/speech_bubble/think_arrow.png"
-dest_files=[ "res://.import/think_arrow.png-448dd7fe7523476bf59cc253b4442ba3.stex" ]
+source_file="res://artwork/Restless1.png"
+dest_files=[ "res://.import/Restless1.png-fb9ae1b7249be8504eeb91ae187c9f9f.stex" ]
 
 [params]
 

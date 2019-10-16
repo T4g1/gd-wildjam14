@@ -9,15 +9,12 @@ signal speech_over
 
 export (Texture) var normal_bubble
 export (Texture) var think_bubble
-export (Texture) var normal_arrow
-export (Texture) var think_arrow
 
 onready var action_indicators = $Background/ActionIndicators
-onready var close_square = $Background/ActionIndicators/CloseSquare
+onready var close_square = $Background/ActionIndicators/CloseArrow
 onready var continue_arrow = $Background/ActionIndicators/ContinueArrow
-onready var arrow = $Arrow
 onready var patch = $Background
-onready var label = $Background/Text
+onready var label = $Background/MarginContainer/Text
 
 var can_close = true
 
@@ -28,15 +25,21 @@ func set_name(text: String):
 
 func say(text: String):
 	patch.texture = normal_bubble
-	arrow.texture = normal_arrow
-	patch.region_rect = Rect2(0, 0, 60, 60)
+	patch.region_rect = Rect2(0, 0, normal_bubble.get_width(), normal_bubble.get_height())
+	patch.patch_margin_left = 25
+	patch.patch_margin_top = 25
+	patch.patch_margin_right = 25
+	patch.patch_margin_bottom = 125
 	set_text(text)
 
 
 func think(text: String):
 	patch.texture = think_bubble
-	arrow.texture = think_arrow
-	patch.region_rect = Rect2(0, 0, 200, 100)
+	patch.region_rect = Rect2(0, 0, think_bubble.get_width(), think_bubble.get_height())
+	patch.patch_margin_left = 150
+	patch.patch_margin_top = 45
+	patch.patch_margin_right = 25
+	patch.patch_margin_bottom = 160
 	set_text(text)
 
 
@@ -61,7 +64,7 @@ func set_text(text : String):
 
 
 func display():
-	patch.rect_size = Vector2(500, 150)
+	#patch.rect_size = Vector2(500, 150)
 	
 	$Tween.interpolate_property(self, "rect_scale", Vector2(0.0, 0.0), Vector2(1.0, 1.0), 0.1, Tween.TRANS_LINEAR, 0)
 	$Tween.start()
