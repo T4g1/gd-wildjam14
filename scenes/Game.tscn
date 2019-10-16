@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/Game.gd" type="Script" id=1]
 [ext_resource path="res://levels/Level1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://nodes/Camera/Camera.tscn" type="PackedScene" id=3]
 [ext_resource path="res://nodes/Item/Gun/Gun.tscn" type="PackedScene" id=4]
-[ext_resource path="res://nodes/UI/ContextMenu/ContextMenu.tscn" type="PackedScene" id=5]
-[ext_resource path="res://nodes/UI/Inventory/Inventory.tscn" type="PackedScene" id=6]
+[ext_resource path="res://nodes/UI/Inventory/Inventory.tscn" type="PackedScene" id=5]
 
 [node name="Game" type="Spatial"]
 script = ExtResource( 1 )
@@ -27,8 +26,6 @@ axis_lock_linear_z = false
 axis_lock_angular_x = false
 axis_lock_angular_y = false
 
-[node name="ContextMenu" parent="." instance=ExtResource( 5 )]
-
-[node name="Inventory" parent="." instance=ExtResource( 6 )]
-margin_left = -80.0
-margin_right = -80.0
+[node name="Inventory" parent="." instance=ExtResource( 5 )]
+margin_left = -45.0
+margin_right = -45.0
