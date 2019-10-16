@@ -7,7 +7,7 @@ Present choice to the player
 signal choice_done
 
 var Choice = preload("res://nodes/ChoiceBubble/Choice.tscn")
-onready var choices_container = $NinePatchRect/VBoxContainer
+onready var choices_container = $NinePatchRect/MarginContainer/VBoxContainer
 
 
 func _ready():
