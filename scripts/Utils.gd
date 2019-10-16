@@ -41,3 +41,14 @@ func zoom_on(targets):
 			characters.append(character)
 		
 	get_camera().zoom_on(characters)
+
+
+func spatial_to_control_position(node: Spatial, control: Control):
+	"""
+	Move a control node to be on top of a given Spatial node
+	"""
+	var position = node.get_global_transform().origin
+	var camera = Utils.get_camera()
+	
+	var screen_position = camera.unproject_position(position)
+	control.rect_position = screen_position

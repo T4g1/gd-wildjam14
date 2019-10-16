@@ -5,6 +5,8 @@ class_name ActionButton
 Action button that can be used for contextual actions
 """
 
+signal pressed
+
 export (ShaderMaterial) var hover_material
 export (Texture) var logo
 export (String) var action
@@ -40,3 +42,7 @@ func _on_hover():
 func _on_iddle():
 	sprite.material = null
 	label.set("custom_colors/font_color", Utils.WHITE)
+
+
+func _on_button_down():
+	emit_signal("pressed", action)

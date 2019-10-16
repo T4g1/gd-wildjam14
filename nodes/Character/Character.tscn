@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://nodes/Character/Character.gd" type="Script" id=1]
-[ext_resource path="res://nodes/Character/UI.gd" type="Script" id=2]
-[ext_resource path="res://nodes/UI/SpeechBubble/SpeechBubble.tscn" type="PackedScene" id=3]
-[ext_resource path="res://nodes/UI/ChoiceBubble/ChoiceBubble.tscn" type="PackedScene" id=4]
-[ext_resource path="res://nodes/Dialog/Dialog.tscn" type="PackedScene" id=5]
+[ext_resource path="res://nodes/UI/SpeechBubble/SpeechBubble.tscn" type="PackedScene" id=2]
+[ext_resource path="res://nodes/UI/ChoiceBubble/ChoiceBubble.tscn" type="PackedScene" id=3]
+[ext_resource path="res://nodes/Dialog/Dialog.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.352844
@@ -22,21 +21,20 @@ shape = SubResource( 1 )
 [node name="UI" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 2 )
 
-[node name="SpeechBubble" parent="UI" instance=ExtResource( 3 )]
+[node name="SpeechBubble" parent="UI" instance=ExtResource( 2 )]
 visible = false
 margin_left = 265.876
 margin_top = -198.8
 margin_right = 265.876
 margin_bottom = -198.8
 
-[node name="ChoiceBubble" parent="UI" instance=ExtResource( 4 )]
+[node name="ChoiceBubble" parent="UI" instance=ExtResource( 3 )]
 visible = false
 margin_left = 374.841
 margin_top = -72.0784
 margin_right = 374.841
 margin_bottom = -72.0784
 
-[node name="Dialog" parent="." instance=ExtResource( 5 )]
+[node name="Dialog" parent="." instance=ExtResource( 4 )]
 [connection signal="choice_done" from="UI/ChoiceBubble" to="." method="_on_choice_done"]

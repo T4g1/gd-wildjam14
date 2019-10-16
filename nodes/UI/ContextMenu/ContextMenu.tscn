@@ -9,6 +9,7 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+mouse_filter = 1
 script = ExtResource( 1 )
 animation_speed = 0.5
 
@@ -35,3 +36,6 @@ margin_bottom = 49.6062
 action = "Take"
 
 [node name="Tween" type="Tween" parent="."]
+[connection signal="pressed" from="Examine" to="." method="_on_pressed"]
+[connection signal="pressed" from="Use" to="." method="_on_pressed"]
+[connection signal="pressed" from="Take" to="." method="_on_pressed"]

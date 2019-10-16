@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://nodes/Item/Item.gd" type="Script" id=1]
 [ext_resource path="res://shader/outline_shadermaterial.tres" type="Material" id=2]
 [ext_resource path="res://assets/items/Gun/gun.png" type="Texture" id=3]
+[ext_resource path="res://nodes/UI/ContextMenu/ContextMenu.tscn" type="PackedScene" id=4]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.491175, 0.486199, 0.01 )
@@ -30,5 +31,10 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 mesh = SubResource( 3 )
 material/0 = null
+
+[node name="ContextMenu" parent="." instance=ExtResource( 4 )]
+visible = false
+[connection signal="input_event" from="." to="." method="_on_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_hover"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exit"]
+[connection signal="context_action" from="ContextMenu" to="." method="_on_context_action"]

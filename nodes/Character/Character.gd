@@ -28,6 +28,10 @@ func _ready():
 	choice_bubble = $UI/ChoiceBubble
 
 
+func _process(_delta):
+	Utils.spatial_to_control_position(self, $UI)
+
+
 func say(text: String):
 	speech_bubble.say(text)
 

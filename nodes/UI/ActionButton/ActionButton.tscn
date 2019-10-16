@@ -11,6 +11,7 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+mouse_filter = 1
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -55,5 +56,6 @@ mouse_filter = 1
 custom_fonts/font = ExtResource( 5 )
 align = 1
 valign = 1
+[connection signal="button_down" from="Button" to="." method="_on_button_down"]
 [connection signal="mouse_entered" from="Button" to="." method="_on_hover"]
 [connection signal="mouse_exited" from="Button" to="." method="_on_iddle"]

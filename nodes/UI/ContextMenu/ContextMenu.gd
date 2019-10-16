@@ -4,18 +4,29 @@ class_name ContextMenu
 Contextual menu that appears sometimes with a list of possible actions
 """
 
+signal context_action
+
 export (float) var animation_speed = 0.1
-
-
-func _input(event):
-	if event.is_action_pressed("ui_accept"):
-		show()
-	if event.is_action_pressed("ui_cancel"):
-		hide()
 
 
 func _ready():
 	hide()
+
+
+func _unhandled_input(event):
+	if not visible:
+		return
+	
+	# Close the context menu if the player does something unrelated
+	if event.is_action("ui_accept") or \
+		event.is_action("ui_cancel") or \
+		event.is_action("ui_move") or \
+		event.is_action("ui_context") or \
+		event.is_action("ui_left") or \
+		event.is_action("ui_right") or \
+		event.is_action("ui_down") or \
+		event.is_action("ui_up"):
+		hide()
 
 
 func show():
@@ -28,3 +39,8 @@ func show():
 
 func hide():
 	visible = false
+
+
+func _on_pressed(action):
+	emit_signal("context_action", action)
+	hide()

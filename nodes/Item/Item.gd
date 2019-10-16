@@ -8,6 +8,7 @@ export (Texture) var texture
 export (ShaderMaterial) var outline_material
 
 onready var sprite = $Sprite
+onready var context_menu = $ContextMenu
 
 var normal_material: SpatialMaterial
 
@@ -20,6 +21,12 @@ func _ready():
 	
 	normal_material = sprite.mesh.material
 	normal_material.albedo_texture = texture
+	
+	context_menu.hide()
+
+
+func _process(_delta):
+	Utils.spatial_to_control_position(self, context_menu)
 
 
 func _on_mouse_hover():
@@ -28,3 +35,14 @@ func _on_mouse_hover():
 
 func _on_mouse_exit():
 	sprite.material_override = normal_material
+
+
+func _on_event(camera, event, click_position, click_normal, shape_idx):
+	if event.is_action_released("ui_context"):
+		if not context_menu.visible:
+			context_menu.show()
+
+
+func _on_context_action(action):
+	# TODO
+	print("Player wants to ", action)
