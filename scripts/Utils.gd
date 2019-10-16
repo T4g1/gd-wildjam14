@@ -1,5 +1,8 @@
 extends Node
 
+const WHITE = Color(1, 1, 1, 1)
+const BLACK = Color(0, 0, 0, 1)
+
 
 func get_player() -> Player:
 	return get_tree().get_nodes_in_group("player").front()

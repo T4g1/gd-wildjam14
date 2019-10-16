@@ -29,6 +29,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://nodes/UI/ChoiceBubble/ChoiceBubble.gd"
 }, {
+"base": "Control",
+"class": "ContextMenu",
+"language": "GDScript",
+"path": "res://nodes/UI/ContextMenu/ContextMenu.gd"
+}, {
 "base": "Node",
 "class": "Dialog",
 "language": "GDScript",
@@ -64,6 +69,7 @@ _global_script_class_icons={
 "Character": "",
 "Choice": "",
 "ChoiceBubble": "",
+"ContextMenu": "",
 "Dialog": "",
 "Game": "",
 "Item": "",

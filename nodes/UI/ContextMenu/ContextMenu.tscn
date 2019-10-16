@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://nodes/UI/ContextMenu/ContextMenu.gd" type="Script" id=1]
+[ext_resource path="res://nodes/UI/ActionButton/ActionButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/ui/examine.png" type="Texture" id=3]
+
+[node name="ContextMenu" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+script = ExtResource( 1 )
+animation_speed = 0.5
+
+[node name="Examine" parent="." instance=ExtResource( 2 )]
+margin_left = -8.46358
+margin_top = -64.9985
+margin_right = -8.46358
+margin_bottom = -64.9985
+logo = ExtResource( 3 )
+action = "Examine"
+
+[node name="Use" parent="." instance=ExtResource( 2 )]
+margin_left = -57.2076
+margin_top = 50.8339
+margin_right = -57.2076
+margin_bottom = 50.8339
+action = "Use"
+
+[node name="Take" parent="." instance=ExtResource( 2 )]
+margin_left = 51.7075
+margin_top = 49.6062
+margin_right = 51.7075
+margin_bottom = 49.6062
+action = "Take"
+
+[node name="Tween" type="Tween" parent="."]

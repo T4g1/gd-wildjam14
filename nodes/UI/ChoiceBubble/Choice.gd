@@ -4,9 +4,6 @@ class_name Choice
 Represent an option in the ChoiceBubble
 """
 
-const WHITE = Color(1, 1, 1, 1)
-const BLACK = Color(0, 0, 0, 1)
-
 signal choice_done
 
 var selection_id: int
@@ -22,8 +19,8 @@ func _on_button_down():
 
 
 func _on_active():
-	$Label.set("custom_colors/font_color", WHITE)
+	$Label.set("custom_colors/font_color", Utils.WHITE)
 
 
 func _on_iddle():
-	$Label.set("custom_colors/font_color", BLACK)
+	$Label.set("custom_colors/font_color", Utils.BLACK)
