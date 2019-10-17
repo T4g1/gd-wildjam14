@@ -21,7 +21,7 @@ func _ready():
 	sprite = get_node(sprite_path)
 	context_menu = get_node(context_menu_path)
 	
-	context_menu.connect("context_action", self, "_on_context_action")
+	var __ = context_menu.connect("context_action", self, "_on_context_action")
 	
 	outline_material = outline_material.duplicate()
 	outline_material.set_shader_param("texturemap", texture)

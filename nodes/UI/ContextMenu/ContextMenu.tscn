@@ -23,4 +23,3 @@ margin_top = -50.0
 margin_bottom = -50.0
 logo = ExtResource( 3 )
 action = "Examine"
-[connection signal="pressed" from="Actions/Examine" to="." method="_on_pressed"]

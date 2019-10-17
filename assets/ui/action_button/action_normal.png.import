@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/button_iddle.png-536d27559b4ecc7e7deadc10e686b58a.stex"
+path="res://.import/action_normal.png-c09c4a8841400d623b52b089d2d7c6e0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/action_button/button_iddle.png"
-dest_files=[ "res://.import/button_iddle.png-536d27559b4ecc7e7deadc10e686b58a.stex" ]
+source_file="res://assets/ui/action_button/action_normal.png"
+dest_files=[ "res://.import/action_normal.png-c09c4a8841400d623b52b089d2d7c6e0.stex" ]
 
 [params]
 

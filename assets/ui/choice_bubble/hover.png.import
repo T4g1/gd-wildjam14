@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/choice_bubble_iddle.png-c8e50c2b64012c1332057df1a07991c3.stex"
+path="res://.import/hover.png-398d3a82c23724b624d9a367156a79b5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/choice_bubble/choice_bubble_iddle.png"
-dest_files=[ "res://.import/choice_bubble_iddle.png-c8e50c2b64012c1332057df1a07991c3.stex" ]
+source_file="res://assets/ui/choice_bubble/hover.png"
+dest_files=[ "res://.import/hover.png-398d3a82c23724b624d9a367156a79b5.stex" ]
 
 [params]
 

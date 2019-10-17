@@ -1,8 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://nodes/UI/ChoiceBubble/ChoiceBubble.gd" type="Script" id=1]
 [ext_resource path="res://nodes/UI/ChoiceBubble/Choice.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/ui/choice_bubble/choice_bubble.png" type="Texture" id=3]
+
+[sub_resource type="ButtonGroup" id=1]
+
+[sub_resource type="ButtonGroup" id=2]
+
+[sub_resource type="ButtonGroup" id=3]
+
+[sub_resource type="ButtonGroup" id=4]
+
+[sub_resource type="ButtonGroup" id=5]
 
 [node name="ChoiceBubble" type="Control"]
 script = ExtResource( 1 )
@@ -16,7 +26,7 @@ anchor_bottom = 0.5
 margin_left = -200.0
 margin_top = -50.0
 margin_right = 100.0
-margin_bottom = 250.0
+margin_bottom = 161.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource( 3 )
@@ -36,7 +46,35 @@ margin_bottom = -10.0
 rect_clip_content = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer"]
-margin_top = 140.0
+margin_top = 2.0
 margin_right = 270.0
-margin_bottom = 140.0
+margin_bottom = 188.0
 size_flags_vertical = 4
+
+[node name="Choice" parent="NinePatchRect/MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_right = 270.0
+group = SubResource( 1 )
+
+[node name="Choice2" parent="NinePatchRect/MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 38.0
+margin_right = 270.0
+margin_bottom = 72.0
+group = SubResource( 2 )
+
+[node name="Choice3" parent="NinePatchRect/MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 76.0
+margin_right = 270.0
+margin_bottom = 110.0
+group = SubResource( 3 )
+
+[node name="Choice4" parent="NinePatchRect/MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 114.0
+margin_right = 270.0
+margin_bottom = 148.0
+group = SubResource( 4 )
+
+[node name="Choice5" parent="NinePatchRect/MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 152.0
+margin_right = 270.0
+margin_bottom = 186.0
+group = SubResource( 5 )
