@@ -16,6 +16,9 @@ var hidded = true
 onready var background = $Background
 onready var action_arrow = $ActionArrow
 onready var action_tween = $ActionArrow/Tween
+onready var container = $Background/Container
+onready var movement_tween = $MovementTween
+onready var take_item_tween = $TakeItemTween
 
 
 func _ready():
@@ -27,6 +30,7 @@ func _ready():
 	preview_position = hidden_position
 	preview_position.x += 10
 	
+	# Hide by default
 	rect_position = hidden_position
 	hidded = true
 
@@ -36,14 +40,37 @@ func _unhandled_event(event):
 		_on_display()
 
 
+func _on_item_in(_item: InventoryItem):
+	"""
+	Called when an item is inserted in the inventory
+	"""
+	var growth = 0.05
+	var grow_scale = Vector2(1 + growth, 1 + growth)
+	movement_tween.interpolate_property(self, "rect_scale", 
+		Vector2(1, 1), 
+		grow_scale, 
+		0.1, Tween.TRANS_LINEAR, 0
+	)
+	movement_tween.start()
+	
+	yield(movement_tween, "tween_all_completed")
+	
+	movement_tween.interpolate_property(self, "rect_scale", 
+		grow_scale, 
+		Vector2(1, 1), 
+		0.1, Tween.TRANS_LINEAR, 0
+	)
+	movement_tween.start()
+
+
 func _on_hide():
 	hidded = true
 	
 	action_arrow.rect_rotation = 0
 	
-	$Tween.stop_all()
-	$Tween.interpolate_property(self, "rect_position", rect_position, hidden_position, hidding_speed, Tween.TRANS_LINEAR, 0)
-	$Tween.start()
+	movement_tween.stop_all()
+	movement_tween.interpolate_property(self, "rect_position", rect_position, hidden_position, hidding_speed, Tween.TRANS_LINEAR, 0)
+	movement_tween.start()
 	
 
 func _on_display():
@@ -51,9 +78,9 @@ func _on_display():
 	
 	action_arrow.rect_rotation = 180
 	
-	$Tween.stop_all()
-	$Tween.interpolate_property(self, "rect_position", rect_position, displayed_position, apparition_speed, Tween.TRANS_BOUNCE, Tween.EASE_OUT)
-	$Tween.start()
+	movement_tween.stop_all()
+	movement_tween.interpolate_property(self, "rect_position", rect_position, displayed_position, apparition_speed, Tween.TRANS_BOUNCE, Tween.EASE_OUT)
+	movement_tween.start()
 
 
 func _on_hover():
@@ -80,3 +107,14 @@ func _on_input(event):
 			_on_display()
 		else:
 			_on_hide()
+
+
+func get_empty_slot():
+	"""
+	Give one of the empty slots or null if none are free
+	"""
+	for slot in container.get_children():
+		if slot.is_free():
+			return slot
+	
+	return null

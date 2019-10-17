@@ -12,10 +12,19 @@ var user_has_control = true
 func on_dialog_start():
 	print("starting dialog")
 	Utils.get_player().in_dialog = true
-	Utils.get_camera().user_controlled = false
+	
+	user_has_control = false
 
 
 func on_dialog_end():
 	print("ending dialog")
 	Utils.get_player().in_dialog = false
-	Utils.get_camera().user_controlled = true
+	
+	user_has_control = true
+
+
+func take(item: Item):
+	"""
+	Called when the player wants to take an item
+	"""
+	pass

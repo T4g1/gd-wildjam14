@@ -12,8 +12,6 @@ export (float) var speed_show_shutter = 0.5
 export (float) var speed_hide_shutter = 0.2
 export (float) var speed = 5.0
 
-var user_controlled = true
-
 
 func _ready():
 	$Shutter.modulate = Color(1, 1, 1, 0)
@@ -63,8 +61,7 @@ func _process(delta):
 	if Input.is_action_pressed("ui_up"):
 		direction.y += 1
 	
-	if user_controlled:
-		move(direction * delta)
+	move(direction * delta)
 
 
 func move(movement: Vector3):

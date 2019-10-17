@@ -14,8 +14,6 @@ var normal_material: SpatialMaterial
 
 
 func _ready():
-	print(outline_material)
-	outline_material = load("res://shader/outline_shadermaterial.tres")
 	outline_material = outline_material.duplicate()
 	outline_material.set_shader_param("texturemap", texture)
 	
@@ -38,11 +36,15 @@ func _on_mouse_exit():
 
 
 func _on_event(_camera, event, _click_position, _click_normal, _shape_idx):
+	if not Utils.get_game().user_has_control:
+		return
+	
 	if event.is_action_released("ui_context"):
 		if not context_menu.visible:
 			context_menu.show()
 
 
 func _on_context_action(action):
-	# TODO
-	print("Player wants to ", action)
+	var game = Utils.get_game()
+	if action == "Take":
+		game.take(self)

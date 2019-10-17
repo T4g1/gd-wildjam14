@@ -10,7 +10,7 @@ mouse_filter = 1
 script = ExtResource( 1 )
 hidding_speed = 0.1
 
-[node name="Tween" type="Tween" parent="."]
+[node name="MovementTween" type="Tween" parent="."]
 
 [node name="Background" type="NinePatchRect" parent="."]
 margin_right = 458.0
@@ -24,7 +24,7 @@ patch_margin_top = 23
 patch_margin_right = 23
 patch_margin_bottom = 23
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Background"]
+[node name="Container" type="HBoxContainer" parent="Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 50.0
@@ -33,7 +33,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="InventoryItem" parent="Background/HBoxContainer" instance=ExtResource( 3 )]
+[node name="Slot0" parent="Background/Container" instance=ExtResource( 3 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -43,7 +43,7 @@ margin_top = 0.0
 margin_right = 50.0
 margin_bottom = 64.0
 
-[node name="InventoryItem2" parent="Background/HBoxContainer" instance=ExtResource( 3 )]
+[node name="Slot1" parent="Background/Container" instance=ExtResource( 3 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -53,7 +53,7 @@ margin_top = 0.0
 margin_right = 105.0
 margin_bottom = 64.0
 
-[node name="InventoryItem3" parent="Background/HBoxContainer" instance=ExtResource( 3 )]
+[node name="Slot2" parent="Background/Container" instance=ExtResource( 3 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -63,7 +63,7 @@ margin_top = 0.0
 margin_right = 160.0
 margin_bottom = 64.0
 
-[node name="InventoryItem4" parent="Background/HBoxContainer" instance=ExtResource( 3 )]
+[node name="Slot3" parent="Background/Container" instance=ExtResource( 3 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -73,7 +73,7 @@ margin_top = 0.0
 margin_right = 215.0
 margin_bottom = 64.0
 
-[node name="InventoryItem5" parent="Background/HBoxContainer" instance=ExtResource( 3 )]
+[node name="Slot4" parent="Background/Container" instance=ExtResource( 3 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -83,7 +83,7 @@ margin_top = 0.0
 margin_right = 270.0
 margin_bottom = 64.0
 
-[node name="InventoryItem6" parent="Background/HBoxContainer" instance=ExtResource( 3 )]
+[node name="Slot5" parent="Background/Container" instance=ExtResource( 3 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -93,7 +93,7 @@ margin_top = 0.0
 margin_right = 325.0
 margin_bottom = 64.0
 
-[node name="InventoryItem7" parent="Background/HBoxContainer" instance=ExtResource( 3 )]
+[node name="Slot6" parent="Background/Container" instance=ExtResource( 3 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -124,6 +124,8 @@ margin_bottom = 10.0
 texture = ExtResource( 4 )
 
 [node name="Tween" type="Tween" parent="ActionArrow"]
+
+[node name="TakeItemTween" type="Tween" parent="."]
 [connection signal="gui_input" from="." to="." method="_on_input"]
 [connection signal="mouse_entered" from="Background" to="." method="_on_hover"]
 [connection signal="mouse_exited" from="Background" to="." method="_on_exit"]
