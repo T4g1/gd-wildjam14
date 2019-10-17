@@ -14,6 +14,8 @@ var sprite: MeshInstance
 var context_menu: ContextMenu
 var normal_material: SpatialMaterial
 
+var interaction_disabled = false
+
 
 func _ready():
 	sprite = get_node(sprite_path)
@@ -31,14 +33,23 @@ func _process(_delta):
 
 
 func _on_mouse_hover():
+	if interaction_disabled:
+		return
+	
 	sprite.material_override = outline_material
 
 
 func _on_mouse_exit():
+	if interaction_disabled:
+		return
+	
 	sprite.material_override = normal_material
 
 
 func _on_event(_camera, event, _click_position, _click_normal, _shape_idx):
+	if interaction_disabled:
+		return
+	
 	if not Utils.get_game().user_has_control:
 		return
 	
@@ -48,4 +59,7 @@ func _on_event(_camera, event, _click_position, _click_normal, _shape_idx):
 
 
 func _on_context_action(action):
+	if interaction_disabled:
+		return
+	
 	Utils.get_game().perform_action(self, action)
