@@ -35,11 +35,6 @@ func _ready():
 	hidded = true
 
 
-func _unhandled_event(event):
-	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
-		_on_display()
-
-
 func _on_item_in(_item: InventoryItem):
 	"""
 	Called when an item is inserted in the inventory
@@ -83,23 +78,7 @@ func _on_display():
 	movement_tween.start()
 
 
-func _on_hover():
-	if hidded:
-		action_tween.interpolate_property(self, "rect_position", hidden_position, preview_position, 0.2, Tween.TRANS_LINEAR, 0)
-	
-	action_tween.interpolate_property(action_arrow, "rect_scale", Vector2(0.2, 0.2), Vector2(1.2, 1.2), 0.5, Tween.TRANS_LINEAR, 0)
-	action_tween.start()
-
-
-func _on_exit():
-	if hidded:
-		rect_position = hidden_position
-	
-	action_arrow.rect_scale = Vector2(1, 1)
-	action_tween.stop_all()
-
-
-func _on_input(event):
+func _on_gui_input(event):
 	if event is InputEventMouseButton and \
 		event.button_index == BUTTON_LEFT and \
 		event.pressed:
@@ -107,6 +86,29 @@ func _on_input(event):
 			_on_display()
 		else:
 			_on_hide()
+
+
+func _on_hover():
+	if hidded:
+		action_tween.interpolate_property(self, "rect_position", hidden_position, preview_position, 0.2, Tween.TRANS_LINEAR, 0)
+	
+	var growth_goal = Vector2(1.3, 1.3)
+	if action_tween.is_active() or action_arrow.rect_scale == growth_goal:
+		return
+	
+	print("hover")
+	
+	action_tween.interpolate_property(action_arrow, "rect_scale", Vector2(1, 1), growth_goal, 0.2, Tween.TRANS_LINEAR, 0)
+	action_tween.start()
+
+
+func _on_exit():
+	if hidded:
+		rect_position = hidden_position
+	
+	print("exit")
+	action_arrow.rect_scale = Vector2(1, 1)
+	action_tween.stop_all()
 
 
 func _get_empty_slot():
