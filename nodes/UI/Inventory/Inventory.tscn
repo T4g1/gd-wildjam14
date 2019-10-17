@@ -5,7 +5,9 @@
 [ext_resource path="res://nodes/UI/Inventory/InventoryItem.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/ui/inventory/Untitled.png" type="Texture" id=4]
 
-[node name="Inventory" type="Control"]
+[node name="Inventory" type="Control" groups=[
+"inventory",
+]]
 mouse_filter = 1
 script = ExtResource( 1 )
 hidding_speed = 0.1

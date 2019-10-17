@@ -109,12 +109,33 @@ func _on_input(event):
 			_on_hide()
 
 
-func get_empty_slot():
+func _get_empty_slot():
 	"""
 	Give one of the empty slots or null if none are free
 	"""
 	for slot in container.get_children():
+		print(slot)
 		if slot.is_free():
 			return slot
 	
 	return null
+
+
+func put_item_in(item: Item) -> InventoryItem:
+	"""
+	Adds an item in the inventory, remove it from the world and 
+	returns the slot where the item is on success.
+	Does nothing and return null on failure (inventory full)
+	"""
+	var slot = _get_empty_slot()
+	if not slot:
+		return null
+	
+	var parent = item.get_parent()
+	if parent:
+		parent.remove_child(item)
+	
+	slot.store(item)
+	_on_item_in(slot)
+	
+	return slot

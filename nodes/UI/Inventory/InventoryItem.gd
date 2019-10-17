@@ -10,7 +10,7 @@ var stored_item = null
 
 
 func is_free():
-	return stored_item != null
+	return stored_item == null
 
 
 func store(item: Item):

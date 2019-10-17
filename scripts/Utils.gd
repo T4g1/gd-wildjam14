@@ -8,6 +8,10 @@ func get_player() -> Player:
 	return get_tree().get_nodes_in_group("player").front()
 
 
+func get_inventory() -> Inventory:
+	return get_tree().get_nodes_in_group("inventory").front()
+
+
 func get_camera() -> Camera2D:
 	return get_tree().get_nodes_in_group("camera").front()
 

@@ -27,4 +27,4 @@ func take(item: Item):
 	"""
 	Called when the player wants to take an item
 	"""
-	pass
+	var __ = Utils.get_inventory().put_item_in(item)
