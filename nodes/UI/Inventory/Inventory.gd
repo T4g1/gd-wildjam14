@@ -96,8 +96,6 @@ func _on_hover():
 	if action_tween.is_active() or action_arrow.rect_scale == growth_goal:
 		return
 	
-	print("hover")
-	
 	action_tween.interpolate_property(action_arrow, "rect_scale", Vector2(1, 1), growth_goal, 0.2, Tween.TRANS_LINEAR, 0)
 	action_tween.start()
 
@@ -106,7 +104,6 @@ func _on_exit():
 	if hidded:
 		rect_position = hidden_position
 	
-	print("exit")
 	action_arrow.rect_scale = Vector2(1, 1)
 	action_tween.stop_all()
 
@@ -116,7 +113,6 @@ func _get_empty_slot():
 	Give one of the empty slots or null if none are free
 	"""
 	for slot in container.get_children():
-		print(slot)
 		if slot.is_free():
 			return slot
 	
