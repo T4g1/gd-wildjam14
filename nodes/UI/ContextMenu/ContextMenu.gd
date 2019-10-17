@@ -9,9 +9,13 @@ signal context_action
 export (float) var animation_speed = 0.1
 export (float, 0.1, 1.0) var full_size = 0.9
 
+onready var action_container = $Actions
 
 func _ready():
 	hide()
+	
+	for action_button in action_container.get_children():
+		action_button.connect("pressed", self, "_on_pressed")
 
 
 func _unhandled_input(event):
@@ -51,7 +55,7 @@ func enable(action: String):
 
 
 func _set_action_status(action: String, active: bool):
-	for action_button in $Actions.get_children():
+	for action_button in action_container.get_children():
 		if action_button.action == action:
 			if active:
 				action_button.enable()

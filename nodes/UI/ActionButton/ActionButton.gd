@@ -45,6 +45,7 @@ func _on_iddle():
 
 
 func _on_button_down():
+	print("signale")
 	emit_signal("pressed", action)
 
 

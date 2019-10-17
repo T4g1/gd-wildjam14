@@ -2,7 +2,6 @@ extends Control
 class_name SpeechBubble
 """
 Handle some lines of text
-TODO: Think style
 """
 
 signal speech_over
@@ -15,12 +14,13 @@ onready var close_square = $Background/ActionIndicators/CloseArrow
 onready var continue_arrow = $Background/ActionIndicators/ContinueArrow
 onready var patch = $Background
 onready var label = $Background/MarginContainer/Text
+onready var name_label = $Background/NameRect/Name
 
 var can_close = true
 
 
 func set_name(text: String):
-	$Background/NinePatchRect/Name.text = text
+	name_label.text = text
 
 
 func say(text: String):
@@ -64,8 +64,6 @@ func set_text(text : String):
 
 
 func display():
-	#patch.rect_size = Vector2(500, 150)
-	
 	$Tween.interpolate_property(self, "rect_scale", Vector2(0.0, 0.0), Vector2(1.0, 1.0), 0.1, Tween.TRANS_LINEAR, 0)
 	$Tween.start()
 	
