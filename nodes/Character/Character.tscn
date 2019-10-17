@@ -1,18 +1,31 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://nodes/Character/Character.gd" type="Script" id=1]
-[ext_resource path="res://nodes/UI/SpeechBubble/SpeechBubble.tscn" type="PackedScene" id=2]
-[ext_resource path="res://nodes/UI/ChoiceBubble/ChoiceBubble.tscn" type="PackedScene" id=3]
-[ext_resource path="res://nodes/Dialog/Dialog.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/ui/action_button/button_action.png" type="Texture" id=2]
+[ext_resource path="res://shader/outline_shadermaterial.tres" type="Material" id=3]
+[ext_resource path="res://nodes/UI/SpeechBubble/SpeechBubble.tscn" type="PackedScene" id=4]
+[ext_resource path="res://nodes/UI/ChoiceBubble/ChoiceBubble.tscn" type="PackedScene" id=5]
+[ext_resource path="res://nodes/Dialog/Dialog.tscn" type="PackedScene" id=6]
+[ext_resource path="res://nodes/UI/ContextMenu/ContextMenu.tscn" type="PackedScene" id=7]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.352844
 height = 0.413166
 
+[sub_resource type="SpatialMaterial" id=3]
+
+[sub_resource type="CapsuleMesh" id=2]
+material = SubResource( 3 )
+
 [node name="Character" type="KinematicBody" groups=[
 "characters",
 ]]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 script = ExtResource( 1 )
+sprite_path = NodePath("Sprite")
+texture = ExtResource( 2 )
+outline_material = ExtResource( 3 )
+context_menu_path = NodePath("ContextMenu")
 firstname = "SET ME"
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
@@ -22,19 +35,33 @@ shape = SubResource( 1 )
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="SpeechBubble" parent="UI" instance=ExtResource( 2 )]
+[node name="SpeechBubble" parent="UI" instance=ExtResource( 4 )]
 visible = false
 margin_left = 265.876
 margin_top = -198.8
 margin_right = 265.876
 margin_bottom = -198.8
 
-[node name="ChoiceBubble" parent="UI" instance=ExtResource( 3 )]
+[node name="ChoiceBubble" parent="UI" instance=ExtResource( 5 )]
 visible = false
 margin_left = 374.841
 margin_top = -72.0784
 margin_right = 374.841
 margin_bottom = -72.0784
 
-[node name="Dialog" parent="." instance=ExtResource( 4 )]
+[node name="Dialog" parent="." instance=ExtResource( 6 )]
+
+[node name="ContextMenu" parent="." instance=ExtResource( 7 )]
+margin_left = -492.0
+margin_top = -280.0
+margin_right = -492.0
+margin_bottom = -280.0
+
+[node name="Sprite" type="MeshInstance" parent="."]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+[connection signal="input_event" from="." to="." method="_on_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_hover"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exit"]
 [connection signal="choice_done" from="UI/ChoiceBubble" to="." method="_on_choice_done"]

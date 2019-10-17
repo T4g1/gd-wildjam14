@@ -46,3 +46,11 @@ func _on_iddle():
 
 func _on_button_down():
 	emit_signal("pressed", action)
+
+
+func disable():
+	visible = false
+
+
+func enable():
+	visible = true

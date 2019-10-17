@@ -42,6 +42,23 @@ func hide():
 	visible = false
 
 
+func disable(action: String):
+	_set_action_status(action, false)
+
+
+func enable(action: String):
+	_set_action_status(action, true)
+
+
+func _set_action_status(action: String, active: bool):
+	for action_button in $Actions.get_children():
+		if action_button.action == action:
+			if active:
+				action_button.enable()
+			else:
+				action_button.disable()
+
+
 func _on_pressed(action):
 	emit_signal("context_action", action)
 	hide()

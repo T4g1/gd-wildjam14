@@ -46,21 +46,21 @@ func _on_item_in(_item: InventoryItem):
 	"""
 	var growth = 0.05
 	var grow_scale = Vector2(1 + growth, 1 + growth)
-	movement_tween.interpolate_property(self, "rect_scale", 
+	take_item_tween.interpolate_property(self, "rect_scale", 
 		Vector2(1, 1), 
 		grow_scale, 
 		0.1, Tween.TRANS_LINEAR, 0
 	)
-	movement_tween.start()
+	take_item_tween.start()
 	
-	yield(movement_tween, "tween_all_completed")
+	yield(take_item_tween, "tween_all_completed")
 	
-	movement_tween.interpolate_property(self, "rect_scale", 
+	take_item_tween.interpolate_property(self, "rect_scale", 
 		grow_scale, 
 		Vector2(1, 1), 
 		0.1, Tween.TRANS_LINEAR, 0
 	)
-	movement_tween.start()
+	take_item_tween.start()
 
 
 func _on_hide():

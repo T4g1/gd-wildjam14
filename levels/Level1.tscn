@@ -4,16 +4,14 @@
 [ext_resource path="res://nodes/Character/Character.tscn" type="PackedScene" id=2]
 [ext_resource path="res://nodes/Player/Player.tscn" type="PackedScene" id=3]
 
+[sub_resource type="CubeMesh" id=1]
 
+[sub_resource type="CapsuleMesh" id=2]
 
-[sub_resource type="CubeMesh" id=2]
-
-[sub_resource type="CapsuleMesh" id=1]
-
-[node name="Level1" instance=ExtResource( 1 )]
+[node name="Level1" index="0" instance=ExtResource( 1 )]
 
 [node name="MeshInstance" type="MeshInstance" parent="ShadowRealm" index="0"]
-mesh = SubResource( 2 )
+mesh = SubResource( 1 )
 material/0 = null
 
 [node name="Jonh" parent="ShadowRealm" index="1" instance=ExtResource( 2 )]
@@ -23,7 +21,7 @@ path_story = "res://dialogs/Jonh.json"
 
 [node name="MeshInstance" type="MeshInstance" parent="RealWorld" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.9 )
-mesh = SubResource( 1 )
+mesh = SubResource( 2 )
 material/0 = null
 
 [node name="MoriartysShadow" parent="RealWorld" index="1" instance=ExtResource( 2 )]
@@ -32,3 +30,4 @@ firstname = "Moriarty's Shadow"
 path_story = "res://dialogs/MoriartysShadow.json"
 
 [node name="Player" parent="RealWorld" index="2" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )

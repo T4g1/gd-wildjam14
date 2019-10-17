@@ -1,4 +1,4 @@
-extends Spatial
+extends "res://scripts/Interactable.gd"
 class_name Character
 """
 Base class for NPC and Player

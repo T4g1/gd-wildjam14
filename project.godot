@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://nodes/UI/ActionButton/ActionButton.gd"
 }, {
-"base": "Spatial",
+"base": "CollisionObject",
 "class": "Character",
 "language": "GDScript",
 "path": "res://nodes/Character/Character.gd"
@@ -49,6 +49,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/Game.gd"
 }, {
+"base": "CollisionObject",
+"class": "Interactable",
+"language": "GDScript",
+"path": "res://scripts/Interactable.gd"
+}, {
 "base": "Control",
 "class": "Inventory",
 "language": "GDScript",
@@ -59,7 +64,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://nodes/UI/Inventory/InventoryItem.gd"
 }, {
-"base": "PhysicsBody",
+"base": "CollisionObject",
 "class": "Item",
 "language": "GDScript",
 "path": "res://nodes/Item/Item.gd"
@@ -88,6 +93,7 @@ _global_script_class_icons={
 "Dialog": "",
 "FixedPosition": "",
 "Game": "",
+"Interactable": "",
 "Inventory": "",
 "InventoryItem": "",
 "Item": "",
