@@ -23,7 +23,7 @@ script = ExtResource( 1 )
 sprite_path = NodePath("Sprite")
 texture = ExtResource( 2 )
 outline_material = ExtResource( 3 )
-context_menu_path = NodePath("CharacterMenu")
+context_menu_path = NodePath("ContextMenu")
 firstname = "SET ME"
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
@@ -35,7 +35,6 @@ mesh = SubResource( 2 )
 material/0 = null
 
 [node name="UI" type="Control" parent="."]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 2
@@ -54,7 +53,7 @@ margin_bottom = -72.0784
 
 [node name="Dialog" parent="." instance=ExtResource( 6 )]
 
-[node name="CharacterMenu" parent="." instance=ExtResource( 7 )]
+[node name="ContextMenu" parent="." instance=ExtResource( 7 )]
 [connection signal="input_event" from="." to="." method="_on_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_hover"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exit"]
