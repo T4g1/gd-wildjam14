@@ -11,28 +11,27 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 mouse_filter = 1
 script = ExtResource( 1 )
-animation_speed = 0.5
+animation_speed = 0.2
+full_size = 0.5
 
 [node name="Examine" parent="." instance=ExtResource( 2 )]
-margin_left = -8.46358
-margin_top = -64.9985
-margin_right = -8.46358
-margin_bottom = -64.9985
+margin_top = -50.0
+margin_bottom = -50.0
 logo = ExtResource( 3 )
 action = "Examine"
 
 [node name="Use" parent="." instance=ExtResource( 2 )]
-margin_left = -57.2076
-margin_top = 50.8339
-margin_right = -57.2076
-margin_bottom = 50.8339
+margin_left = -45.0
+margin_top = 50.0
+margin_right = -45.0
+margin_bottom = 50.0
 action = "Use"
 
 [node name="Take" parent="." instance=ExtResource( 2 )]
-margin_left = 51.7075
-margin_top = 49.6062
-margin_right = 51.7075
-margin_bottom = 49.6062
+margin_left = 55.0
+margin_top = 50.0
+margin_right = 55.0
+margin_bottom = 50.0
 action = "Take"
 
 [node name="Tween" type="Tween" parent="."]

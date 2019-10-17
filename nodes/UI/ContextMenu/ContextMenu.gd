@@ -7,6 +7,7 @@ Contextual menu that appears sometimes with a list of possible actions
 signal context_action
 
 export (float) var animation_speed = 0.1
+export (float, 0.1, 1.0) var full_size = 0.9
 
 
 func _ready():
@@ -30,7 +31,7 @@ func _unhandled_input(event):
 
 
 func show():
-	$Tween.interpolate_property(self, "rect_scale", Vector2(0.0, 0.0), Vector2(1.0, 1.0), animation_speed, Tween.TRANS_LINEAR, 0)
+	$Tween.interpolate_property(self, "rect_scale", Vector2(0.0, 0.0), Vector2(full_size, full_size), animation_speed, Tween.TRANS_LINEAR, 0)
 	$Tween.interpolate_property(self, "rect_rotation", 270, 0, animation_speed, Tween.TRANS_LINEAR, 0)
 	$Tween.start()
 	
