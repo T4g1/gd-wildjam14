@@ -7,7 +7,7 @@
 [ext_resource path="res://assets/ui/action_button/action_hover.png" type="Texture" id=5]
 [ext_resource path="res://fonts/MonospaceTypewriter_dynamicfont.tres" type="DynamicFont" id=6]
 
-[node name="SpeechBubble" index="0" instance=ExtResource( 1 )]
+[node name="SpeechBubble" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 close_sprite_path = NodePath("../SpeechBubble/Background/ActionArrows/Close")
 continue_sprite_path = NodePath("../SpeechBubble/Background/ActionArrows/Continue")
@@ -17,22 +17,21 @@ think_bubble = ExtResource( 4 )
 [node name="Background" parent="." index="0"]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -304.0
-margin_right = 518.0
-margin_bottom = 0.0
+margin_top = -250.0
+margin_right = 437.0
+margin_bottom = -4.0
 texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 526, 296 )
 patch_margin_left = 150
-patch_margin_top = 45
 patch_margin_right = 25
-patch_margin_bottom = 160
+patch_margin_bottom = 113
 axis_stretch_vertical = 2
 
 [node name="Text" parent="Background" index="0"]
-margin_left = 50.0
+margin_left = 40.0
 margin_top = 25.0
-margin_right = 508.0
-margin_bottom = 166.0
+margin_right = 420.0
+margin_bottom = 118.0
 text = "line 1
 line 2
 line 3
@@ -40,18 +39,18 @@ line 4
 line 5
 line 6"
 valign = 1
-max_lines_visible = 6
+max_lines_visible = 4
 
 [node name="ActionArrows" parent="Background" index="1"]
-margin_left = 474.933
-margin_top = 191.749
-margin_right = 474.933
-margin_bottom = 191.749
+margin_left = 395.111
+margin_top = 137.992
+margin_right = 395.111
+margin_bottom = 137.992
 
 [node name="NameBackground" type="NinePatchRect" parent="Background" index="2"]
-margin_left = 75.0
+margin_left = 40.0
 margin_top = -30.0
-margin_right = 275.0
+margin_right = 240.0
 margin_bottom = 20.0
 texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 97, 120 )

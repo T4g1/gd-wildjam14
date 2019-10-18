@@ -8,7 +8,7 @@
 flags_transparent = true
 albedo_texture = ExtResource( 3 )
 
-[node name="Player" index="0" groups=[
+[node name="Player" groups=[
 "player",
 ] instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0 )

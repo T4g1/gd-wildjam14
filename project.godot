@@ -110,7 +110,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="gd-wildjam14"
+config/name="Shadow Realm"
 run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
 

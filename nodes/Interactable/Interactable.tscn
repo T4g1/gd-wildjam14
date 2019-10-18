@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scripts/Interactable.gd" type="Script" id=1]
 [ext_resource path="res://shader/outline_shadermaterial.tres" type="Material" id=2]
-[ext_resource path="res://assets/characters/Richard.png" type="Texture" id=3]
+[ext_resource path="res://assets/ui/dialog_close.png" type="Texture" id=3]
 [ext_resource path="res://nodes/Dialog/Dialog.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape" id=1]

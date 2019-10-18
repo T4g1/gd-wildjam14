@@ -45,7 +45,7 @@ func perform_action(node, action: String):
 	if action == "Examine":
 		examine(node)
 	elif action == "Use":
-		display_text("You cannot do that right now...")
+		use(node)
 	elif node is Item:
 		if action == "Take":
 			take(node)
@@ -65,19 +65,28 @@ func examine(node: Interactable):
 	"""
 	Display description of given Interactable
 	"""
-	display_text(node.description)
+	if node._on_examine():
+		display_text(node.description)
 
 
 func take(item: Item):
 	"""
 	Called when the player wants to take an item
 	"""
-	var __ = Utils.get_inventory().put_item_in(item)
-	item._on_take()
+	if item._on_take():
+		var __ = Utils.get_inventory().put_item_in(item)
 
 
 func talk(character: Character):
 	"""
 	Starts a dialog with the given character
 	"""
-	character.continue_story()
+	if character._on_talk():
+		character.continue_story()
+
+
+func use(node: Interactable):
+	"""
+	Starts a dialog with the given character
+	"""
+	node._on_use()

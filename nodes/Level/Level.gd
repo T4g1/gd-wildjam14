@@ -9,12 +9,17 @@ signal realm_changed
 # On which plan the level starts
 enum Realms {REAL, SHADOW}
 export (Realms) var start_realm
+export(String, FILE, "*.json") var path_story
+
+onready var dialog = $Dialog
 
 var realm_nodes: Dictionary
 var current_realm = Realms.REAL
 
 
 func _ready():
+	assert(path_story != "")
+	
 	realm_nodes = {
 		Realms.REAL: $RealWorld,
 		Realms.SHADOW: $ShadowRealm
@@ -23,7 +28,12 @@ func _ready():
 	for realm_node in realm_nodes.values():
 		realm_node.visible = false
 	
+	dialog.load_story(path_story)
+	
 	set_realm(start_realm)
+	
+	yield(get_tree(), "idle_frame")
+	_on_start()
 
 
 func _input(event):
@@ -32,6 +42,13 @@ func _input(event):
 	
 	if event.is_action_pressed("ui_select"):
 		switch_realm()
+
+
+func _on_start():
+	"""
+	Overide for custom behavior
+	"""
+	pass
 
 
 func switch_realm():

@@ -77,3 +77,33 @@ func _on_context_action(action):
 		return
 	
 	Utils.get_game().perform_action(self, action)
+
+
+func _on_take():
+	"""
+	Overide for custom behavior, returns true if the action can be performed
+	"""
+	return true
+
+
+func _on_use():
+	"""
+	Overide for custom behavior
+	"""
+	pass
+
+
+func _on_examine():
+	"""
+	Overide for custom behavior, returns true if the action can be performed
+	"""
+	return true
+
+
+func _on_talk():
+	"""
+	Overide for custom behavior, returns true if the action can be performed
+	"""
+	return true
+
+
