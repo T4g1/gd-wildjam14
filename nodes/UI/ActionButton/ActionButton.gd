@@ -13,6 +13,7 @@ export (String) var action
 
 onready var sprite = $Button/MarginContainer/VBoxContainer/Sprite
 onready var label = $Button/MarginContainer/VBoxContainer/Label
+onready var button = $Button
 
 
 func _ready():
@@ -20,6 +21,8 @@ func _ready():
 	sprite.texture = logo
 	
 	label.text = action
+	
+	button.hint_tooltip = action
 
 
 func _process(_delta):

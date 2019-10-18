@@ -1,33 +1,48 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://nodes/UI/Inventory/InventoryItem.gd" type="Script" id=1]
-[ext_resource path="res://assets/ui/inventory/item_background.png" type="Texture" id=2]
+[ext_resource path="res://nodes/UI/Inventory/inventory_item_hover.tres" type="StyleBox" id=2]
+[ext_resource path="res://nodes/UI/Inventory/inventory_item_normal.tres" type="StyleBox" id=3]
+[ext_resource path="res://nodes/UI/ContextMenu/InventoryItemMenu.tscn" type="PackedScene" id=4]
 
-[node name="InventoryItem" type="CenterContainer"]
+[node name="InventoryItem" type="Control"]
 use_parent_material = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -20.0
-margin_top = -20.0
-margin_right = 20.0
-margin_bottom = 20.0
-rect_min_size = Vector2( 40, 40 )
+margin_left = -512.0
+margin_top = -300.0
+margin_right = -462.0
+margin_bottom = -250.0
+rect_min_size = Vector2( 50, 50 )
 mouse_filter = 2
 script = ExtResource( 1 )
 
-[node name="Container" type="TextureRect" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 25.0
+margin_bottom = 25.0
+
+[node name="Button" type="Button" parent="CenterContainer"]
 use_parent_material = true
 margin_right = 50.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 50, 50 )
-mouse_filter = 2
+focus_mode = 0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource( 2 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 3 )
+enabled_focus_mode = 0
 
-[node name="Sprite" type="TextureRect" parent="Container"]
+[node name="Sprite" type="TextureRect" parent="CenterContainer/Button"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -39,3 +54,16 @@ margin_bottom = 7.0
 mouse_filter = 2
 expand = true
 stretch_mode = 2
+
+[node name="ContextMenu" parent="." instance=ExtResource( 4 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 25.0
+margin_top = 60.0
+margin_right = 25.0
+margin_bottom = 60.0
+rect_scale = Vector2( 0.5, 0.5 )
+full_size = 0.5
+[connection signal="gui_input" from="CenterContainer/Button" to="." method="_on_gui_input"]

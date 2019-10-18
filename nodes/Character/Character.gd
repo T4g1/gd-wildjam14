@@ -8,10 +8,7 @@ signal choice_done
 
 
 export (String) var firstname = "Jonh"
-export(String, FILE, "*.json") var path_story
 
-
-onready var dialog = $Dialog
 onready var speech_bubble = $UI/SpeechBubble
 onready var choice_bubble = $UI/ChoiceBubble
 
@@ -19,7 +16,6 @@ onready var choice_bubble = $UI/ChoiceBubble
 func _ready():
 	assert(path_story != "")
 	
-	dialog.load_story(path_story)
 	speech_bubble.set_name(firstname)
 
 

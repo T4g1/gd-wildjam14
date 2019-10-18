@@ -30,12 +30,13 @@ func continue_story():
 	
 	story.variables_state.set("paused", 0)
 	
+	var game = Utils.get_game()
 	var player = Utils.get_player()
 	var character
+	var text_display
 	
 	while story.can_continue and story.variables_state.get("paused") == 0:
 		var text = story.continue()
-		character = get_character_from_story()
 		
 		var zoom_targets = story.get_current_tags()
 		if zoom_targets.size() > 0:
@@ -43,18 +44,36 @@ func continue_story():
 		
 		print(text)
 		
-		var mood = story.variables_state.get("character_mood")
-		if mood == "think":
-			character.think(text)
+		# Realm change triggered ?
+		if story.variables_state.get("trigger_switch_realm") == 1:
+			story.variables_state.set("trigger_switch_realm", 0)
+			game.current_level.switch_realm()
+			yield(game.current_level, "realm_changed")
+		
+		character = get_character_from_story()
+		if character == null:
+			# For general text display
+			text_display = game.pop_up
+			
+			game.display_text(text)
 		else:
-			character.say(text)
-	
+			# A character is talking
+			text_display = character.speech_bubble
+			
+			var mood = story.variables_state.get("character_mood")
+			if mood == "think":
+				character.think(text)
+			else:
+				character.say(text)
+			
+		# Check no choice are coming
 		if story.current_choices.size() <= 0:
-			character.speech_bubble.set_close_action(true)
-			yield(character.speech_bubble, "closed")
+			text_display.set_close_action(true)
+			yield(text_display, "closed")
+			print("suite")
 	
 	if story.current_choices.size() > 0:
-		character.speech_bubble.set_close_action(false)
+		text_display.set_close_action(false)
 		player.prompt(story.current_choices)
 		player.choice_bubble.connect("choice_done", self, "_choice_done")
 	else:

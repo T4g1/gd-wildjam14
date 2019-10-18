@@ -4,6 +4,8 @@ class_name Level
 Base for every level
 """
 
+signal realm_changed
+
 # On which plan the level starts
 enum Realms {REAL, SHADOW}
 export (Realms) var start_realm
@@ -29,12 +31,19 @@ func _input(event):
 		return
 	
 	if event.is_action_pressed("ui_select"):
-		var realm = Realms.REAL
-		if current_realm == Realms.REAL:
-			realm = Realms.SHADOW
-		
-		fade_realm(realm)
+		switch_realm()
+
+
+func switch_realm():
+	"""
+	Switch between realms
+	"""
+	var realm = Realms.REAL
+	if current_realm == Realms.REAL:
+		realm = Realms.SHADOW
 	
+	fade_realm(realm)
+
 
 func can_change_realm():
 	"""
@@ -75,3 +84,4 @@ func fade_realm(realm):
 	yield(camera, "shutter_hidden")
 	
 	Utils.get_game().user_has_control= true
+	emit_signal("realm_changed")

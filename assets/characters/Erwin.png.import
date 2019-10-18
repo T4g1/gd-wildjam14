@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/action_hover.png-71ae1dfd7630a8f7833d421f55690d34.s3tc.stex"
-path.etc2="res://.import/action_hover.png-71ae1dfd7630a8f7833d421f55690d34.etc2.stex"
+path.s3tc="res://.import/Erwin.png-ce6f8aad47c7b192beb11ad391e13387.s3tc.stex"
+path.etc2="res://.import/Erwin.png-ce6f8aad47c7b192beb11ad391e13387.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/ui/action_button/action_hover.png"
-dest_files=[ "res://.import/action_hover.png-71ae1dfd7630a8f7833d421f55690d34.s3tc.stex", "res://.import/action_hover.png-71ae1dfd7630a8f7833d421f55690d34.etc2.stex" ]
+source_file="res://assets/characters/Erwin.png"
+dest_files=[ "res://.import/Erwin.png-ce6f8aad47c7b192beb11ad391e13387.s3tc.stex", "res://.import/Erwin.png-ce6f8aad47c7b192beb11ad391e13387.etc2.stex" ]
 
 [params]
 

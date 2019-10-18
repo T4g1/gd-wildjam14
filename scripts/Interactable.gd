@@ -9,27 +9,30 @@ export (NodePath) var sprite_path
 export (Texture) var texture
 export (ShaderMaterial) var outline_material
 export (NodePath) var context_menu_path
+export (NodePath) var dialog_path
 # warning-ignore:unused_class_variable
 export (String, MULTILINE) var description
+export(String, FILE, "*.json") var path_story
 
-var sprite: MeshInstance
-var context_menu: ContextMenu
+onready var sprite = get_node(sprite_path)
+onready var context_menu = get_node(context_menu_path)
+onready var dialog = get_node(dialog_path)
 var normal_material: SpatialMaterial
 
 var interaction_disabled = false
 
 
 func _ready():
-	sprite = get_node(sprite_path)
-	context_menu = get_node(context_menu_path)
-	
 	var __ = context_menu.connect("context_action", self, "_on_context_action")
 	
 	outline_material = outline_material.duplicate()
 	outline_material.set_shader_param("texturemap", texture)
 	
-	normal_material = sprite.mesh.material
+	normal_material = sprite.get_surface_material(0)
 	normal_material.albedo_texture = texture
+	
+	if path_story != "":
+		dialog.load_story(path_story)
 
 
 func _process(_delta):
@@ -58,8 +61,15 @@ func _on_event(_camera, event, _click_position, _click_normal, _shape_idx):
 		return
 	
 	if event.is_action_released("ui_context"):
-		if not context_menu.visible:
-			context_menu.show()
+		show_context_menu()
+
+
+func show_context_menu():
+	"""
+	Displays its context menu
+	"""
+	if not context_menu.visible:
+		context_menu.show()
 
 
 func _on_context_action(action):

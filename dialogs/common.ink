@@ -1,6 +1,7 @@
 VAR character_name = "Moriarty"
 VAR character_mood = "normal"
 VAR paused = 0
+VAR trigger_switch_realm = 0
 
 
 === function who(value) ===
@@ -14,3 +15,7 @@ VAR paused = 0
 
 === function pause_after() ===
     ~ paused = 1
+
+
+=== function switch_realm() ===
+    ~ trigger_switch_realm = 1

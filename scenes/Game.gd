@@ -8,6 +8,7 @@ Handle the game flow: load levels and shit
 # warning-ignore:unused_class_variable
 var user_has_control = true
 
+onready var current_level = $Level1
 onready var pop_up = $PopUp
 
 
@@ -43,6 +44,8 @@ func perform_action(node, action: String):
 	
 	if action == "Examine":
 		examine(node)
+	elif action == "Use":
+		display_text("You cannot do that right now...")
 	elif node is Item:
 		if action == "Take":
 			take(node)
@@ -54,11 +57,15 @@ func perform_action(node, action: String):
 		assert(false)
 
 
+func display_text(text: String):
+	pop_up.set_text(text)
+
+
 func examine(node: Interactable):
 	"""
 	Display description of given Interactable
 	"""
-	pop_up.set_text(node.description)
+	display_text(node.description)
 
 
 func take(item: Item):

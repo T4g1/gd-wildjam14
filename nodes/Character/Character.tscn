@@ -1,62 +1,36 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://nodes/Character/Character.gd" type="Script" id=1]
-[ext_resource path="res://assets/ui/action_button/action_hover.png" type="Texture" id=2]
-[ext_resource path="res://shader/outline_shadermaterial.tres" type="Material" id=3]
-[ext_resource path="res://nodes/UI/ChoiceBubble/ChoiceBubble.tscn" type="PackedScene" id=4]
-[ext_resource path="res://nodes/UI/TextDisplay/SpeechBubble/SpeechBubble.tscn" type="PackedScene" id=5]
-[ext_resource path="res://nodes/Dialog/Dialog.tscn" type="PackedScene" id=6]
-[ext_resource path="res://nodes/UI/ContextMenu/CharacterMenu.tscn" type="PackedScene" id=7]
+[ext_resource path="res://nodes/Interactable/Interactable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://nodes/Character/Character.gd" type="Script" id=2]
+[ext_resource path="res://nodes/UI/ChoiceBubble/ChoiceBubble.tscn" type="PackedScene" id=3]
+[ext_resource path="res://nodes/UI/TextDisplay/SpeechBubble/SpeechBubble.tscn" type="PackedScene" id=4]
+[ext_resource path="res://nodes/UI/ContextMenu/CharacterMenu.tscn" type="PackedScene" id=5]
 
-[sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.3, 0.3, 0.01 )
-
-[sub_resource type="SpatialMaterial" id=2]
-
-[sub_resource type="PlaneMesh" id=3]
-material = SubResource( 2 )
-
-[node name="Character" type="KinematicBody" groups=[
+[node name="Character" index="0" groups=[
 "characters",
-]]
-script = ExtResource( 1 )
-sprite_path = NodePath("Sprite")
-texture = ExtResource( 2 )
-outline_material = ExtResource( 3 )
+] instance=ExtResource( 1 )]
+script = ExtResource( 2 )
 context_menu_path = NodePath("ContextMenu")
 firstname = "SET ME"
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
-shape = SubResource( 1 )
-
-[node name="Sprite" type="MeshInstance" parent="."]
-transform = Transform( 0.3, 0, 0, 0, -1.31134e-08, -0.3, 0, 0.3, -1.31134e-08, 0, 0, 0 )
-mesh = SubResource( 3 )
-material/0 = null
-
-[node name="UI" type="Control" parent="."]
+[node name="UI" type="Control" parent="." index="3"]
 margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 2
 
-[node name="ChoiceBubble" parent="UI" instance=ExtResource( 4 )]
+[node name="ChoiceBubble" parent="UI" index="0" instance=ExtResource( 3 )]
 visible = false
 margin_left = 374.841
 margin_top = -72.0784
 margin_right = 374.841
 margin_bottom = -72.0784
 
-[node name="SpeechBubble" parent="UI" instance=ExtResource( 5 )]
+[node name="SpeechBubble" parent="UI" index="1" instance=ExtResource( 4 )]
 visible = false
 margin_left = 36.6555
 margin_top = -18.404
 margin_right = -3.34448
 margin_bottom = -58.404
 
-[node name="Dialog" parent="." instance=ExtResource( 6 )]
-
-[node name="ContextMenu" parent="." instance=ExtResource( 7 )]
-[connection signal="input_event" from="." to="." method="_on_event"]
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_hover"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exit"]
+[node name="ContextMenu" parent="." index="4" instance=ExtResource( 5 )]
 [connection signal="choice_done" from="UI/ChoiceBubble" to="." method="_on_choice_done"]

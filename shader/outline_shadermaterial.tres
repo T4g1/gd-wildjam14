@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=2]
 
 [ext_resource path="res://shader/outline.shader" type="Shader" id=1]
-[ext_resource path="res://assets/items/Gun/gun.png" type="Texture" id=2]
+[ext_resource path="res://assets/items/gun.png" type="Texture" id=2]
 
 [resource]
 shader = ExtResource( 1 )
