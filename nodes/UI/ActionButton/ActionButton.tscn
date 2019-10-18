@@ -28,6 +28,7 @@ margin_left = -50.0
 margin_top = -55.0
 margin_right = 40.0
 margin_bottom = 35.0
+hint_tooltip = "TEST"
 custom_styles/hover = ExtResource( 3 )
 custom_styles/pressed = ExtResource( 3 )
 custom_styles/normal = ExtResource( 4 )

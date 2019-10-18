@@ -4,17 +4,29 @@ class_name Game
 Handle the game flow: load levels and shit
 """
 
+signal game_over
+
 
 # warning-ignore:unused_class_variable
 var user_has_control = true
 
 onready var current_level = $Level1
 onready var pop_up = $PopUp
+onready var environment = $WorldEnvironment
 
 
 func _ready():
 	var __ = pop_up.connect("opened", self, "on_dialog_start")
 	__ = pop_up.connect("closed", self, "on_dialog_end")
+	
+	Utils.get_camera().set_environment(environment)
+
+
+func on_game_over():
+	"""
+	Trigger game over and back to title screen
+	"""
+	emit_signal("game_over")
 
 
 func on_dialog_start():

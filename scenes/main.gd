@@ -1,15 +1,48 @@
-extends Node2D
+extends Spatial
+"""
+Entry point of main scene
+"""
 
-var InkRuntime = load("res://addons/inkgd/runtime.gd")
+
+var GameNode = load("res://scenes/Game.tscn")
+var game: Game
+onready var title = $Title
+
 
 func _ready():
-    InkRuntime.init(get_tree().root)
+	title.connect("play", self, "_on_play")
+	
+	show_title()
 
-func _exit_tree():
-    call_deferred("_remove_runtime")
 
-func _add_runtime():
-    InkRuntime.init(get_tree().root)
+func _on_play():
+	show_game()
 
-func _remove_runtime():
-    InkRuntime.deinit(get_tree().root)
+
+func _on_game_over():
+	show_title()
+
+
+func clear_game():
+	"""
+	Remove game node
+	"""
+	if game:
+		remove_child(game)
+		game = null
+
+
+func show_title():
+	"""
+	Goes to title
+	"""
+	clear_game()
+	title.show()
+
+
+func show_game():
+	game = GameNode.instance()
+	game.connect("game_over", self, "_on_game_over")
+	add_child(game)
+	
+	title.hide()

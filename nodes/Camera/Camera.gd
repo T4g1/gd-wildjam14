@@ -48,7 +48,7 @@ func hide_shutter():
 
 
 func _process(delta):
-	if not Utils.get_game().user_has_control:
+	if not Utils.get_game() or not Utils.get_game().user_has_control:
 		return
 	
 	var direction = Vector3(0, 0, 0)

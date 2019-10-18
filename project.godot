@@ -88,6 +88,11 @@ _global_script_classes=[ {
 "class": "TextDisplay",
 "language": "GDScript",
 "path": "res://nodes/UI/TextDisplay/TextDisplay.gd"
+}, {
+"base": "Spatial",
+"class": "Title",
+"language": "GDScript",
+"path": "res://scenes/Title.gd"
 } ]
 _global_script_class_icons={
 "ActionButton": "",
@@ -105,7 +110,8 @@ _global_script_class_icons={
 "Level": "",
 "Player": "",
 "SpeechBubble": "",
-"TextDisplay": ""
+"TextDisplay": "",
+"Title": ""
 }
 
 [application]
