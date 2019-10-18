@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dialog_continue.png-fdc60157e718470007d141cda3ab06ae.stex"
+path="res://.import/dialog_continue.png-9591c67c9d4aec854b46234600f499d7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/speech_bubble/dialog_continue.png"
-dest_files=[ "res://.import/dialog_continue.png-fdc60157e718470007d141cda3ab06ae.stex" ]
+source_file="res://assets/ui/dialog_continue.png"
+dest_files=[ "res://.import/dialog_continue.png-9591c67c9d4aec854b46234600f499d7.stex" ]
 
 [params]
 

@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://nodes/UI/TextDisplay/TextDisplay.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/ui/action_button/action_normal.png" type="Texture" id=2]
+
+[node name="PopUp" instance=ExtResource( 1 )]
+
+[node name="Background" parent="." index="0"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -67.5
+margin_right = 250.0
+margin_bottom = 67.5
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 98, 120 )
+patch_margin_left = 23
+patch_margin_top = 23
+patch_margin_right = 23
+patch_margin_bottom = 23
+
+[node name="Text" parent="Background" index="0"]
+margin_left = 21.0
+margin_top = 18.0
+margin_right = 480.0
+margin_bottom = 111.0
+text = "line 1
+line 2
+line 3
+line 4line 4line 4line 4line 4line 4line 4line 4
+line 5"
+max_lines_visible = 4
+
+[node name="ActionArrows" parent="Background" index="1"]
+margin_left = 460.842
+margin_top = 123.192
+margin_right = 460.842
+margin_bottom = 123.192

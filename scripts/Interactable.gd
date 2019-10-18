@@ -9,6 +9,8 @@ export (NodePath) var sprite_path
 export (Texture) var texture
 export (ShaderMaterial) var outline_material
 export (NodePath) var context_menu_path
+# warning-ignore:unused_class_variable
+export (String, MULTILINE) var description
 
 var sprite: MeshInstance
 var context_menu: ContextMenu

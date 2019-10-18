@@ -8,16 +8,27 @@ Handle the game flow: load levels and shit
 # warning-ignore:unused_class_variable
 var user_has_control = true
 
+onready var pop_up = $PopUp
+
+
+func _ready():
+	var __ = pop_up.connect("opened", self, "on_dialog_start")
+	__ = pop_up.connect("closed", self, "on_dialog_end")
+
 
 func on_dialog_start():
-	print("starting dialog")
+	"""
+	Can be called to disable further player's interactions
+	"""
 	Utils.get_player().in_dialog = true
 	
 	user_has_control = false
 
 
 func on_dialog_end():
-	print("ending dialog")
+	"""
+	Can be called to re-enable player's interactions
+	"""
 	Utils.get_player().in_dialog = false
 	
 	user_has_control = true
@@ -27,7 +38,12 @@ func perform_action(node, action: String):
 	"""
 	Dispatch action given the node the action is performed on and the action performed
 	"""
-	if node is Item:
+	if Utils.get_player().in_dialog:
+		return
+	
+	if action == "Examine":
+		examine(node)
+	elif node is Item:
 		if action == "Take":
 			take(node)
 	elif node is Character:
@@ -36,6 +52,13 @@ func perform_action(node, action: String):
 	else:
 		print("Unknown node ", node, " received for action ", action)
 		assert(false)
+
+
+func examine(node: Interactable):
+	"""
+	Display description of given Interactable
+	"""
+	pop_up.set_text(node.description)
 
 
 func take(item: Item):
@@ -50,7 +73,4 @@ func talk(character: Character):
 	"""
 	Starts a dialog with the given character
 	"""
-	if Utils.get_player().in_dialog:
-		return
-		
 	character.continue_story()

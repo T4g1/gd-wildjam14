@@ -3,18 +3,18 @@
 [ext_resource path="res://nodes/Character/Character.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/action_button/action_hover.png" type="Texture" id=2]
 [ext_resource path="res://shader/outline_shadermaterial.tres" type="Material" id=3]
-[ext_resource path="res://nodes/UI/SpeechBubble/SpeechBubble.tscn" type="PackedScene" id=4]
-[ext_resource path="res://nodes/UI/ChoiceBubble/ChoiceBubble.tscn" type="PackedScene" id=5]
+[ext_resource path="res://nodes/UI/ChoiceBubble/ChoiceBubble.tscn" type="PackedScene" id=4]
+[ext_resource path="res://nodes/UI/TextDisplay/SpeechBubble/SpeechBubble.tscn" type="PackedScene" id=5]
 [ext_resource path="res://nodes/Dialog/Dialog.tscn" type="PackedScene" id=6]
 [ext_resource path="res://nodes/UI/ContextMenu/CharacterMenu.tscn" type="PackedScene" id=7]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.3, 0.3, 0.01 )
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=2]
 
-[sub_resource type="PlaneMesh" id=2]
-material = SubResource( 3 )
+[sub_resource type="PlaneMesh" id=3]
+material = SubResource( 2 )
 
 [node name="Character" type="KinematicBody" groups=[
 "characters",
@@ -31,7 +31,7 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="MeshInstance" parent="."]
 transform = Transform( 0.3, 0, 0, 0, -1.31134e-08, -0.3, 0, 0.3, -1.31134e-08, 0, 0, 0 )
-mesh = SubResource( 2 )
+mesh = SubResource( 3 )
 material/0 = null
 
 [node name="UI" type="Control" parent="."]
@@ -39,17 +39,19 @@ margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 2
 
-[node name="SpeechBubble" parent="UI" instance=ExtResource( 4 )]
-margin_left = 265.876
-margin_top = -198.8
-margin_right = 265.876
-margin_bottom = -198.8
-
-[node name="ChoiceBubble" parent="UI" instance=ExtResource( 5 )]
+[node name="ChoiceBubble" parent="UI" instance=ExtResource( 4 )]
+visible = false
 margin_left = 374.841
 margin_top = -72.0784
 margin_right = 374.841
 margin_bottom = -72.0784
+
+[node name="SpeechBubble" parent="UI" instance=ExtResource( 5 )]
+visible = false
+margin_left = 36.6555
+margin_top = -18.404
+margin_right = -3.34448
+margin_bottom = -58.404
 
 [node name="Dialog" parent="." instance=ExtResource( 6 )]
 

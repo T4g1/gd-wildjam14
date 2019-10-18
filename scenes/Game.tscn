@@ -3,8 +3,8 @@
 [ext_resource path="res://scenes/Game.gd" type="Script" id=1]
 [ext_resource path="res://levels/Level1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://nodes/Camera/Camera.tscn" type="PackedScene" id=3]
-[ext_resource path="res://nodes/Item/Gun/Gun.tscn" type="PackedScene" id=4]
-[ext_resource path="res://nodes/UI/Inventory/Inventory.tscn" type="PackedScene" id=5]
+[ext_resource path="res://nodes/UI/Inventory/Inventory.tscn" type="PackedScene" id=4]
+[ext_resource path="res://nodes/UI/TextDisplay/PopUp/PopUp.tscn" type="PackedScene" id=5]
 
 [node name="Game" type="Spatial"]
 script = ExtResource( 1 )
@@ -14,18 +14,14 @@ script = ExtResource( 1 )
 [node name="Camera" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8 )
 
-[node name="Gun" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.533001, -0.509255, 1.5 )
-axis_lock_linear_z = false
-axis_lock_angular_x = false
-axis_lock_angular_y = false
-
-[node name="Gun2" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.923, -1.132, 1.5 )
-axis_lock_linear_z = false
-axis_lock_angular_x = false
-axis_lock_angular_y = false
-
-[node name="Inventory" parent="." instance=ExtResource( 5 )]
+[node name="Inventory" parent="." instance=ExtResource( 4 )]
 margin_left = -45.0
 margin_right = -45.0
+
+[node name="PopUp" parent="." instance=ExtResource( 5 )]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+margin_top = -70.0
+margin_right = 0.0
+margin_bottom = -70.0

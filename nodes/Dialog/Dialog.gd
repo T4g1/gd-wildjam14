@@ -12,10 +12,8 @@ var story
 
 
 func _ready():
-# warning-ignore:return_value_discarded
-	connect("dialog_start", Utils.get_game(), "on_dialog_start")
-# warning-ignore:return_value_discarded
-	connect("dialog_end", Utils.get_game(), "on_dialog_end")
+	var __ = connect("dialog_start", Utils.get_game(), "on_dialog_start")
+	__ = connect("dialog_end", Utils.get_game(), "on_dialog_end")
 
 
 func load_story(ink_story_path):
@@ -53,7 +51,7 @@ func continue_story():
 	
 		if story.current_choices.size() <= 0:
 			character.speech_bubble.set_close_action(true)
-			yield(character.speech_bubble, "speech_over")
+			yield(character.speech_bubble, "closed")
 	
 	if story.current_choices.size() > 0:
 		character.speech_bubble.set_close_action(false)

@@ -82,7 +82,12 @@ _global_script_classes=[ {
 "base": "Control",
 "class": "SpeechBubble",
 "language": "GDScript",
-"path": "res://nodes/UI/SpeechBubble/SpeechBubble.gd"
+"path": "res://nodes/UI/TextDisplay/SpeechBubble/SpeechBubble.gd"
+}, {
+"base": "Control",
+"class": "TextDisplay",
+"language": "GDScript",
+"path": "res://nodes/UI/TextDisplay/TextDisplay.gd"
 } ]
 _global_script_class_icons={
 "ActionButton": "",
@@ -99,7 +104,8 @@ _global_script_class_icons={
 "Item": "",
 "Level": "",
 "Player": "",
-"SpeechBubble": ""
+"SpeechBubble": "",
+"TextDisplay": ""
 }
 
 [application]
