@@ -51,7 +51,12 @@ func perform_action(node, action: String):
 	"""
 	Dispatch action given the node the action is performed on and the action performed
 	"""
-	if Utils.get_player().in_dialog:
+	var player = Utils.get_player()
+	if player.in_dialog:
+		return
+	
+	if not player.is_in_range(node):
+		pop_up.set_text("You are too far away to do that")
 		return
 	
 	if action == "Examine":
