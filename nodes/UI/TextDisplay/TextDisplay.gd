@@ -32,7 +32,8 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("ui_accept") or event.is_action_pressed("ui_move"):
-		on_action()
+		if on_action():
+			get_tree().set_input_as_handled()
 
 
 func set_text(text : String):
@@ -58,12 +59,13 @@ func hide():
 	visible = false
 
 
-func on_action():
+func on_action() -> bool:
 	"""
 	Player triggers next lines/end
+	return true in case the action was taken effectively
 	"""
 	if not is_shown():
-		return
+		return false
 	
 	if not is_last_line_shown():
 		label.lines_skipped += label.max_lines_visible
@@ -75,6 +77,8 @@ func on_action():
 	elif can_close:
 		hide()
 		emit_signal("closed")
+	
+	return true
 
 
 func set_close_action(value):

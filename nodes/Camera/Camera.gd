@@ -14,7 +14,10 @@ export (float) var speed_hide_shutter = 0.2
 export (float) var speed = 5.0
 
 
-func _input(event):
+func _unhandled_input(event):
+	if not Utils.get_game() or not Utils.get_game().user_has_control:
+		return
+	
 	if event.is_action_pressed("ui_move"):
 		var from = project_ray_origin(event.position)
 		var to = project_ray_normal(event.position) * RAY_LENGTH

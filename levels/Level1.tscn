@@ -31,7 +31,7 @@ background_mode = 2
 background_sky = SubResource( 6 )
 ambient_light_color = Color( 1, 1, 1, 1 )
 
-[node name="Level1" instance=ExtResource( 1 )]
+[node name="Level1" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 path_story = "res://dialogs/level1/level_1.json"
 environment_path = NodePath("WorldEnvironment")
