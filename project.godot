@@ -42,7 +42,7 @@ _global_script_classes=[ {
 "base": "KinematicBody",
 "class": "Door",
 "language": "GDScript",
-"path": "res://nodes/Interactable/Door.gd"
+"path": "res://entities/Door.gd"
 }, {
 "base": "Control",
 "class": "FixedPosition",
@@ -172,7 +172,3 @@ ui_move={
 3d_physics/layer_2="interactable"
 3d_physics/layer_3="player"
 3d_physics/layer_4="character"
-
-[rendering]
-
-environment/default_environment="res://environment/default_env.tres"

@@ -76,7 +76,7 @@ func _on_context_action(action):
 	if interaction_disabled:
 		return
 	
-	Utils.get_game().perform_action(self, action)
+	Utils.get_game().perform_action(self, action, false)
 
 
 func _on_take():

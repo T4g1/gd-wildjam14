@@ -16,7 +16,7 @@ func _ready():
 
 func _on_context_action(action):
 	if not is_free():
-		Utils.get_game().perform_action(stored_item, action)
+		Utils.get_game().perform_action(stored_item, action, true)
 	
 	context_menu.hide()
 

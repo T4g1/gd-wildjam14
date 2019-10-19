@@ -76,7 +76,7 @@ func on_dialog_end():
 	user_has_control = true
 
 
-func perform_action(node, action: String):
+func perform_action(node, action: String, in_inventory=false):
 	"""
 	Dispatch action given the node the action is performed on and the action performed
 	"""
@@ -84,7 +84,7 @@ func perform_action(node, action: String):
 	if player.in_dialog:
 		return
 	
-	if not player.is_in_range(node):
+	if not in_inventory and not player.is_in_range(node):
 		pop_up.set_text("You are too far away to do that")
 		return
 	
@@ -92,12 +92,10 @@ func perform_action(node, action: String):
 		examine(node)
 	elif action == "Use":
 		use(node)
-	elif node is Item:
-		if action == "Take":
-			take(node)
-	elif node is Character:
-		if action == "Talk":
-			talk(node)
+	elif action == "Take":
+		take(node)
+	elif action == "Talk":
+		talk(node)
 	else:
 		print("Unknown node ", node, " received for action ", action)
 		assert(false)
