@@ -15,7 +15,7 @@ size = Vector2( 1, 0.5 )
 flags_transparent = true
 albedo_texture = ExtResource( 3 )
 
-[node name="Key" index="0" instance=ExtResource( 1 )]
+[node name="Key" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 texture = ExtResource( 3 )
 description = "Any key"
