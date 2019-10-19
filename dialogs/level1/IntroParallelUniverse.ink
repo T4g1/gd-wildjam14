@@ -1,4 +1,4 @@
-INCLUDE common.ink
+INCLUDE ../common.ink
 
 # Erwin
 

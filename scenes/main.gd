@@ -12,8 +12,8 @@ onready var title = $Title
 func _ready():
 	title.connect("play", self, "_on_play")
 	
-	show_title()
-	#show_game()
+	#show_title()
+	show_game()
 
 
 func _on_play():
