@@ -15,7 +15,7 @@ radius = 2.16507
 "player",
 ] instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0 )
-collision_layer = 1
+collision_layer = 4
 collision_mask = 1
 script = ExtResource( 2 )
 texture = ExtResource( 3 )

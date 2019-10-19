@@ -12,7 +12,7 @@ export (NodePath) var context_menu_path
 export (NodePath) var dialog_path
 # warning-ignore:unused_class_variable
 export (String, MULTILINE) var description
-export(String, FILE, "*.json") var path_story
+export (String, FILE, "*.json") var path_story
 
 onready var sprite = get_node(sprite_path)
 onready var context_menu = get_node(context_menu_path)

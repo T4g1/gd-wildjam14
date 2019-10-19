@@ -9,6 +9,7 @@
 [node name="Character" groups=[
 "characters",
 ] instance=ExtResource( 1 )]
+collision_layer = 10
 script = ExtResource( 2 )
 context_menu_path = NodePath("ContextMenu")
 firstname = "SET ME"

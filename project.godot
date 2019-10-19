@@ -93,6 +93,11 @@ _global_script_classes=[ {
 "class": "Title",
 "language": "GDScript",
 "path": "res://scenes/Title.gd"
+}, {
+"base": "Area",
+"class": "Trigger",
+"language": "GDScript",
+"path": "res://nodes/Trigger/Trigger.gd"
 } ]
 _global_script_class_icons={
 "ActionButton": "",
@@ -111,7 +116,8 @@ _global_script_class_icons={
 "Player": "",
 "SpeechBubble": "",
 "TextDisplay": "",
-"Title": ""
+"Title": "",
+"Trigger": ""
 }
 
 [application]
@@ -158,6 +164,8 @@ ui_move={
 
 3d_physics/layer_1="general"
 3d_physics/layer_2="interactable"
+3d_physics/layer_3="player"
+3d_physics/layer_4="character"
 
 [rendering]
 
