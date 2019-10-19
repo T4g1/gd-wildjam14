@@ -36,7 +36,7 @@ func _on_use():
 		locked = false
 	
 	if locked:
-		Utils.get_game().display_text("A key is required...")
+		dialog.continue_story()
 	else:
 		toggle()
 

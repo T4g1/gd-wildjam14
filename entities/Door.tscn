@@ -21,6 +21,7 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 context_menu_path = NodePath("ContextMenu")
 description = "Just a door, really"
+path_story = "res://dialogs/level1/Door.json"
 
 [node name="CollisionShape" parent="." index="0"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.00491, 0.985705 )
