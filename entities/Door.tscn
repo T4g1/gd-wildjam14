@@ -35,3 +35,4 @@ material/0 = SubResource( 3 )
 
 [node name="DoorSound" type="AudioStreamPlayer" parent="." index="4"]
 stream = ExtResource( 5 )
+volume_db = -10.0

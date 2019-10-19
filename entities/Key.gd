@@ -1,10 +1,9 @@
 extends "res://nodes/Item/Item.gd"
 
-
-onready var audio = $TakeSound
+onready var take_sound = $TakeSound
 
 
 func _on_take():
-	audio.play()
-	print("cling")
+	take_sound.play()
+	
 	return true

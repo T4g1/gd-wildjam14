@@ -4,6 +4,7 @@ class_name Player
 const NEXT_PATH_THRESHOLD = 1.0
 
 onready var interaction_area = $InteractionArea
+onready var move_order_sound = $MoveOrderSound
 
 var speed = 4.0
 var path = []
@@ -45,3 +46,5 @@ func move_to(target: Vector3):
 	
 	path = navigation.get_simple_path(global_transform.origin, target)
 	path_index = 0
+	
+	move_order_sound.play()

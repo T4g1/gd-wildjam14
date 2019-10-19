@@ -108,6 +108,7 @@ environment = SubResource( 7 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+volume_db = -15.0
 autoplay = true
 [connection signal="pressed" from="UI/VBoxContainer/Play" to="." method="_on_play"]
 [connection signal="pressed" from="UI/VBoxContainer/Quit" to="." method="_on_quit"]

@@ -35,7 +35,7 @@ func _ready():
 	hidded = true
 
 
-func _on_item_in(_item: InventoryItem):
+func _on_item_in(item: InventoryItem):
 	"""
 	Called when an item is inserted in the inventory
 	"""
@@ -142,9 +142,7 @@ func put_item_in(item: Item) -> InventoryItem:
 	if not slot:
 		return null
 	
-	var parent = item.get_parent()
-	if parent:
-		parent.remove_child(item)
+	item.visible = false
 	
 	slot.store(item)
 	_on_item_in(slot)

@@ -33,9 +33,10 @@ func _ready():
 
 
 func _input(event):
+	var tree = get_tree()
 	if event.is_action_pressed("ui_accept") or event.is_action_pressed("ui_move"):
 		if on_action():
-			get_tree().set_input_as_handled()
+			tree.set_input_as_handled()
 
 
 func set_text(text : String):
