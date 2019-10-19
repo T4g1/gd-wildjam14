@@ -26,9 +26,9 @@ transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0 )
 texture = ExtResource( 2 )
 outline_material = SubResource( 1 )
 description = "A common USP-S whose silencer is lost since ages ago"
+item_name = "Gun"
 
 [node name="CollisionShape" parent="." index="0"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Sprite" parent="." index="1"]

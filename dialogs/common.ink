@@ -4,6 +4,7 @@ VAR paused = 0
 VAR trigger_switch_realm = 0
 VAR game_is_over = 0
 
+EXTERNAL has(name)
 
 === function who(value) ===
     ~ character_mood = "normal"

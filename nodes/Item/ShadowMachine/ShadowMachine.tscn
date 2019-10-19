@@ -9,3 +9,4 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 description = "Machine built and used by Erwin to bring his shadow to his side before the incident"
 path_story = "res://dialogs/level1/ShadowMachine.json"
+item_name = "Shadow Machine"

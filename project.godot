@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://nodes/UI/ActionButton/ActionButton.gd"
 }, {
-"base": "CollisionObject",
+"base": "KinematicBody",
 "class": "Character",
 "language": "GDScript",
 "path": "res://nodes/Character/Character.gd"
@@ -39,6 +39,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://nodes/Dialog/Dialog.gd"
 }, {
+"base": "KinematicBody",
+"class": "Door",
+"language": "GDScript",
+"path": "res://nodes/Interactable/Door.gd"
+}, {
 "base": "Control",
 "class": "FixedPosition",
 "language": "GDScript",
@@ -52,7 +57,7 @@ _global_script_classes=[ {
 "base": "KinematicBody",
 "class": "Interactable",
 "language": "GDScript",
-"path": "res://scripts/Interactable.gd"
+"path": "res://nodes/Interactable/Interactable.gd"
 }, {
 "base": "Control",
 "class": "Inventory",
@@ -64,7 +69,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://nodes/UI/Inventory/InventoryItem.gd"
 }, {
-"base": "CollisionObject",
+"base": "KinematicBody",
 "class": "Item",
 "language": "GDScript",
 "path": "res://nodes/Item/Item.gd"
@@ -106,6 +111,7 @@ _global_script_class_icons={
 "ChoiceBubble": "",
 "ContextMenu": "",
 "Dialog": "",
+"Door": "",
 "FixedPosition": "",
 "Game": "",
 "Interactable": "",

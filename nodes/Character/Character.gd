@@ -1,4 +1,4 @@
-extends "res://scripts/Interactable.gd"
+extends "res://nodes/Interactable/Interactable.gd"
 class_name Character
 """
 Base class for NPC and Player

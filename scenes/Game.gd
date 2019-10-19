@@ -15,6 +15,7 @@ var level_index
 export (Array, Resource) var levels
 export (int) var start_level
 
+onready var inventory = $Inventory
 onready var pop_up = $PopUp
 
 

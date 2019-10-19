@@ -23,6 +23,7 @@ func load_story(ink_story_path):
 	ink_story.close()
 	
 	story = Story.new(content)
+	story.bind_external_function("has", Utils.get_game().inventory, "has")
 
 
 func continue_story():
@@ -41,8 +42,6 @@ func continue_story():
 		var zoom_targets = story.get_current_tags()
 		if zoom_targets.size() > 0:
 			Utils.zoom_on(zoom_targets)
-		
-		print(text)
 		
 		# Game over? (triggers next level)
 		if story.variables_state.get("game_is_over") == 1:
@@ -74,7 +73,6 @@ func continue_story():
 		if story.current_choices.size() <= 0:
 			text_display.set_close_action(true)
 			yield(text_display, "closed")
-			print("suite")
 	
 	if story.current_choices.size() > 0:
 		text_display.set_close_action(false)
