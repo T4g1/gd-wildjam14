@@ -161,4 +161,4 @@ ui_move={
 
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+environment/default_environment="res://environment/default_env.tres"

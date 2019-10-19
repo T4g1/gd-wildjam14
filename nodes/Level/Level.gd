@@ -9,9 +9,11 @@ signal realm_changed
 # On which plan the level starts
 enum Realms {REAL, SHADOW}
 export (Realms) var start_realm
-export(String, FILE, "*.json") var path_story
+export (String, FILE, "*.json") var path_story
+export (NodePath) var environment_path
 
 onready var dialog = $Dialog
+onready var environment: WorldEnvironment
 
 var realm_nodes: Dictionary
 var current_realm = Realms.REAL
@@ -19,6 +21,9 @@ var current_realm = Realms.REAL
 
 func _ready():
 	assert(path_story != "")
+	
+	if environment_path != "":
+		environment = get_node(environment_path)
 	
 	realm_nodes = {
 		Realms.REAL: $RealWorld,

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://nodes/Level/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/Level1.gd" type="Script" id=2]
@@ -21,9 +21,17 @@ polygons = [ PoolIntArray( 2, 0, 1 ), PoolIntArray( 5, 3, 4 ), PoolIntArray( 8, 
 [sub_resource type="ConvexPolygonShape" id=5]
 points = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, -1 )
 
-[node name="Level1" index="0" instance=ExtResource( 1 )]
+[sub_resource type="ProceduralSky" id=6]
+
+[sub_resource type="Environment" id=7]
+background_mode = 2
+background_sky = SubResource( 6 )
+ambient_light_color = Color( 1, 1, 1, 1 )
+
+[node name="Level1" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 path_story = "res://dialogs/level_1.json"
+environment_path = NodePath("WorldEnvironment")
 
 [node name="MeshInstance" type="MeshInstance" parent="ShadowRealm" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26, -2.25 )
@@ -63,3 +71,6 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="NavigationMeshInstance/MeshInstance/StaticBody" index="0"]
 shape = SubResource( 5 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="5"]
+environment = SubResource( 7 )

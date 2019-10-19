@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://nodes/UI/ContextMenu/ContextMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://nodes/UI/ActionButton/ActionButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/ui/take.png" type="Texture" id=3]
+[ext_resource path="res://assets/ui/use.png" type="Texture" id=4]
 
 [node name="ContextMenu" instance=ExtResource( 1 )]
 
@@ -19,4 +20,5 @@ margin_left = -45.0
 margin_top = 50.0
 margin_right = -45.0
 margin_bottom = 50.0
+logo = ExtResource( 4 )
 action = "Use"

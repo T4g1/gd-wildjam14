@@ -16,14 +16,12 @@ export (Array, Resource) var levels
 export (int) var start_level
 
 onready var pop_up = $PopUp
-onready var environment = $WorldEnvironment
 
 
 func _ready():
 	var __ = pop_up.connect("opened", self, "on_dialog_start")
 	__ = pop_up.connect("closed", self, "on_dialog_end")
 	
-	Utils.get_camera().set_environment(environment)
 	load_level(start_level)
 
 
@@ -31,7 +29,7 @@ func on_next_level():
 	"""
 	Trigger next level or game over
 	"""
-	if level_index < levels.size():
+	if level_index < levels.size() - 1:
 		load_level(level_index + 1)
 	else:
 		on_game_over()
@@ -47,6 +45,9 @@ func load_level(index: int):
 	level_index = index
 	current_level = levels[level_index].instance()
 	add_child(current_level)
+	
+	if current_level.environment:
+		Utils.get_camera().set_environment(current_level.environment)
 
 
 func on_game_over():
