@@ -11,10 +11,10 @@ Grmbl qui a encore fermé cette porte ?  RICHARD !
 ~ who("Richard")
 OUI MONSIEUR ?
 
-~ pause_after()
-
 # Erwin
 ~ who("Erwin")
 Putain gueule pas t'es juste à côté couillon x)
+
+~ game_over()
 
 -> start
