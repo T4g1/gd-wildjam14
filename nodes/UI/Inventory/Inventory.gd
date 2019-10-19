@@ -35,7 +35,7 @@ func _ready():
 	hidded = true
 
 
-func _on_item_in(item: InventoryItem):
+func _on_item_in(_item: InventoryItem):
 	"""
 	Called when an item is inserted in the inventory
 	"""
