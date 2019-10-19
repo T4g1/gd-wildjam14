@@ -105,5 +105,3 @@ func _on_talk():
 	Overide for custom behavior, returns true if the action can be performed
 	"""
 	return true
-
-

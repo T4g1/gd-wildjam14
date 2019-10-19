@@ -20,6 +20,8 @@ onready var continue_sprite = get_node(continue_sprite_path)
 onready var label = get_node(label_path)
 onready var action_tween = get_node(action_tween_path)
 
+onready var confirm_sound = $ConfirmSound
+
 var can_close = true
 
 
@@ -31,9 +33,10 @@ func _ready():
 
 
 func _input(event):
+	var tree = get_tree()
 	if event.is_action_pressed("ui_accept") or event.is_action_pressed("ui_move"):
 		if on_action():
-			get_tree().set_input_as_handled()
+			tree.set_input_as_handled()
 
 
 func set_text(text : String):
@@ -77,6 +80,8 @@ func on_action() -> bool:
 	elif can_close:
 		hide()
 		emit_signal("closed")
+	
+	confirm_sound.play()
 	
 	return true
 

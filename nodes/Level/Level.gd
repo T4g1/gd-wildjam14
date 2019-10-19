@@ -14,6 +14,9 @@ export (NodePath) var environment_path
 
 onready var dialog = $Dialog
 onready var environment: WorldEnvironment
+onready var real_audio = $RealWorld/Audio
+onready var shadow_audio = $ShadowRealm/Audio
+onready var switch_realm_sound = $SwitchRealmSound
 
 var realm_nodes: Dictionary
 var current_realm = Realms.REAL
@@ -85,6 +88,20 @@ func set_realm(realm):
 	realm_node.visible = true
 	
 	current_realm = realm
+	
+	set_audio()
+
+
+func set_audio():
+	"""
+	Set correct music in background
+	"""
+	if current_realm == Realms.SHADOW:
+		real_audio.stop()
+		shadow_audio.play()
+	else:
+		real_audio.play()
+		shadow_audio.stop()
 
 
 func fade_realm(realm):
@@ -93,6 +110,8 @@ func fade_realm(realm):
 	"""
 	if not can_change_realm():
 		return
+	
+	switch_realm_sound.play()
 	
 	Utils.get_game().user_has_control = false
 	var camera = Utils.get_camera()

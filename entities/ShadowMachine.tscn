@@ -1,12 +1,27 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://nodes/Item/Item.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/ShadowMachine.gd" type="Script" id=2]
-[ext_resource path="res://assets/ui/dialog_close.png" type="Texture" id=3]
+[ext_resource path="res://assets/shadow_machine.png" type="Texture" id=3]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.689513, 0.0959909, 0.727885 )
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+albedo_texture = ExtResource( 3 )
 
 [node name="ShadowMachine" instance=ExtResource( 1 )]
+transform = Transform( 2.11521, 0, 0, 0, 2.11521, 0, 0, 0, 1, 0, 0, 0 )
 script = ExtResource( 2 )
 texture = ExtResource( 3 )
 description = "Machine built and used by Erwin to bring his shadow to his side before the incident"
 path_story = "res://dialogs/level1/ShadowMachine.json"
 item_name = "Shadow Machine"
+
+[node name="CollisionShape" parent="." index="0"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0627343, -0.0134344, 0 )
+shape = SubResource( 1 )
+
+[node name="Sprite" parent="." index="1"]
+material/0 = SubResource( 2 )

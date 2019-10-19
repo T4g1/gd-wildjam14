@@ -142,9 +142,7 @@ func put_item_in(item: Item) -> InventoryItem:
 	if not slot:
 		return null
 	
-	var parent = item.get_parent()
-	if parent:
-		parent.remove_child(item)
+	item.visible = false
 	
 	slot.store(item)
 	_on_item_in(slot)

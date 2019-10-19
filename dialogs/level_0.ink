@@ -3,32 +3,26 @@ INCLUDE common.ink
 # Erwin
 
 ~ who("")
-Le professeur Erwin était un homme seul.
+Professor Erwin was a lone man
 
-Non pas qu’il n’avait personne pour lui, au contraire, sa famille l’appréciait.
+Not that nobody wanted to be with him, quite the opposite, his family had always been a loving one
 
-Non, c’était lui qui n’appréciait personne, hormis son propre génie
+No, it was him who didn't liked anyone except for his own genius mind
 
-Malgré cela, il commençait à souffrir de sa solitude
+Despite that, he was beginning to fell the grip of loneliness in his life
 
-Sa famille disait toujours que depuis qu’il avait ouvert son propre laboratoire
+His family always said that since he opened his own lab, he was only the shadow of himself
 
-Il n’était plus que l’ombre de lui-même
+That's probably what started it all as, after many thought, he saw a solution in that sentence
 
-Cette phrase avait résonné dans sa tête et lui avait fourni une solution
+If he is the only one whose presency he can bear, all he had to do was to make his own shadow his friend!
 
-Si la seule personne qu’il supportait c’était lui-même, il n’avait qu’à faire de son ombre un compagnon
+He crafted a shadow machine capable of tearing his shadow from his own body and to give it life
 
-Il inventa une machine capable d’arracher son ombre à son corps et lui donner vie
+The experiment was sucessfull but he rapidly found that there was a problem, he was experiencing memory loss and his shadow was the exact opposite of himself. It was dumb, funny and extremely friendly
 
-L’expérience fut un succès
+During one of their many arguments, the shadow, drowned by sorrow, triggered the shadow machine randomly and all humanity's shadow!
 
-Mais rapidement il comprit qu’il y avait un problème
-
-Il souffrait de perte de souvenir et son ombre était l’exact opposé de lui. Elle était bête, blagueuse et surtout extrêmement gentille.
-
-Lors d’une de leur nombreuses disputes, l’ombre prit de chagrin activa la machine au hasard et arracha l’ombre du corps de toute l’humanité
-
-La machine surchauffa et le professeur arriva trop tard pour arrêter l’ombre qui prit la fuite dans la panique.
+The shadow machine overheated and the professor arrived too late to stop his shadow who fled away in panic
 
 ~ game_over()

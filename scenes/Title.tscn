@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/Title.gd" type="Script" id=1]
 [ext_resource path="res://fonts/MonospaceTypewriter.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://nodes/UI/Inventory/inventory_item_hover.tres" type="StyleBox" id=3]
-[ext_resource path="res://nodes/UI/Inventory/inventory_item_normal.tres" type="StyleBox" id=4]
+[ext_resource path="res://nodes/UI/button_hover.tres" type="StyleBox" id=3]
+[ext_resource path="res://nodes/UI/button_normal.tres" type="StyleBox" id=4]
 [ext_resource path="res://fonts/MonospaceTypewriter_dynamicfont.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/sounds/title.wav" type="AudioStream" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -98,11 +99,16 @@ process_material = SubResource( 4 )
 draw_pass_1 = SubResource( 6 )
 
 [node name="SpotLight" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, -10, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -10, 0 )
 spot_range = 18.1
 spot_angle = 60.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 7 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -15.0
+autoplay = true
 [connection signal="pressed" from="UI/VBoxContainer/Play" to="." method="_on_play"]
 [connection signal="pressed" from="UI/VBoxContainer/Quit" to="." method="_on_quit"]
