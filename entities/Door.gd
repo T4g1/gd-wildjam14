@@ -8,6 +8,8 @@ export (String) var required_item = "Key"
 export (bool) var is_open = false
 export (bool) var locked = false
 
+onready var door_sound = $DoorSound
+
 var inventory
 
 func _ready():
@@ -39,6 +41,8 @@ func _on_use():
 		toggle()
 
 func toggle():
+	door_sound.play()
+	
 	if is_open:
 		close()
 	else:

@@ -7,6 +7,7 @@ Title screen
 signal play
 
 onready var ui = $UI
+onready var audio = $AudioStreamPlayer
 
 
 func _on_play():
@@ -20,8 +21,10 @@ func _on_quit():
 func hide():
 	ui.hide()
 	visible = false
+	audio.stop()
 
 
 func show():
 	ui.show()
 	visible = true
+	audio.play()

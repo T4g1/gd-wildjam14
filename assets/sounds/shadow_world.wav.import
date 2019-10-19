@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/shadow_world.wav-53fd9b5e7837a1d981141df30fa7a539.sample"
+
+[deps]
+
+source_file="res://assets/sounds/shadow_world.wav"
+dest_files=[ "res://.import/shadow_world.wav-53fd9b5e7837a1d981141df30fa7a539.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
