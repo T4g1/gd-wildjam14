@@ -44,9 +44,9 @@ func continue_story():
 		
 		print(text)
 		
-		# Game over?
+		# Game over? (triggers next level)
 		if story.variables_state.get("game_is_over") == 1:
-			return game.on_game_over()
+			return game.on_next_level()
 		
 		# Realm change triggered ?
 		if story.variables_state.get("trigger_switch_realm") == 1:

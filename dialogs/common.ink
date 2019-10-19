@@ -24,8 +24,5 @@ VAR game_is_over = 0
 
 === function game_over() ===
     ~ who("")
-    And this is how Erwin saved the day! Congratulation, you finished the game
-
     ~ game_is_over = 1
-
     QUIT

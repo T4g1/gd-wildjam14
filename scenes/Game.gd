@@ -9,8 +9,12 @@ signal game_over
 
 # warning-ignore:unused_class_variable
 var user_has_control = true
+var current_level
+var level_index
 
-onready var current_level = $Level1
+export (Array, Resource) var levels
+export (int) var start_level
+
 onready var pop_up = $PopUp
 onready var environment = $WorldEnvironment
 
@@ -20,6 +24,29 @@ func _ready():
 	__ = pop_up.connect("closed", self, "on_dialog_end")
 	
 	Utils.get_camera().set_environment(environment)
+	load_level(start_level)
+
+
+func on_next_level():
+	"""
+	Trigger next level or game over
+	"""
+	if level_index < levels.size():
+		load_level(level_index + 1)
+	else:
+		on_game_over()
+
+
+func load_level(index: int):
+	"""
+	Given the index of the level to load, remove the actual one and loads it
+	"""
+	if current_level:
+		remove_child(current_level)
+	
+	level_index = index
+	current_level = levels[level_index].instance()
+	add_child(current_level)
 
 
 func on_game_over():
