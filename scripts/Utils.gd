@@ -4,8 +4,12 @@ const WHITE = Color(1, 1, 1, 1)
 const BLACK = Color(0, 0, 0, 1)
 
 
-func get_player() -> Player:
+func get_player():
 	return get_tree().get_nodes_in_group("player").front()
+
+
+func get_navigation() -> Navigation:
+	return get_tree().get_nodes_in_group("navigation").front()
 
 
 func get_inventory() -> Inventory:
@@ -17,7 +21,9 @@ func get_camera() -> Camera2D:
 
 
 func get_game():
-	return get_tree().get_root().get_node("main/Game")
+	var root = get_tree().get_root()
+	if root.has_node("main/Game"):
+		return root.get_node("main/Game")
 
 
 func get_character(character_name: String):

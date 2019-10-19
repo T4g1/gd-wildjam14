@@ -3,7 +3,9 @@
 [ext_resource path="res://nodes/Level/Level.gd" type="Script" id=1]
 [ext_resource path="res://nodes/Dialog/Dialog.tscn" type="PackedScene" id=2]
 
-[node name="Level" type="Spatial"]
+[node name="Level" type="Navigation" groups=[
+"navigation",
+]]
 script = ExtResource( 1 )
 
 [node name="ShadowRealm" type="Spatial" parent="."]

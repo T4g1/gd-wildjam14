@@ -7,10 +7,21 @@ signal shutter_hidden
 
 const TRANSPARENT = Color(1, 1, 1, 0)
 const OPAQUE = Color(1, 1, 1, 1)
+const RAY_LENGTH = 1000
 
 export (float) var speed_show_shutter = 0.5
 export (float) var speed_hide_shutter = 0.2
 export (float) var speed = 5.0
+
+
+func _input(event):
+	if event.is_action_pressed("ui_move"):
+		var from = project_ray_origin(event.position)
+		var to = project_ray_normal(event.position) * RAY_LENGTH
+		var space_state = get_world().direct_space_state
+		var collision = space_state.intersect_ray(from, to)
+		if collision:
+			get_tree().call_group("player", "move_to", collision.position)
 
 
 func _ready():

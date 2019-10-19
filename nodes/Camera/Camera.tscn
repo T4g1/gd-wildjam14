@@ -3,8 +3,6 @@
 [ext_resource path="res://nodes/Camera/Camera.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/camera/transition.png" type="Texture" id=2]
 
-
-
 [node name="Camera" type="Camera" groups=[
 "camera",
 ]]

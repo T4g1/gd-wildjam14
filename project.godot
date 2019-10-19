@@ -49,7 +49,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/Game.gd"
 }, {
-"base": "CollisionObject",
+"base": "KinematicBody",
 "class": "Interactable",
 "language": "GDScript",
 "path": "res://scripts/Interactable.gd"
@@ -74,7 +74,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://nodes/Level/Level.gd"
 }, {
-"base": "CollisionObject",
+"base": "KinematicBody",
 "class": "Player",
 "language": "GDScript",
 "path": "res://nodes/Player/Player.gd"

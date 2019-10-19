@@ -1,4 +1,4 @@
-extends CollisionObject
+extends KinematicBody
 class_name Interactable
 """
 Handle something that possess a context menu and connect its various actions

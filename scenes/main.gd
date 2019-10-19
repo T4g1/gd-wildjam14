@@ -42,7 +42,7 @@ func show_title():
 
 func show_game():
 	game = GameNode.instance()
-	game.connect("game_over", self, "_on_game_over")
+	var __ = game.connect("game_over", self, "_on_game_over")
 	add_child(game)
 	
 	title.hide()
