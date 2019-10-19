@@ -20,7 +20,7 @@ func _ready():
 
 
 func open():
-	rotation.y = 120
+	rotation.y = deg2rad(120.0)
 	is_open = true
 
 
