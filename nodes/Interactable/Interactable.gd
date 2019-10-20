@@ -4,12 +4,13 @@ class_name Interactable
 Handle something that possess a context menu and connect its various actions
 """
 
+var sprite_path = "Sprite"
+var context_menu_path = "ContextMenu"
+var dialog_path = "Dialog"
+
 # Node to be outlined
-export (NodePath) var sprite_path
 export (Texture) var texture
 export (ShaderMaterial) var outline_material
-export (NodePath) var context_menu_path
-export (NodePath) var dialog_path
 # warning-ignore:unused_class_variable
 export (String, MULTILINE) var description
 export (String, FILE, "*.json") var path_story
@@ -23,6 +24,8 @@ var interaction_disabled = false
 
 
 func _ready():
+	assert(sprite and context_menu and dialog)
+	
 	var __ = context_menu.connect("context_action", self, "_on_context_action")
 	
 	outline_material = outline_material.duplicate()

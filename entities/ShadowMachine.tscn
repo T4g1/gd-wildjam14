@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/shadow_machine.png" type="Texture" id=3]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.689513, 0.0959909, 0.727885 )
+extents = Vector3( 0.69, 0.196, 0.728 )
 
 [sub_resource type="SpatialMaterial" id=2]
 flags_transparent = true

@@ -47,10 +47,10 @@ Base scene for every highlitable elements. Allows to give them a context menu an
 Customize by inheriting that scene and extend: Interactable.gd
 
 Customizable callbacks:
-* on_talk: Must return true for the action to be performed
-* on_examine: Must return true for the action to be performed
-* on_use
-* on_take: Must return true for the action to be performed
+* _on_talk: Must return true for the action to be performed
+* _on_examine: Must return true for the action to be performed
+* _on_use
+* _on_take: Must return true for the action to be performed
 
 
 ### Item

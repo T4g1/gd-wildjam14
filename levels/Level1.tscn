@@ -1,23 +1,22 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://nodes/Level/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/Level1.gd" type="Script" id=2]
 [ext_resource path="res://environments/level1_env.tres" type="Environment" id=3]
 [ext_resource path="res://entities/ShadowMachine.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/shaders/outline_shadermaterial.tres" type="Material" id=5]
-[ext_resource path="res://assets/textures/labo color.png" type="Texture" id=6]
-[ext_resource path="res://nodes/Trigger/OneShotTriger.tscn" type="PackedScene" id=7]
-[ext_resource path="res://entities/Door.tscn" type="PackedScene" id=8]
-[ext_resource path="res://entities/characters/Richard.tscn" type="PackedScene" id=9]
-[ext_resource path="res://entities/Key.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/textures/labo color.png" type="Texture" id=5]
+[ext_resource path="res://nodes/Trigger/OneShotTriger.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entities/Door.tscn" type="PackedScene" id=7]
+[ext_resource path="res://entities/characters/Richard.tscn" type="PackedScene" id=8]
+[ext_resource path="res://entities/Key.tscn" type="PackedScene" id=9]
+[ext_resource path="res://entities/Lift.tscn" type="PackedScene" id=10]
 [ext_resource path="res://nodes/Player/Player.tscn" type="PackedScene" id=11]
 [ext_resource path="res://levels/elements/SimpleRoom/SimpleRoom.tscn" type="PackedScene" id=12]
-[ext_resource path="res://assets/textures/ascenseur color.png" type="Texture" id=13]
-[ext_resource path="res://assets/textures/salon color.png" type="Texture" id=14]
-[ext_resource path="res://assets/textures/cuisine color.png" type="Texture" id=15]
-[ext_resource path="res://assets/textures/sdb color.png" type="Texture" id=16]
-[ext_resource path="res://assets/textures/chambre color.png" type="Texture" id=17]
-[ext_resource path="res://levels/elements/SimpleRoom/meterial_room.tres" type="Material" id=18]
+[ext_resource path="res://assets/textures/salon color.png" type="Texture" id=13]
+[ext_resource path="res://assets/textures/cuisine color.png" type="Texture" id=14]
+[ext_resource path="res://assets/textures/sdb color.png" type="Texture" id=15]
+[ext_resource path="res://assets/textures/chambre color.png" type="Texture" id=16]
+[ext_resource path="res://levels/elements/SimpleRoom/meterial_room.tres" type="Material" id=17]
 
 [sub_resource type="NavigationMesh" id=1]
 vertices = PoolVector3Array( -30.9307, 8.34986, -3.4, -30.9307, 8.34986, 3.5, -28.2307, 8.34986, 3.5, -28.2307, 8.34986, -3.4, -27.0307, 23.3499, -3.4, -27.0307, 23.3499, 3.5, -18.6307, 23.3499, 3.5, -18.6307, 23.3499, -3.4, -9.9307, 23.3499, 3.5, -1.2307, 23.3499, 3.5, -1.2307, 23.3499, -3.4, -9.9307, 23.3499, -3.4, -1.2307, 23.3499, 3.5, 7.4693, 23.3499, 3.5, 7.4693, 23.3499, -3.4, -1.2307, 23.3499, -3.4, -9.9307, 23.3499, -3.4, -18.6307, 23.3499, -3.4, -18.6307, 23.3499, 3.5, -9.9307, 23.3499, 3.5, 8.6693, 8.34986, -3.4, 8.6693, 8.34986, 3.5, 15.5693, 8.34986, 3.5, 15.5693, 8.34986, -3.4, 22.4693, 8.34986, -3.4, 15.5693, 8.34986, -3.4, 15.5693, 8.34986, 3.5, 22.4693, 8.34986, 3.5, -29.4307, 0.749857, 0.5, -30.9307, 0.749857, 0.8, -30.9307, 0.749857, 3.5, -22.5307, 0.749857, 3.5, -13.8307, 0.749857, 3.5, -13.5307, 0.749857, 0.5, -13.5307, 0.749857, -2.8, -21.6307, 0.749857, -2.8, -22.5307, 0.749857, 3.5, -21.6307, 0.749857, -2.8, -29.4307, 0.749857, -2.8, -29.4307, 0.749857, 0.5, -22.5307, 0.749857, 3.5, -8.7307, 8.34986, 0.5, -8.7307, 8.34986, -2.8, -10.8307, 8.34986, -2.8, -10.8307, 8.34986, 0.5, -19.5307, 8.34986, -2.8, -25.8307, 8.34986, -2.8, -25.8307, 8.34986, 3.5, -15.9307, 8.34986, 3.5, -6.0307, 8.34986, 3.5, -6.3307, 8.34986, 0.5, -8.7307, 8.34986, 0.5, -8.7307, 8.34986, 0.5, -10.8307, 8.34986, 0.5, -12.9307, 8.34986, 0.8, -15.9307, 8.34986, 3.5, -6.0307, 8.34986, 3.5, -15.9307, 8.34986, 3.5, -12.9307, 8.34986, 0.8, -13.2307, 8.34986, -2.8, -19.5307, 8.34986, -2.8, -8.7307, 15.7499, 0.5, -8.7307, 15.7499, -2.8, -10.8307, 15.7499, -2.8, -10.8307, 15.7499, 0.5, -19.5307, 15.7499, -2.8, -25.8307, 15.7499, -2.8, -25.8307, 15.7499, 3.5, -15.9307, 15.7499, 3.5, -6.0307, 15.7499, 3.5, -6.3307, 15.7499, 0.5, -8.7307, 15.7499, 0.5, -8.7307, 15.7499, 0.5, -10.8307, 15.7499, 0.5, -12.9307, 15.7499, 0.8, -15.9307, 15.7499, 3.5, -6.0307, 15.7499, 3.5, -15.9307, 15.7499, 3.5, -12.9307, 15.7499, 0.8, -13.2307, 15.7499, -2.8, -19.5307, 15.7499, -2.8, 7.4693, 0.749857, 3.5, 7.4693, 0.749857, 0.8, 6.2693, 0.749857, 0.5, -8.7307, 0.749857, -2.8, -10.8307, 0.749857, -2.8, -10.8307, 0.749857, 0.5, -8.4307, 0.749857, 0.8, -6.3307, 0.749857, 0.5, -8.4307, 0.749857, 0.8, -3.3307, 0.749857, 3.5, -10.8307, 0.749857, 0.5, -13.5307, 0.749857, 0.5, -13.8307, 0.749857, 3.5, -3.3307, 0.749857, 3.5, -8.4307, 0.749857, 0.8, -6.3307, 0.749857, -2.8, -6.3307, 0.749857, 0.5, -3.3307, 0.749857, 3.5, 7.4693, 0.749857, 3.5, 6.2693, 0.749857, 0.5, -0.0306988, 0.749857, -2.8, 6.2693, 0.749857, 0.5, 6.2693, 0.749857, -2.8, -0.0306988, 0.749857, -2.8, -6.3307, 8.34986, -2.8, -6.3307, 8.34986, 0.5, -6.0307, 8.34986, 3.5, -0.0306988, 8.34986, 3.5, -0.0306988, 8.34986, -2.8, -0.0306988, 8.34986, 3.5, 6.2693, 8.34986, 3.5, 6.2693, 8.34986, -2.8, -0.0306988, 8.34986, -2.8, -6.3307, 15.7499, -2.8, -6.3307, 15.7499, 0.5, -6.0307, 15.7499, 3.5, -0.0306988, 15.7499, 3.5, -0.0306988, 15.7499, -2.8, -0.0306988, 15.7499, 3.5, 6.2693, 15.7499, 3.5, 6.2693, 15.7499, -2.8, -0.0306988, 15.7499, -2.8, 8.6693, 0.749857, 0.5, 7.4693, 0.749857, 0.8, 7.4693, 0.749857, 3.5, 14.3693, 0.749857, 3.5, 21.2693, 0.749857, 3.5, 21.2693, 0.749857, -2.8, 14.9693, 0.749857, -2.8, 14.3693, 0.749857, 3.5, 14.9693, 0.749857, -2.8, 8.6693, 0.749857, -2.8, 8.6693, 0.749857, 0.5, 14.3693, 0.749857, 3.5 )
@@ -25,53 +24,47 @@ polygons = [ PoolIntArray( 3, 0, 2 ), PoolIntArray( 0, 1, 2 ), PoolIntArray( 7, 
 
 [sub_resource type="CubeMesh" id=2]
 
-[node name="Level1" instance=ExtResource( 1 )]
+[node name="Level1" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 path_story = "res://dialogs/level1/level_1.json"
 custom_environment = ExtResource( 3 )
 
-[node name="ShadowMachine" parent="RealWorld" index="1" groups=[
-"interactable",
-] instance=ExtResource( 4 )]
-transform = Transform( 4.359, 0, 0, 0, 4.359, 0, 0, 0, 1, 3.272, 18.956, 1 )
-collision_layer = 2
-collision_mask = 0
-sprite_path = NodePath("Sprite")
-outline_material = ExtResource( 5 )
-dialog_path = NodePath("Dialog")
+[node name="ShadowMachine" parent="RealWorld" index="1" instance=ExtResource( 4 )]
+transform = Transform( 4.359, 0, 0, 0, 4.359, 0, 0, 0, 1, 2.97923, 18.956, 1 )
 
 [node name="Sprite3D" type="Sprite3D" parent="RealWorld" index="2"]
 transform = Transform( 1.3, 0, 0, 0, 2.06522, 0, 0, 0, 1, -18.3177, 18.6674, -0.287354 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 582.071, 14.4327, 695.972, 332.44 )
 
-[node name="RealmChangeTrigger" parent="RealWorld" index="3" instance=ExtResource( 7 )]
+[node name="RealmChangeTrigger" parent="RealWorld" index="3" instance=ExtResource( 6 )]
 transform = Transform( 4.359, 0, 0, 0, 1.46936, 0, 0, 0, 1.49731, -1.07751, 18.9137, 0.731565 )
 
-[node name="Door" parent="RealWorld" index="4" instance=ExtResource( 8 )]
+[node name="Door" parent="RealWorld" index="4" instance=ExtResource( 7 )]
 transform = Transform( 4.359, 0, 0, 0, 1.5525, 0, 0, 0, 1.96554, -7.41, 15.3886, 0 )
 required_item = "Appartement's key"
 locked = true
 
-[node name="Richard" parent="RealWorld" index="5" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1.5, 0, 0, 0, 1, -18.0581, 17.0569, 1.5 )
+[node name="Richard" parent="RealWorld" index="5" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1.5, 0, 0, 0, 1, -24.0117, 2.00173, 1.5 )
 
-[node name="Key" parent="RealWorld" index="6" groups=[
-"interactable",
-] instance=ExtResource( 10 )]
+[node name="Key" parent="RealWorld" index="6" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.00024, 15.6701, 3.93108 )
-collision_layer = 2
-collision_mask = 0
-sprite_path = NodePath("Sprite")
-outline_material = ExtResource( 5 )
-dialog_path = NodePath("Dialog")
 description = "Key of the main door of your appartment"
 item_name = "Appartement's key"
 
+[node name="Lift_floor2" parent="RealWorld" index="7" instance=ExtResource( 10 )]
+transform = Transform( 2, 0, 0, 0, 3.3, 0, 0, 0, 1, -9.828, 18.786, -3.125 )
+
+[node name="Lift_floor1" parent="RealWorld" index="8" instance=ExtResource( 10 )]
+transform = Transform( 2, 0, 0, 0, 3.3, 0, 0, 0, 1, -9.828, 11.022, -3.125 )
+
+[node name="Lift_floor0" parent="RealWorld" index="9" instance=ExtResource( 10 )]
+transform = Transform( 2, 0, 0, 0, 3.3, 0, 0, 0, 1, -9.828, 3.73727, -3.125 )
+
 [node name="Player" parent="." index="2" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1.4, 0, 0, 0, 1, 4.04079, 17.0164, 2 )
-dialog_path = NodePath("../Dialog")
 
 [node name="House" type="NavigationMeshInstance" parent="." index="4"]
 navmesh = SubResource( 1 )
@@ -88,10 +81,6 @@ omni_range = 11.9
 omni_attenuation = 1.46409
 omni_shadow_mode = 0
 
-[node name="Sprite3D" type="Sprite3D" parent="House/Lift" index="2"]
-transform = Transform( 2.83438, 0, 0, 0, 1.78202, 0, 0, 0, 1, 0, 3.67838, -2.79932 )
-texture = ExtResource( 13 )
-
 [node name="Lift2" parent="House" index="1" instance=ExtResource( 12 )]
 transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 1, -9.762, 7.502, 0 )
 
@@ -104,10 +93,6 @@ omni_range = 11.9
 omni_attenuation = 1.46409
 omni_shadow_mode = 0
 
-[node name="Sprite3D" type="Sprite3D" parent="House/Lift2" index="2"]
-transform = Transform( 2.83438, 0, 0, 0, 1.78202, 0, 0, 0, 1, 0, 3.67838, -2.79932 )
-texture = ExtResource( 13 )
-
 [node name="Lift3" parent="House" index="2" instance=ExtResource( 12 )]
 transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 1, -9.762, 15.003, 0 )
 
@@ -119,10 +104,6 @@ light_specular = 0.41
 omni_range = 11.9
 omni_attenuation = 1.46409
 omni_shadow_mode = 0
-
-[node name="Sprite3D" type="Sprite3D" parent="House/Lift3" index="2"]
-transform = Transform( 2.83438, 0, 0, 0, 1.78202, 0, 0, 0, 1, 0, 3.67838, -2.79932 )
-texture = ExtResource( 13 )
 
 [node name="RDC" type="Spatial" parent="House" index="3"]
 editor/display_folded = true
@@ -151,7 +132,7 @@ omni_shadow_mode = 0
 
 [node name="Sprite3D" type="Sprite3D" parent="House/RDC/Living" index="3"]
 transform = Transform( 1, 0, 0, 0, 2.42908, 0, 0, 0, 1, 0, 3.13718, -2.40015 )
-texture = ExtResource( 14 )
+texture = ExtResource( 13 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 601.86, 246.06 )
 
@@ -179,7 +160,7 @@ omni_shadow_mode = 0
 
 [node name="Notbryan" type="Sprite3D" parent="House/RDC/Kitchen" index="3"]
 transform = Transform( 1.09826, 0, 0, 0, 2.04163, 0, 0, 0, 1, -0.614807, 3.54669, -2.55835 )
-texture = ExtResource( 15 )
+texture = ExtResource( 14 )
 
 [node name="Corridor" parent="House/RDC" index="2" instance=ExtResource( 12 )]
 transform = Transform( 2.5, 0, 0, 0, 1, 0, 0, 0, 1, -21.5307, 0.0124574, 0 )
@@ -204,43 +185,43 @@ omni_shadow_mode = 0
 
 [node name="Sprite3D" type="Sprite3D" parent="House/RDC/Corridor" index="3"]
 transform = Transform( 1.34975, 0, 0, 0, 2.94032, 0, 0, 0, 1, 2.21219, 1.71767, -3.29785 )
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 region_enabled = true
 region_rect = Rect2( 402.42, 259.292, 98.3456, 92.1085 )
 
 [node name="Sprite3D2" type="Sprite3D" parent="House/RDC/Corridor" index="4"]
 transform = Transform( 1.34975, 0, 0, 0, 2.94032, 0, 0, 0, 1, 1.00457, 1.71767, -3.29785 )
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 region_enabled = true
 region_rect = Rect2( 402.42, 259.292, 98.3456, 92.1085 )
 
 [node name="Sprite3D3" type="Sprite3D" parent="House/RDC/Corridor" index="5"]
 transform = Transform( 1, 0, 0, 0, 2.18771, 0, 0, 0, 1, -1.89072, 4.99927, -3.15649 )
-texture = ExtResource( 14 )
+texture = ExtResource( 13 )
 region_enabled = true
 region_rect = Rect2( 371.062, -2.55463, 75.8128, 96.8071 )
 
 [node name="Sprite3D6" type="Sprite3D" parent="House/RDC/Corridor" index="6"]
 transform = Transform( 1, 0, 0, 0, 2.18771, 0, 0, 0, 1, 2.39754, 4.96985, -3.15649 )
-texture = ExtResource( 14 )
+texture = ExtResource( 13 )
 region_enabled = true
 region_rect = Rect2( 371.062, -2.55463, 75.8128, 96.8071 )
 
 [node name="Sprite3D7" type="Sprite3D" parent="House/RDC/Corridor" index="7"]
 transform = Transform( 1, 0, 0, 0, 2.18771, 0, 0, 0, 1, -0.0346098, 4.48874, -3.15649 )
-texture = ExtResource( 14 )
+texture = ExtResource( 13 )
 region_enabled = true
 region_rect = Rect2( 371.062, -2.55463, 75.8128, 96.8071 )
 
 [node name="Sprite3D4" type="Sprite3D" parent="House/RDC/Corridor" index="8"]
 transform = Transform( 1, 0, 0, 0, 3.14064, 0, 0, 0, 1, -2.36444, 1.04858, 3.58057 )
-texture = ExtResource( 17 )
+texture = ExtResource( 16 )
 region_enabled = true
 region_rect = Rect2( 49.1023, 201.643, 80.6127, 63.0076 )
 
 [node name="Sprite3D5" type="Sprite3D" parent="House/RDC/Corridor" index="9"]
 transform = Transform( 0.428166, 0, 0, 0, 2.39896, 0, 0, 0, 1, -2.35324, 2.28983, 3.3916 )
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 region_enabled = true
 region_rect = Rect2( 320.337, 210.427, 122.257, 26.3085 )
 
@@ -269,7 +250,7 @@ omni_shadow_mode = 0
 
 [node name="Sprite3D" type="Sprite3D" parent="House/First_floor/Bedroom" index="3"]
 transform = Transform( 1, 0, 0, 0, 3.05075, 0, 0, 0, 1, 0.200352, 3.53085, -2.29639 )
-texture = ExtResource( 17 )
+texture = ExtResource( 16 )
 
 [node name="Bathroom" parent="House/First_floor" index="1" instance=ExtResource( 12 )]
 editor/display_folded = true
@@ -295,7 +276,7 @@ omni_shadow_mode = 0
 
 [node name="Sprite3D" type="Sprite3D" parent="House/First_floor/Bathroom" index="3"]
 transform = Transform( 1, 0, 0, 0, 2.15915, 0, 0, 0, 1, 0.344276, 3.55145, -2.41895 )
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 
 [node name="Last_floor" type="Spatial" parent="House" index="5"]
 
@@ -346,24 +327,24 @@ omni_shadow_mode = 0
 [node name="MeshInstance" type="MeshInstance" parent="House/walls" index="0"]
 transform = Transform( 0.497121, 0, 0, 0, 3.28237, 0, 0, 0, 2.00484, -27.0082, 10.7834, 1.98359 )
 mesh = SubResource( 2 )
-material/0 = ExtResource( 18 )
+material/0 = ExtResource( 17 )
 
 [node name="MeshInstance2" type="MeshInstance" parent="House/walls" index="1"]
 transform = Transform( 0.497121, 0, 0, 0, 3.28237, 0, 0, 0, 2.00484, 7.50439, 10.7834, 1.98359 )
 mesh = SubResource( 2 )
-material/0 = ExtResource( 18 )
+material/0 = ExtResource( 17 )
 
 [node name="MeshInstance12" type="MeshInstance" parent="House/walls" index="2"]
 transform = Transform( 0.497121, 0, 0, 0, 3.28237, 0, 0, 0, 2.00484, 22.4735, 3.65334, 1.98359 )
 mesh = SubResource( 2 )
-material/0 = ExtResource( 18 )
+material/0 = ExtResource( 17 )
 
 [node name="MeshInstance3" type="MeshInstance" parent="House/walls" index="3"]
 transform = Transform( 0.497121, 0, 0, 0, 3.28237, 0, 0, 0, 2.00484, 7.50439, 18.6902, 1.98359 )
 mesh = SubResource( 2 )
-material/0 = ExtResource( 18 )
+material/0 = ExtResource( 17 )
 
 [node name="MeshInstance4" type="MeshInstance" parent="House/walls" index="4"]
 transform = Transform( 0.497121, 0, 0, 0, 3.28237, 0, 0, 0, 2.00484, -27.008, 18.69, 1.984 )
 mesh = SubResource( 2 )
-material/0 = ExtResource( 18 )
+material/0 = ExtResource( 17 )

@@ -39,6 +39,14 @@ func _physics_process(_delta):
 			var __ = move_and_slide(move_vector.normalized() * speed, Vector3(0, 1, 0))
 
 
+func teleport_to(position: Vector3):
+	"""
+	Teleport player to given coordinates
+	"""
+	global_transform.origin = position
+	path_index = path.size()
+
+
 func move_to(target: Vector3):
 	var navigation = Utils.get_navigation()
 	if navigation == null:
