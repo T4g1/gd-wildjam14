@@ -2,11 +2,12 @@
 
 [ext_resource path="res://scenes/Title.gd" type="Script" id=1]
 [ext_resource path="res://environments/title_env.tres" type="Environment" id=2]
-[ext_resource path="res://fonts/MonospaceTypewriter.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/fonts/MonospaceTypewriter.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://nodes/UI/button_hover.tres" type="StyleBox" id=4]
 [ext_resource path="res://nodes/UI/button_normal.tres" type="StyleBox" id=5]
-[ext_resource path="res://fonts/MonospaceTypewriter_dynamicfont.tres" type="DynamicFont" id=6]
+[ext_resource path="res://assets/fonts/MonospaceTypewriter_dynamicfont.tres" type="DynamicFont" id=6]
 [ext_resource path="res://assets/sounds/title.wav" type="AudioStream" id=7]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
