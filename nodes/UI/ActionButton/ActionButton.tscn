@@ -1,10 +1,13 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://nodes/UI/ActionButton/ActionButton.gd" type="Script" id=1]
-[ext_resource path="res://shader/invertcolor_shadermaterial.tres" type="Material" id=2]
+[ext_resource path="res://assets/shaders/invertcolor_shadermaterial.tres" type="Material" id=2]
 [ext_resource path="res://nodes/UI/ActionButton/action_hover.tres" type="StyleBox" id=3]
 [ext_resource path="res://nodes/UI/ActionButton/action_normal.tres" type="StyleBox" id=4]
-[ext_resource path="res://fonts/MonospaceTypewriter_dynamicfont.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/fonts/MonospaceTypewriter_dynamicfont.tres" type="DynamicFont" id=5]
+
+
+
 
 [node name="ActionButton" type="Control"]
 anchor_left = 0.5

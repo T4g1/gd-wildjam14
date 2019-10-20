@@ -1,14 +1,15 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://nodes/Level/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/Level1.gd" type="Script" id=2]
-[ext_resource path="res://entities/characters/RichardShadow.tscn" type="PackedScene" id=3]
-[ext_resource path="res://entities/characters/Richard.tscn" type="PackedScene" id=4]
-[ext_resource path="res://entities/ShadowMachine.tscn" type="PackedScene" id=5]
-[ext_resource path="res://nodes/Trigger/OneShotTriger.tscn" type="PackedScene" id=6]
-[ext_resource path="res://entities/Door.tscn" type="PackedScene" id=7]
-[ext_resource path="res://entities/Key.tscn" type="PackedScene" id=8]
-[ext_resource path="res://nodes/Player/Player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://environments/level1_env.tres" type="Environment" id=3]
+[ext_resource path="res://entities/characters/RichardShadow.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entities/characters/Richard.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entities/ShadowMachine.tscn" type="PackedScene" id=6]
+[ext_resource path="res://nodes/Trigger/OneShotTriger.tscn" type="PackedScene" id=7]
+[ext_resource path="res://entities/Door.tscn" type="PackedScene" id=8]
+[ext_resource path="res://entities/Key.tscn" type="PackedScene" id=9]
+[ext_resource path="res://nodes/Player/Player.tscn" type="PackedScene" id=10]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -23,24 +24,17 @@ polygons = [ PoolIntArray( 2, 0, 1 ), PoolIntArray( 5, 3, 4 ), PoolIntArray( 8, 
 [sub_resource type="ConvexPolygonShape" id=5]
 points = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, -1 )
 
-[sub_resource type="ProceduralSky" id=6]
-
-[sub_resource type="Environment" id=7]
-background_mode = 2
-background_sky = SubResource( 6 )
-ambient_light_color = Color( 1, 1, 1, 1 )
-
 [node name="Level1" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 path_story = "res://dialogs/level1/level_1.json"
-environment_path = NodePath("WorldEnvironment")
+custom_environment = ExtResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="ShadowRealm" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26, -2.25 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="RichardShadow" parent="ShadowRealm" index="1" instance=ExtResource( 3 )]
+[node name="RichardShadow" parent="ShadowRealm" index="1" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.92871, 1.00711, 0 )
 collision_layer = 2
 
@@ -49,27 +43,27 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.9 )
 mesh = SubResource( 2 )
 material/0 = null
 
-[node name="Richard" parent="RealWorld" index="1" instance=ExtResource( 4 )]
+[node name="Richard" parent="RealWorld" index="1" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1.5, 0, 0, 0, 1, 11.9686, 1.48217, 0 )
 collision_layer = 2
 
-[node name="ShadowMachine" parent="RealWorld" index="2" instance=ExtResource( 5 )]
+[node name="ShadowMachine" parent="RealWorld" index="2" instance=ExtResource( 6 )]
 transform = Transform( 4.35937, 0, 0, 0, 4.35937, 0, 0, 0, 1, -8.86206, 3.31554, 0 )
 
-[node name="OneShotTriger" parent="RealWorld" index="3" instance=ExtResource( 6 )]
+[node name="OneShotTriger" parent="RealWorld" index="3" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 3, 0, 0, 0, 3, -3.5485, 2.73466, 1.83831 )
 
-[node name="Door" parent="RealWorld" index="4" instance=ExtResource( 7 )]
+[node name="Door" parent="RealWorld" index="4" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85615, 0.0613523, 0.589428 )
 required_item = "Appartement's key"
 locked = true
 
-[node name="Key" parent="RealWorld/Door" index="5" instance=ExtResource( 8 )]
+[node name="Key" parent="RealWorld/Door" index="5" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.08297, 0.193886, 4.47418 )
 description = "Key of the main door of your appartment"
 item_name = "Appartement's key"
 
-[node name="Player" parent="." index="2" instance=ExtResource( 9 )]
+[node name="Player" parent="." index="2" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1.4, 0, 0, 0, 1, -12.8122, 1.73948, 0.930808 )
 
 [node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="." index="4"]
@@ -85,6 +79,3 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="NavigationMeshInstance/MeshInstance/StaticBody" index="0"]
 shape = SubResource( 5 )
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="5"]
-environment = SubResource( 7 )

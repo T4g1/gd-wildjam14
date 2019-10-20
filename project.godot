@@ -44,11 +44,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://entities/Door.gd"
 }, {
-"base": "Control",
-"class": "FixedPosition",
-"language": "GDScript",
-"path": "res://nodes/Character/UI.gd"
-}, {
 "base": "Spatial",
 "class": "Game",
 "language": "GDScript",
@@ -112,7 +107,6 @@ _global_script_class_icons={
 "ContextMenu": "",
 "Dialog": "",
 "Door": "",
-"FixedPosition": "",
 "Game": "",
 "Interactable": "",
 "Inventory": "",

@@ -1,25 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://nodes/Level/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/level0.gd" type="Script" id=2]
-[ext_resource path="res://nodes/Player/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://shader/outline_shadermaterial.tres" type="Material" id=4]
-
-[sub_resource type="Environment" id=1]
-background_mode = 1
-ambient_light_color = Color( 1, 1, 1, 1 )
-ambient_light_energy = 0.1
+[ext_resource path="res://environments/level0_env.tres" type="Environment" id=3]
+[ext_resource path="res://nodes/Player/Player.tscn" type="PackedScene" id=4]
 
 [node name="Level0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 path_story = "res://dialogs/level_0.json"
+custom_environment = ExtResource( 3 )
 
-[node name="Player" parent="." index="3" groups=[
-"interactable",
-] instance=ExtResource( 3 )]
-sprite_path = NodePath("Sprite")
-outline_material = ExtResource( 4 )
-dialog_path = NodePath("Dialog")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="4"]
-environment = SubResource( 1 )
+[node name="Player" parent="." index="3" instance=ExtResource( 4 )]

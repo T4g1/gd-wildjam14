@@ -10,10 +10,9 @@ signal realm_changed
 enum Realms {REAL, SHADOW}
 export (Realms) var start_realm
 export (String, FILE, "*.json") var path_story
-export (NodePath) var environment_path
+export (Resource) var custom_environment
 
 onready var dialog = $Dialog
-onready var environment: WorldEnvironment
 onready var real_audio = $RealWorld/Audio
 onready var shadow_audio = $ShadowRealm/Audio
 onready var switch_realm_sound = $SwitchRealmSound
@@ -25,8 +24,8 @@ var current_realm = Realms.REAL
 func _ready():
 	assert(path_story != "")
 	
-	if environment_path != "":
-		environment = get_node(environment_path)
+	if custom_environment:
+		Utils.get_environment().set_environment(custom_environment)
 	
 	realm_nodes = {
 		Realms.REAL: $RealWorld,

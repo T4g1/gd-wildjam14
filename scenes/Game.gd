@@ -46,9 +46,6 @@ func load_level(index: int):
 	level_index = index
 	current_level = levels[level_index].instance()
 	add_child(current_level)
-	
-	if current_level.environment:
-		Utils.get_camera().set_environment(current_level.environment)
 
 
 func on_game_over():
@@ -65,6 +62,8 @@ func on_dialog_start():
 	Utils.get_player().in_dialog = true
 	
 	user_has_control = false
+	
+	get_tree().call_group("context_menu", "hide")
 
 
 func on_dialog_end():

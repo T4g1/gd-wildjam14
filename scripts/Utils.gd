@@ -20,6 +20,10 @@ func get_camera() -> Camera2D:
 	return get_tree().get_nodes_in_group("camera").front()
 
 
+func get_environment() -> WorldEnvironment:
+	return get_tree().get_nodes_in_group("environment").front()
+
+
 func get_game():
 	var root = get_tree().get_root()
 	if root.has_node("main/Game"):
