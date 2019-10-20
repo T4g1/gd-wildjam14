@@ -25,9 +25,9 @@ polygons = [ PoolIntArray( 2, 0, 1 ), PoolIntArray( 5, 3, 4 ), PoolIntArray( 8, 
 [sub_resource type="ConvexPolygonShape" id=5]
 points = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, -1 )
 
-[node name="Level1" instance=ExtResource( 1 )]
+[node name="TestLevel" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-path_story = "res://dialogs/level1/level_1.json"
+path_story = "res://dialogs/test.json"
 custom_environment = ExtResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="ShadowRealm" index="0"]
