@@ -3,9 +3,9 @@ extends Spatial
 Entry point of main scene
 """
 
-
 var GameNode = load("res://scenes/Game.tscn")
 var game: Game
+
 onready var title = $Title
 
 

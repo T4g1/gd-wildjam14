@@ -6,6 +6,8 @@ Title screen
 
 signal play
 
+export (Resource) var environment
+
 onready var ui = $UI
 onready var audio = $AudioStreamPlayer
 
@@ -28,3 +30,5 @@ func show():
 	ui.show()
 	visible = true
 	audio.play()
+	
+	Utils.get_environment().set_environment(environment)
