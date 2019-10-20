@@ -11,6 +11,10 @@ export_presets.cfg
 *~
 *.orig
 
+# Exported files
 build/
-artwork/
-.*
+
+# Inc config files
+.inkgd*
+
+assets/artwork/
