@@ -55,7 +55,7 @@ required_item = "Appartement's key"
 locked = true
 
 [node name="Richard" parent="RealWorld" index="5" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1.5, 0, 0, 0, 1, -21.1944, 2.0846, 1.5 )
+transform = Transform( 1, 0, 0, 0, 1.5, 0, 0, 0, 1, -18.0581, 17.0569, 1.5 )
 
 [node name="Key" parent="RealWorld" index="6" groups=[
 "interactable",

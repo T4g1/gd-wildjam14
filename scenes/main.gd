@@ -7,6 +7,7 @@ var GameNode = load("res://scenes/Game.tscn")
 var game: Game
 
 onready var title = $Title
+onready var camera = $Camera
 
 
 func _ready():
@@ -36,6 +37,8 @@ func show_title():
 	"""
 	Goes to title
 	"""
+	camera.reset_position()
+	
 	clear_game()
 	title.show()
 

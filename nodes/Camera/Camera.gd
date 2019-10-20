@@ -14,6 +14,10 @@ export (float) var speed_show_shutter = 0.5
 export (float) var speed_hide_shutter = 0.2
 export (float) var speed = 5.0
 
+onready var shutter = $Shutter
+
+var original_position
+
 
 func _unhandled_input(event):
 	if not Utils.get_game() or not Utils.get_game().user_has_control:
@@ -29,14 +33,22 @@ func _unhandled_input(event):
 
 
 func _ready():
-	$Shutter.modulate = Color(1, 1, 1, 0)
+	original_position = global_transform.origin
+	shutter.modulate = Color(1, 1, 1, 0)
+
+
+func reset_position():
+	"""
+	Replace camera to original position
+	"""
+	global_transform.origin = original_position
 
 
 func show_shutter():
 	"""
 	Fade the shutter to display it
 	"""
-	$FadeTween.interpolate_property($Shutter, "modulate", 
+	$FadeTween.interpolate_property(shutter, "modulate", 
 		TRANSPARENT, OPAQUE, 
 		speed_show_shutter, 
 		Tween.TRANS_LINEAR, 0
@@ -51,7 +63,7 @@ func hide_shutter():
 	"""
 	Fade the shutter to hide it
 	"""
-	$FadeTween.interpolate_property($Shutter, "modulate", 
+	$FadeTween.interpolate_property(shutter, "modulate", 
 		OPAQUE, TRANSPARENT, 
 		speed_hide_shutter, 
 		Tween.TRANS_LINEAR, 0
