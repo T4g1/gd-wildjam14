@@ -3,3 +3,106 @@
 ## Theme
 
 ![Shadows](https://img.itch.zone/aW1nLzI1NzQ4MDEucG5n/original/LzPSsd.png)
+
+## nodes
+
+### Camera
+
+Standalone camera for the game, used in the main scene.
+
+
+### Character
+
+Base scene for every NPC in the game and the Player. Contains speech bubble and choices features
+
+Customize by inheriting that scene and extend: Character.gd
+
+Customizable callbacks:
+* same as interactable
+
+### Dialog
+
+Every scene that posses this can load an Ink script and process it. Highly coupled with game logic
+
+
+### Interactable
+
+Base scene for every highlitable elements. Allows to give them a context menu and custom behavior for actions of that context menu
+
+Customize by inheriting that scene and extend: Interactable.gd
+
+Customizable callbacks:
+* on_talk: Must return true for the action to be performed
+* on_examine: Must return true for the action to be performed
+* on_use
+* on_take: Must return true for the action to be performed
+
+
+### Item
+
+Base scene for every object in the game. Main difference with Character being they don't have speech features
+
+Customize by inheriting that scene and extend: Item.gd
+
+Customizable callbacks:
+* same as interactable
+
+
+### Level
+
+Base scene for every level in the game.
+
+Customize by inheriting that scene and extend: Level.gd
+
+Customizable callbacks:
+* on_start: called when the level is loaded
+
+
+### Player
+
+Can be moved and must be in the Level tree for most of the game logic to happen
+
+
+### Trigger
+
+Base scene for every invisble elements that should trigger given action under given conditions
+
+Example: OneShotTrigger triggers a script when the Player pass through it
+
+Customize by inheriting that scene and extend: Trigger.gd
+
+Customizable callbacks:
+* on_triggered: Response to trigger event
+
+### UI
+
+The two button ressource at the root are used for the title screen and ce be reused for any other button too
+
+### UI/ActionButton
+
+Generic action button, used in the context menu. Better used with no label and a small icon
+
+### UI/ChoiceBubble
+
+Choice UI used by the player (every character has it but it is not exploited/will not be exploited yet)
+
+### UI/ContextMenu
+
+Contain all possible context menu
+
+### UI/Inventory
+
+Manage the player's inventory
+
+### UI/TextDisplay
+
+Generic display of any text on multiline Label
+
+### UI/TextDisplay/PopUp
+
+Used for general display of text. Used in Game scene
+
+### UI/TextDisplay/SpeechBubble
+
+Used for Characters to talk
+
