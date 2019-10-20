@@ -5,6 +5,7 @@ Base class for NPC and Player
 """
 
 const NEXT_PATH_THRESHOLD = 1.0
+const BLOCKED_THRESHOLD = 0.8
 
 signal choice_done
 signal stopped			# When a character stops moving
@@ -19,7 +20,16 @@ onready var choice_bubble = $UI/ChoiceBubble
 
 var path = []
 var path_index = 0
-var in_dialog = false
+var in_dialog = false setget set_in_dialog
+
+
+func set_in_dialog(value):
+	"""
+	All character stops when they enter a dialog
+	"""
+	in_dialog = value
+	if in_dialog:
+		clear_path()
 
 
 func _ready():
@@ -43,19 +53,16 @@ func process_movement(delta):
 	"""
 	if path_index >= path.size():
 		clear_path()
-		print("move over")
 		emit_signal("destination_reached")
 		return
 	
 	var move_vector = path[path_index] - global_transform.origin
 	if move_vector.length() <= NEXT_PATH_THRESHOLD:
 		path_index += 1
-		print("next move id")
 	else:
 		var move_order = move_vector.normalized() * delta * speed
 		var effective_move = move_and_slide(move_order, Vector3(0, 1, 0))
-		print(move_order.length(), effective_move.length())
-		if move_order.length() != effective_move.length() and effective_move.length() < 0.8:
+		if move_order.length() != effective_move.length() and effective_move.length() < BLOCKED_THRESHOLD:
 			print(effective_move.length())
 			# Character is blocked
 			clear_path()
