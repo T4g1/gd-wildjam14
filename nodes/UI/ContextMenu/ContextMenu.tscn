@@ -4,7 +4,9 @@
 [ext_resource path="res://nodes/UI/ActionButton/ActionButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/ui/examine.png" type="Texture" id=3]
 
-[node name="ContextMenu" type="Control"]
+[node name="ContextMenu" type="Control" groups=[
+"context_menu",
+]]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

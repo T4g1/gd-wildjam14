@@ -62,6 +62,8 @@ func on_dialog_start():
 	Utils.get_player().in_dialog = true
 	
 	user_has_control = false
+	
+	get_tree().call_group("context_menu", "hide")
 
 
 func on_dialog_end():
