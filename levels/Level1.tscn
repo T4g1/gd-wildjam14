@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://nodes/Level/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/Level1.gd" type="Script" id=2]
@@ -11,26 +11,21 @@
 [ext_resource path="res://entities/characters/Richard.tscn" type="PackedScene" id=9]
 [ext_resource path="res://entities/Key.tscn" type="PackedScene" id=10]
 [ext_resource path="res://nodes/Player/Player.tscn" type="PackedScene" id=11]
-[ext_resource path="res://nodes/rooms/simple/simple_room.tscn" type="PackedScene" id=12]
+[ext_resource path="res://levels/elements/SimpleRoom/SimpleRoom.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/elements/ascenseur color.png" type="Texture" id=13]
 [ext_resource path="res://assets/elements/salon color.png" type="Texture" id=14]
 [ext_resource path="res://assets/elements/cuisine color.png" type="Texture" id=15]
 [ext_resource path="res://assets/elements/sdb color.png" type="Texture" id=16]
 [ext_resource path="res://assets/elements/chambre color.png" type="Texture" id=17]
-[ext_resource path="res://nodes/rooms/simple/meterial_room.tres" type="Material" id=18]
+[ext_resource path="res://levels/elements/SimpleRoom/meterial_room.tres" type="Material" id=18]
 
-[sub_resource type="NavigationMesh" id=4]
-vertices = PoolVector3Array( -7.68222, 15.9813, 2.26132, -7.68222, 15.9813, 3.16132, -0.78222, 15.9813, 3.16132, -0.78222, 15.9813, 2.26132, -0.78222, 15.9813, 3.16132, 6.41778, 15.9813, 3.16132, 6.41778, 15.9813, 2.26132, -0.78222, 15.9813, 2.26132 )
-polygons = [ PoolIntArray( 3, 0, 2 ), PoolIntArray( 0, 1, 2 ), PoolIntArray( 7, 4, 6 ), PoolIntArray( 4, 5, 6 ) ]
+[sub_resource type="NavigationMesh" id=1]
+vertices = PoolVector3Array( -30.9307, 8.34986, -3.4, -30.9307, 8.34986, 3.5, -28.2307, 8.34986, 3.5, -28.2307, 8.34986, -3.4, -27.0307, 23.3499, -3.4, -27.0307, 23.3499, 3.5, -18.6307, 23.3499, 3.5, -18.6307, 23.3499, -3.4, -9.9307, 23.3499, 3.5, -1.2307, 23.3499, 3.5, -1.2307, 23.3499, -3.4, -9.9307, 23.3499, -3.4, -1.2307, 23.3499, 3.5, 7.4693, 23.3499, 3.5, 7.4693, 23.3499, -3.4, -1.2307, 23.3499, -3.4, -9.9307, 23.3499, -3.4, -18.6307, 23.3499, -3.4, -18.6307, 23.3499, 3.5, -9.9307, 23.3499, 3.5, 8.6693, 8.34986, -3.4, 8.6693, 8.34986, 3.5, 15.5693, 8.34986, 3.5, 15.5693, 8.34986, -3.4, 22.4693, 8.34986, -3.4, 15.5693, 8.34986, -3.4, 15.5693, 8.34986, 3.5, 22.4693, 8.34986, 3.5, -29.4307, 0.749857, 0.5, -30.9307, 0.749857, 0.8, -30.9307, 0.749857, 3.5, -22.5307, 0.749857, 3.5, -13.8307, 0.749857, 3.5, -13.5307, 0.749857, 0.5, -13.5307, 0.749857, -2.8, -21.6307, 0.749857, -2.8, -22.5307, 0.749857, 3.5, -21.6307, 0.749857, -2.8, -29.4307, 0.749857, -2.8, -29.4307, 0.749857, 0.5, -22.5307, 0.749857, 3.5, -8.7307, 8.34986, 0.5, -8.7307, 8.34986, -2.8, -10.8307, 8.34986, -2.8, -10.8307, 8.34986, 0.5, -19.5307, 8.34986, -2.8, -25.8307, 8.34986, -2.8, -25.8307, 8.34986, 3.5, -15.9307, 8.34986, 3.5, -6.0307, 8.34986, 3.5, -6.3307, 8.34986, 0.5, -8.7307, 8.34986, 0.5, -8.7307, 8.34986, 0.5, -10.8307, 8.34986, 0.5, -12.9307, 8.34986, 0.8, -15.9307, 8.34986, 3.5, -6.0307, 8.34986, 3.5, -15.9307, 8.34986, 3.5, -12.9307, 8.34986, 0.8, -13.2307, 8.34986, -2.8, -19.5307, 8.34986, -2.8, -8.7307, 15.7499, 0.5, -8.7307, 15.7499, -2.8, -10.8307, 15.7499, -2.8, -10.8307, 15.7499, 0.5, -19.5307, 15.7499, -2.8, -25.8307, 15.7499, -2.8, -25.8307, 15.7499, 3.5, -15.9307, 15.7499, 3.5, -6.0307, 15.7499, 3.5, -6.3307, 15.7499, 0.5, -8.7307, 15.7499, 0.5, -8.7307, 15.7499, 0.5, -10.8307, 15.7499, 0.5, -12.9307, 15.7499, 0.8, -15.9307, 15.7499, 3.5, -6.0307, 15.7499, 3.5, -15.9307, 15.7499, 3.5, -12.9307, 15.7499, 0.8, -13.2307, 15.7499, -2.8, -19.5307, 15.7499, -2.8, 7.4693, 0.749857, 3.5, 7.4693, 0.749857, 0.8, 6.2693, 0.749857, 0.5, -8.7307, 0.749857, -2.8, -10.8307, 0.749857, -2.8, -10.8307, 0.749857, 0.5, -8.4307, 0.749857, 0.8, -6.3307, 0.749857, 0.5, -8.4307, 0.749857, 0.8, -3.3307, 0.749857, 3.5, -10.8307, 0.749857, 0.5, -13.5307, 0.749857, 0.5, -13.8307, 0.749857, 3.5, -3.3307, 0.749857, 3.5, -8.4307, 0.749857, 0.8, -6.3307, 0.749857, -2.8, -6.3307, 0.749857, 0.5, -3.3307, 0.749857, 3.5, 7.4693, 0.749857, 3.5, 6.2693, 0.749857, 0.5, -0.0306988, 0.749857, -2.8, 6.2693, 0.749857, 0.5, 6.2693, 0.749857, -2.8, -0.0306988, 0.749857, -2.8, -6.3307, 8.34986, -2.8, -6.3307, 8.34986, 0.5, -6.0307, 8.34986, 3.5, -0.0306988, 8.34986, 3.5, -0.0306988, 8.34986, -2.8, -0.0306988, 8.34986, 3.5, 6.2693, 8.34986, 3.5, 6.2693, 8.34986, -2.8, -0.0306988, 8.34986, -2.8, -6.3307, 15.7499, -2.8, -6.3307, 15.7499, 0.5, -6.0307, 15.7499, 3.5, -0.0306988, 15.7499, 3.5, -0.0306988, 15.7499, -2.8, -0.0306988, 15.7499, 3.5, 6.2693, 15.7499, 3.5, 6.2693, 15.7499, -2.8, -0.0306988, 15.7499, -2.8, 8.6693, 0.749857, 0.5, 7.4693, 0.749857, 0.8, 7.4693, 0.749857, 3.5, 14.3693, 0.749857, 3.5, 21.2693, 0.749857, 3.5, 21.2693, 0.749857, -2.8, 14.9693, 0.749857, -2.8, 14.3693, 0.749857, 3.5, 14.9693, 0.749857, -2.8, 8.6693, 0.749857, -2.8, 8.6693, 0.749857, 0.5, 14.3693, 0.749857, 3.5 )
+polygons = [ PoolIntArray( 3, 0, 2 ), PoolIntArray( 0, 1, 2 ), PoolIntArray( 7, 4, 6 ), PoolIntArray( 4, 5, 6 ), PoolIntArray( 11, 8, 10 ), PoolIntArray( 8, 9, 10 ), PoolIntArray( 15, 12, 14 ), PoolIntArray( 12, 13, 14 ), PoolIntArray( 19, 16, 18 ), PoolIntArray( 16, 17, 18 ), PoolIntArray( 23, 20, 22 ), PoolIntArray( 20, 21, 22 ), PoolIntArray( 27, 24, 26 ), PoolIntArray( 24, 25, 26 ), PoolIntArray( 31, 28, 30 ), PoolIntArray( 28, 29, 30 ), PoolIntArray( 36, 32, 35 ), PoolIntArray( 32, 33, 35 ), PoolIntArray( 33, 34, 35 ), PoolIntArray( 40, 37, 39 ), PoolIntArray( 37, 38, 39 ), PoolIntArray( 44, 41, 43 ), PoolIntArray( 41, 42, 43 ), PoolIntArray( 48, 45, 47 ), PoolIntArray( 45, 46, 47 ), PoolIntArray( 51, 49, 50 ), PoolIntArray( 56, 52, 55 ), PoolIntArray( 52, 53, 55 ), PoolIntArray( 53, 54, 55 ), PoolIntArray( 60, 57, 59 ), PoolIntArray( 57, 58, 59 ), PoolIntArray( 64, 61, 63 ), PoolIntArray( 61, 62, 63 ), PoolIntArray( 68, 65, 67 ), PoolIntArray( 65, 66, 67 ), PoolIntArray( 71, 69, 70 ), PoolIntArray( 76, 72, 75 ), PoolIntArray( 72, 73, 75 ), PoolIntArray( 73, 74, 75 ), PoolIntArray( 80, 77, 79 ), PoolIntArray( 77, 78, 79 ), PoolIntArray( 83, 81, 82 ), PoolIntArray( 87, 84, 86 ), PoolIntArray( 84, 85, 86 ), PoolIntArray( 90, 88, 89 ), PoolIntArray( 95, 91, 94 ), PoolIntArray( 91, 92, 94 ), PoolIntArray( 92, 93, 94 ), PoolIntArray( 101, 96, 100 ), PoolIntArray( 96, 97, 100 ), PoolIntArray( 97, 98, 100 ), PoolIntArray( 98, 99, 100 ), PoolIntArray( 104, 102, 103 ), PoolIntArray( 109, 105, 108 ), PoolIntArray( 105, 106, 108 ), PoolIntArray( 106, 107, 108 ), PoolIntArray( 113, 110, 112 ), PoolIntArray( 110, 111, 112 ), PoolIntArray( 118, 114, 117 ), PoolIntArray( 114, 115, 117 ), PoolIntArray( 115, 116, 117 ), PoolIntArray( 122, 119, 121 ), PoolIntArray( 119, 120, 121 ), PoolIntArray( 126, 123, 125 ), PoolIntArray( 123, 124, 125 ), PoolIntArray( 130, 127, 129 ), PoolIntArray( 127, 128, 129 ), PoolIntArray( 134, 131, 133 ), PoolIntArray( 131, 132, 133 ) ]
 
-[sub_resource type="PlaneMesh" id=5]
+[sub_resource type="CubeMesh" id=2]
 
-[sub_resource type="ConvexPolygonShape" id=6]
-points = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, -1 )
-
-[sub_resource type="CubeMesh" id=3]
-
-[node name="Level1" index="0" instance=ExtResource( 1 )]
+[node name="Level1" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 path_story = "res://dialogs/level1/level_1.json"
 custom_environment = ExtResource( 3 )
@@ -46,7 +41,7 @@ outline_material = ExtResource( 5 )
 dialog_path = NodePath("Dialog")
 
 [node name="Sprite3D" type="Sprite3D" parent="RealWorld" index="2"]
-transform = Transform( 1.3, 0, 0, 0, 2.06522, 0, 0, 0, 1, -19.053, 18.6674, -0.287354 )
+transform = Transform( 1.3, 0, 0, 0, 2.06522, 0, 0, 0, 1, -18.3177, 18.6674, -0.287354 )
 texture = ExtResource( 6 )
 region_enabled = true
 region_rect = Rect2( 582.071, 14.4327, 695.972, 332.44 )
@@ -74,24 +69,12 @@ dialog_path = NodePath("Dialog")
 description = "Key of the main door of your appartment"
 item_name = "Appartement's key"
 
-[node name="WalkableArea" type="NavigationMeshInstance" parent="RealWorld" index="7"]
-navmesh = SubResource( 4 )
-
-[node name="MeshInstance" type="MeshInstance" parent="RealWorld/WalkableArea" index="0"]
-transform = Transform( 7.58538, 0, 0, 0, 1, 0, 0, 0, 2.55828, -0.696843, 15.5813, 1.47739 )
-mesh = SubResource( 5 )
-material/0 = null
-
-[node name="StaticBody" type="StaticBody" parent="RealWorld/WalkableArea/MeshInstance" index="0"]
-
-[node name="CollisionShape" type="CollisionShape" parent="RealWorld/WalkableArea/MeshInstance/StaticBody" index="0"]
-shape = SubResource( 6 )
-
 [node name="Player" parent="." index="2" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1.4, 0, 0, 0, 1, 4.04079, 17.0164, 2 )
 dialog_path = NodePath("../Dialog")
 
-[node name="House" type="Spatial" parent="." index="4"]
+[node name="House" type="NavigationMeshInstance" parent="." index="4"]
+navmesh = SubResource( 1 )
 
 [node name="Lift" parent="House" index="0" instance=ExtResource( 12 )]
 transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 1, -9.76195, 0, 0 )
@@ -317,7 +300,6 @@ texture = ExtResource( 16 )
 [node name="Last_floor" type="Spatial" parent="House" index="5"]
 
 [node name="Lab" parent="House/Last_floor" index="0" instance=ExtResource( 12 )]
-editor/display_folded = true
 transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.0035, 0 )
 
 [node name="DirectionalLight6" type="OmniLight" parent="House/Last_floor/Lab" index="1"]
@@ -363,25 +345,25 @@ omni_shadow_mode = 0
 
 [node name="MeshInstance" type="MeshInstance" parent="House/walls" index="0"]
 transform = Transform( 0.497121, 0, 0, 0, 3.28237, 0, 0, 0, 2.00484, -27.0082, 10.7834, 1.98359 )
-mesh = SubResource( 3 )
+mesh = SubResource( 2 )
 material/0 = ExtResource( 18 )
 
 [node name="MeshInstance2" type="MeshInstance" parent="House/walls" index="1"]
 transform = Transform( 0.497121, 0, 0, 0, 3.28237, 0, 0, 0, 2.00484, 7.50439, 10.7834, 1.98359 )
-mesh = SubResource( 3 )
+mesh = SubResource( 2 )
 material/0 = ExtResource( 18 )
 
 [node name="MeshInstance12" type="MeshInstance" parent="House/walls" index="2"]
 transform = Transform( 0.497121, 0, 0, 0, 3.28237, 0, 0, 0, 2.00484, 22.4735, 3.65334, 1.98359 )
-mesh = SubResource( 3 )
+mesh = SubResource( 2 )
 material/0 = ExtResource( 18 )
 
 [node name="MeshInstance3" type="MeshInstance" parent="House/walls" index="3"]
 transform = Transform( 0.497121, 0, 0, 0, 3.28237, 0, 0, 0, 2.00484, 7.50439, 18.6902, 1.98359 )
-mesh = SubResource( 3 )
+mesh = SubResource( 2 )
 material/0 = ExtResource( 18 )
 
 [node name="MeshInstance4" type="MeshInstance" parent="House/walls" index="4"]
 transform = Transform( 0.497121, 0, 0, 0, 3.28237, 0, 0, 0, 2.00484, -27.008, 18.69, 1.984 )
-mesh = SubResource( 3 )
+mesh = SubResource( 2 )
 material/0 = ExtResource( 18 )

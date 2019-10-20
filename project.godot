@@ -162,5 +162,11 @@ ui_move={
 
 [layer_names]
 
-3d_physics/layer_1="general"
+3d_physics/layer_1="obstacle"
 3d_physics/layer_2="interactable"
+3d_physics/layer_3="player"
+3d_physics/layer_4="floor"
+
+[rendering]
+
+environment/default_environment="res://environments/level1_env.tres"

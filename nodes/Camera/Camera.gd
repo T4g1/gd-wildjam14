@@ -8,6 +8,7 @@ signal shutter_hidden
 const TRANSPARENT = Color(1, 1, 1, 0)
 const OPAQUE = Color(1, 1, 1, 1)
 const RAY_LENGTH = 1000
+const FLOOR_LAYER = 8
 
 export (float) var speed_show_shutter = 0.5
 export (float) var speed_hide_shutter = 0.2
@@ -22,7 +23,7 @@ func _unhandled_input(event):
 		var from = project_ray_origin(event.position)
 		var to = project_ray_normal(event.position) * RAY_LENGTH
 		var space_state = get_world().direct_space_state
-		var collision = space_state.intersect_ray(from, to)
+		var collision = space_state.intersect_ray(from, to, [], FLOOR_LAYER)
 		if collision:
 			get_tree().call_group("player", "move_to", collision.position)
 
