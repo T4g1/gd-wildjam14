@@ -4,6 +4,21 @@
 
 ![Shadows](https://img.itch.zone/aW1nLzI1NzQ4MDEucG5n/original/LzPSsd.png)
 
+## Directory structure
+
+* addons: Every used addons, this game requires Ink to handle scripted events
+* assets: sounds, fonts, textures and so on
+* build: Project exports goes there
+* dialogs: Every scripted events goes here. One subdirectory per level please!
+* docs: Useful documents related to the project, not required for the game to work
+* entities: Entities that can be placed in any level
+* environments: Custom environments goes there, every level can define one custom environments (TODO: Maybe add one more for shadow realm?)
+* levels: Every level inheriting Level.tscn goes here. Add them to Game.tscn level array so they can be played
+* nodes: Generic project nodes here, documentation about that follows, keep reading
+* scenes: Main screens of the game. Typically, title screen, game screen, settings, ... main.tscn is the entry point
+* screenshots: This may go into assets? Screenshots used for advertising the game
+* scripts: General usage scripts. Currently contains Utils which is a singleton pre-loaded in project setting that can be used to access every game element from anywhere
+
 ## nodes
 
 ### Camera
