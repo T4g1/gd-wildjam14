@@ -7,6 +7,8 @@ Base class for NPC and Player
 const NEXT_PATH_THRESHOLD = 1.0
 
 signal choice_done
+signal stopped			# When a character stops moving
+signal destination_reached		# When a character arrives where he wanted to go
 
 
 export (String) var firstname = "Jonh"
@@ -26,16 +28,49 @@ func _ready():
 	speech_bubble.set_name(firstname)
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	if in_dialog:
 		return
 	
-	if path_index < path.size():
-		var move_vector = path[path_index] - global_transform.origin
-		if move_vector.length() <= NEXT_PATH_THRESHOLD:
-			path_index += 1
-		else:
-			var __ = move_and_slide(move_vector.normalized() * speed, Vector3(0, 1, 0))
+	if path.size() > 0:
+		process_movement(delta)
+
+
+func process_movement(delta):
+	"""
+	Try to reach next path position and increment path index
+	When path index is over the path size, movement is completed
+	"""
+	if path_index >= path.size():
+		clear_path()
+		print("move over")
+		emit_signal("destination_reached")
+		return
+	
+	var move_vector = path[path_index] - global_transform.origin
+	if move_vector.length() <= NEXT_PATH_THRESHOLD:
+		path_index += 1
+		print("next move id")
+	else:
+		var move_order = move_vector.normalized() * delta * speed
+		var effective_move = move_and_slide(move_order, Vector3(0, 1, 0))
+		print(move_order.length(), effective_move.length())
+		if move_order.length() != effective_move.length() and effective_move.length() < 0.8:
+			print(effective_move.length())
+			# Character is blocked
+			clear_path()
+
+
+func clear_path():
+	path = []
+	emit_signal("stopped")
+
+
+func is_moving():
+	"""
+	Character is moving or not
+	"""
+	return path.size() > 0 and path_index < path.size()
 
 
 func teleport_to(position: Vector3):

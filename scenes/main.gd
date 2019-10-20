@@ -3,7 +3,7 @@ extends Spatial
 Entry point of main scene
 """
 
-export (bool) var debug = true
+export (bool) var debug = false
 
 var GameNode = load("res://scenes/Game.tscn")
 var game: Game

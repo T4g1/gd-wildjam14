@@ -4,6 +4,14 @@
 
 ![Shadows](https://img.itch.zone/aW1nLzI1NzQ4MDEucG5n/original/LzPSsd.png)
 
+## Debug
+
+To activate debug mode: 
+1. Open `scenes/main.tscn`
+2. Set debug variable in the properties to true (checked)
+
+In your code, you can check for debug status with: `Utils.is_debug()`
+
 ## Directory structure
 
 * addons: Every used addons, this game requires Ink to handle scripted events
