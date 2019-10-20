@@ -4,7 +4,7 @@
 [ext_resource path="res://nodes/Item/Item.gd" type="Script" id=2]
 [ext_resource path="res://nodes/UI/ContextMenu/ItemMenu.tscn" type="PackedScene" id=3]
 
-[node name="Item" groups=[
+[node name="Item" index="0" groups=[
 "item",
 ] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
