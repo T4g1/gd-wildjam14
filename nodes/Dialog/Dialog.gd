@@ -10,76 +10,82 @@ signal dialog_end
 var Story = load("res://addons/inkgd/runtime/story.gd")
 var story
 
+var debug = false;
+
 
 func _ready():
-	var __ = connect("dialog_start", Utils.get_game(), "on_dialog_start")
-	__ = connect("dialog_end", Utils.get_game(), "on_dialog_end")
+	if (debug) :
+		var __ = connect("dialog_start", Utils.get_game(), "on_dialog_start")
+		__ = connect("dialog_end", Utils.get_game(), "on_dialog_end")
+	pass
 
 
 func load_story(ink_story_path):
-	var ink_story = File.new()
-	ink_story.open(ink_story_path, File.READ)
-	var content = ink_story.get_as_text()
-	ink_story.close()
-	
-	story = Story.new(content)
-	story.bind_external_function("has", Utils.get_game().inventory, "has")
+	if(debug):
+		var ink_story = File.new()
+		ink_story.open(ink_story_path, File.READ)
+		var content = ink_story.get_as_text()
+		ink_story.close()
+		
+		story = Story.new(content)
+		story.bind_external_function("has", Utils.get_game().inventory, "has")
 
 
 func continue_story():
-	emit_signal("dialog_start")
-	
-	story.variables_state.set("paused", 0)
-	
-	var game = Utils.get_game()
-	var player = Utils.get_player()
-	var character
-	var text_display
-	
-	while story.can_continue and story.variables_state.get("paused") == 0:
-		var text = story.continue()
+	if (debug):
+		emit_signal("dialog_start")
 		
-		var zoom_targets = story.get_current_tags()
-		if zoom_targets.size() > 0:
-			Utils.zoom_on(zoom_targets)
+		story.variables_state.set("paused", 0)
 		
-		# Game over? (triggers next level)
-		if story.variables_state.get("game_is_over") == 1:
-			return game.on_next_level()
+		var game = Utils.get_game()
+		var player = Utils.get_player()
+		var character
+		var text_display
 		
-		# Realm change triggered ?
-		if story.variables_state.get("trigger_switch_realm") == 1:
-			story.variables_state.set("trigger_switch_realm", 0)
-			game.current_level.switch_realm()
-			yield(game.current_level, "realm_changed")
-		
-		character = get_character_from_story()
-		if character == null:
-			# For general text display
-			text_display = game.pop_up
+		while story.can_continue and story.variables_state.get("paused") == 0:
+			var text = story.continue()
 			
-			game.display_text(text)
-		else:
-			# A character is talking
-			text_display = character.speech_bubble
+			var zoom_targets = story.get_current_tags()
+			if zoom_targets.size() > 0:
+				Utils.zoom_on(zoom_targets)
 			
-			var mood = story.variables_state.get("character_mood")
-			if mood == "think":
-				character.think(text)
+			# Game over? (triggers next level)
+			if story.variables_state.get("game_is_over") == 1:
+				return game.on_next_level()
+			
+			# Realm change triggered ?
+			if story.variables_state.get("trigger_switch_realm") == 1:
+				story.variables_state.set("trigger_switch_realm", 0)
+				game.current_level.switch_realm()
+				yield(game.current_level, "realm_changed")
+			
+			character = get_character_from_story()
+			if character == null:
+				# For general text display
+				text_display = game.pop_up
+				
+				game.display_text(text)
 			else:
-				character.say(text)
-			
-		# Check no choice are coming
-		if story.current_choices.size() <= 0:
-			text_display.set_close_action(true)
-			yield(text_display, "closed")
-	
-	if story.current_choices.size() > 0:
-		text_display.set_close_action(false)
-		player.prompt(story.current_choices)
-		player.choice_bubble.connect("choice_done", self, "_choice_done")
-	else:
-		emit_signal("dialog_end")
+				# A character is talking
+				text_display = character.speech_bubble
+				
+				var mood = story.variables_state.get("character_mood")
+				if mood == "think":
+					character.think(text)
+				else:
+					character.say(text)
+				
+			# Check no choice are coming
+			if story.current_choices.size() <= 0:
+				text_display.set_close_action(true)
+				yield(text_display, "closed")
+		
+		if story.current_choices.size() > 0:
+			text_display.set_close_action(false)
+			player.prompt(story.current_choices)
+			player.choice_bubble.connect("choice_done", self, "_choice_done")
+		else:
+			emit_signal("dialog_end")
 
 
 func _choice_done(index):

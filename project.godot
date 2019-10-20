@@ -134,12 +134,12 @@ config/icon="res://icon.png"
 
 [autoload]
 
-__InkRuntime="*res://addons/inkgd/runtime/static/ink_runtime.gd"
+__InkRuntime="res://addons/inkgd/runtime/static/ink_runtime.gd"
 Utils="*res://scripts/Utils.gd"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "inkgd" )
+enabled=PoolStringArray( "MagicaVoxelImporter", "inkgd" )
 
 [input]
 
@@ -170,5 +170,3 @@ ui_move={
 
 3d_physics/layer_1="general"
 3d_physics/layer_2="interactable"
-3d_physics/layer_3="player"
-3d_physics/layer_4="character"
