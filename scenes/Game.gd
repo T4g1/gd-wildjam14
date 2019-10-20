@@ -13,8 +13,10 @@ var current_level
 var level_index
 
 export (Array, Resource) var levels
+export (Resource) var test_level
 export (int) var start_level
 
+# warning-ignore:unused_class_variable
 onready var inventory = $Inventory
 onready var pop_up = $PopUp
 
@@ -23,7 +25,12 @@ func _ready():
 	var __ = pop_up.connect("opened", self, "on_dialog_start")
 	__ = pop_up.connect("closed", self, "on_dialog_end")
 	
-	load_level(start_level)
+	if Utils.is_debug():
+		# Load debug level
+		levels = [ test_level ]
+		load_level(0)
+	else:
+		load_level(start_level)
 
 
 func on_next_level():

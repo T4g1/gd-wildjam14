@@ -3,16 +3,22 @@ extends Spatial
 Entry point of main scene
 """
 
+export (bool) var debug = false
+
 var GameNode = load("res://scenes/Game.tscn")
 var game: Game
 
 onready var title = $Title
+onready var camera = $Camera
 
 
 func _ready():
 	title.connect("play", self, "_on_play")
 	
-	show_title()
+	if debug:
+		show_game()
+	else:
+		show_title()
 
 
 func _on_play():
@@ -36,6 +42,8 @@ func show_title():
 	"""
 	Goes to title
 	"""
+	camera.reset_position()
+	
 	clear_game()
 	title.show()
 

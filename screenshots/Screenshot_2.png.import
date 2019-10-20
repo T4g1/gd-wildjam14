@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/labo shadow.png-eab3634a41c2caf985ea616043e763a1.stex"
+path="res://.import/Screenshot_2.png-13b4aba31cb596bee9c95970bae1a45a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/elements/labo shadow.png"
-dest_files=[ "res://.import/labo shadow.png-eab3634a41c2caf985ea616043e763a1.stex" ]
+source_file="res://screenshots/Screenshot_2.png"
+dest_files=[ "res://.import/Screenshot_2.png-13b4aba31cb596bee9c95970bae1a45a.stex" ]
 
 [params]
 

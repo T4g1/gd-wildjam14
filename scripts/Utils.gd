@@ -30,6 +30,10 @@ func get_game():
 		return root.get_node("main/Game")
 
 
+func is_debug():
+	return get_tree().get_root().get_node("main").debug
+
+
 func get_character(character_name: String):
 	"""
 	Get a character from the protagonists list given
@@ -37,6 +41,17 @@ func get_character(character_name: String):
 	for character in get_tree().get_nodes_in_group("characters"):
 		if character.firstname == character_name:
 			return character
+	
+	return null
+
+
+func get_waypoint(identifier: String) -> Waypoint:
+	"""
+	Get a waypoint
+	"""
+	for waypoint in get_tree().get_nodes_in_group("waypoint"):
+		if waypoint.identifier == identifier:
+			return waypoint
 	
 	return null
 

@@ -8,10 +8,15 @@ signal shutter_hidden
 const TRANSPARENT = Color(1, 1, 1, 0)
 const OPAQUE = Color(1, 1, 1, 1)
 const RAY_LENGTH = 1000
+const FLOOR_LAYER = 8
 
 export (float) var speed_show_shutter = 0.5
 export (float) var speed_hide_shutter = 0.2
 export (float) var speed = 5.0
+
+onready var shutter = $Shutter
+
+var original_position
 
 
 func _unhandled_input(event):
@@ -22,20 +27,28 @@ func _unhandled_input(event):
 		var from = project_ray_origin(event.position)
 		var to = project_ray_normal(event.position) * RAY_LENGTH
 		var space_state = get_world().direct_space_state
-		var collision = space_state.intersect_ray(from, to)
+		var collision = space_state.intersect_ray(from, to, [], FLOOR_LAYER)
 		if collision:
 			get_tree().call_group("player", "move_to", collision.position)
 
 
 func _ready():
-	$Shutter.modulate = Color(1, 1, 1, 0)
+	original_position = global_transform.origin
+	shutter.modulate = Color(1, 1, 1, 0)
+
+
+func reset_position():
+	"""
+	Replace camera to original position
+	"""
+	global_transform.origin = original_position
 
 
 func show_shutter():
 	"""
 	Fade the shutter to display it
 	"""
-	$FadeTween.interpolate_property($Shutter, "modulate", 
+	$FadeTween.interpolate_property(shutter, "modulate", 
 		TRANSPARENT, OPAQUE, 
 		speed_show_shutter, 
 		Tween.TRANS_LINEAR, 0
@@ -50,7 +63,7 @@ func hide_shutter():
 	"""
 	Fade the shutter to hide it
 	"""
-	$FadeTween.interpolate_property($Shutter, "modulate", 
+	$FadeTween.interpolate_property(shutter, "modulate", 
 		OPAQUE, TRANSPARENT, 
 		speed_hide_shutter, 
 		Tween.TRANS_LINEAR, 0

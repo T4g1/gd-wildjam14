@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://nodes/Interactable/Interactable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://entities/Lift.gd" type="Script" id=2]
+[ext_resource path="res://assets/textures/ascenseur color.png" type="Texture" id=3]
+[ext_resource path="res://nodes/UI/ContextMenu/InventoryItemMenu.tscn" type="PackedScene" id=4]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+albedo_texture = ExtResource( 3 )
+
+[node name="Lift" groups=[
+"lift",
+] instance=ExtResource( 1 )]
+transform = Transform( 2, 0, 0, 0, 3.3, 0, 0, 0, 1, 0, 0, 0 )
+script = ExtResource( 2 )
+texture = ExtResource( 3 )
+description = "Lift can transport you between floor levels"
+
+[node name="Sprite" parent="." index="1"]
+material/0 = SubResource( 1 )
+
+[node name="Spawn" type="Spatial" parent="." index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.566009, 0.234788 )
+
+[node name="ContextMenu" parent="." index="4" instance=ExtResource( 4 )]

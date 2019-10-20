@@ -4,6 +4,14 @@
 
 ![Shadows](https://img.itch.zone/aW1nLzI1NzQ4MDEucG5n/original/LzPSsd.png)
 
+## Debug
+
+To activate debug mode: 
+1. Open `scenes/main.tscn`
+2. Set debug variable in the properties to true (checked)
+
+In your code, you can check for debug status with: `Utils.is_debug()`
+
 ## Directory structure
 
 * addons: Every used addons, this game requires Ink to handle scripted events
@@ -47,10 +55,10 @@ Base scene for every highlitable elements. Allows to give them a context menu an
 Customize by inheriting that scene and extend: Interactable.gd
 
 Customizable callbacks:
-* on_talk: Must return true for the action to be performed
-* on_examine: Must return true for the action to be performed
-* on_use
-* on_take: Must return true for the action to be performed
+* _on_talk: Must return true for the action to be performed
+* _on_examine: Must return true for the action to be performed
+* _on_use
+* _on_take: Must return true for the action to be performed
 
 
 ### Item

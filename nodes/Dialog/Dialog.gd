@@ -24,6 +24,7 @@ func load_story(ink_story_path):
 	
 	story = Story.new(content)
 	story.bind_external_function("has", Utils.get_game().inventory, "has")
+	story.bind_external_function("move", self, "move")
 
 
 func continue_story():
@@ -90,6 +91,16 @@ func _choice_done(index):
 		character.speech_bubble.hide()
 	
 	continue_story()
+
+
+func move(character_name: String, waypoint_name: String):
+	var waypoint = Utils.get_waypoint(waypoint_name)
+	var character = Utils.get_character(character_name)
+	
+	if waypoint == null or character == null:
+		return
+	
+	character.move_to(waypoint.global_transform.origin)
 
 
 func get_character_from_story():

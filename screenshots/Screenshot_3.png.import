@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/chambre shadow.png-567ffab48c1c0c853483cab3f0b843fa.stex"
+path="res://.import/Screenshot_3.png-4c5bf68e45ab97414a5c6a617aada922.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/elements/chambre shadow.png"
-dest_files=[ "res://.import/chambre shadow.png-567ffab48c1c0c853483cab3f0b843fa.stex" ]
+source_file="res://screenshots/Screenshot_3.png"
+dest_files=[ "res://.import/Screenshot_3.png-4c5bf68e45ab97414a5c6a617aada922.stex" ]
 
 [params]
 
