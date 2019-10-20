@@ -1,81 +1,371 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://nodes/Level/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/Level1.gd" type="Script" id=2]
 [ext_resource path="res://environments/level1_env.tres" type="Environment" id=3]
-[ext_resource path="res://entities/characters/RichardShadow.tscn" type="PackedScene" id=4]
-[ext_resource path="res://entities/characters/Richard.tscn" type="PackedScene" id=5]
-[ext_resource path="res://entities/ShadowMachine.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entities/ShadowMachine.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/shaders/outline_shadermaterial.tres" type="Material" id=5]
+[ext_resource path="res://assets/elements/labo color.png" type="Texture" id=6]
 [ext_resource path="res://nodes/Trigger/OneShotTriger.tscn" type="PackedScene" id=7]
 [ext_resource path="res://entities/Door.tscn" type="PackedScene" id=8]
-[ext_resource path="res://entities/Key.tscn" type="PackedScene" id=9]
-[ext_resource path="res://nodes/Player/Player.tscn" type="PackedScene" id=10]
+[ext_resource path="res://entities/characters/Richard.tscn" type="PackedScene" id=9]
+[ext_resource path="res://entities/Key.tscn" type="PackedScene" id=10]
+[ext_resource path="res://nodes/Player/Player.tscn" type="PackedScene" id=11]
+[ext_resource path="res://nodes/rooms/simple/simple_room.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/elements/ascenseur color.png" type="Texture" id=13]
+[ext_resource path="res://assets/elements/salon color.png" type="Texture" id=14]
+[ext_resource path="res://assets/elements/cuisine color.png" type="Texture" id=15]
+[ext_resource path="res://assets/elements/sdb color.png" type="Texture" id=16]
+[ext_resource path="res://assets/elements/chambre color.png" type="Texture" id=17]
+[ext_resource path="res://nodes/rooms/simple/meterial_room.tres" type="Material" id=18]
 
-[sub_resource type="CubeMesh" id=1]
+[sub_resource type="NavigationMesh" id=4]
+vertices = PoolVector3Array( -7.68222, 15.9813, 2.26132, -7.68222, 15.9813, 3.16132, -0.78222, 15.9813, 3.16132, -0.78222, 15.9813, 2.26132, -0.78222, 15.9813, 3.16132, 6.41778, 15.9813, 3.16132, 6.41778, 15.9813, 2.26132, -0.78222, 15.9813, 2.26132 )
+polygons = [ PoolIntArray( 3, 0, 2 ), PoolIntArray( 0, 1, 2 ), PoolIntArray( 7, 4, 6 ), PoolIntArray( 4, 5, 6 ) ]
 
-[sub_resource type="CapsuleMesh" id=2]
+[sub_resource type="PlaneMesh" id=5]
 
-[sub_resource type="NavigationMesh" id=3]
-vertices = PoolVector3Array( 6.54569, 0.4, -27.2219, 6.54569, 0.4, -35.9219, -0.0543056, 0.4, -35.9219, -0.0543056, 0.4, -35.9219, -6.65431, 0.4, -35.9219, -6.65431, 0.4, -27.2219, -6.65431, 0.4, 26.7781, -6.65431, 0.4, 35.7781, -0.0543056, 0.4, 35.7781, -0.0543056, 0.4, 35.7781, 6.54569, 0.4, 35.7781, 6.54569, 0.4, 26.7781, -6.65431, 0.4, 26.7781, -0.0543056, 0.4, 35.7781, 6.54569, 0.4, 26.7781, 6.54569, 0.4, 17.7781, -6.65431, 0.4, 17.7781, 6.54569, 0.4, -27.2219, -0.0543056, 0.4, -35.9219, -6.65431, 0.4, -27.2219, -6.65431, 0.4, -18.2219, 6.54569, 0.4, -18.2219, 6.54569, 0.4, -0.221882, 6.54569, 0.4, -9.22188, -6.65431, 0.4, -9.22188, -6.65431, 0.4, -0.221882, -6.65431, 0.4, -0.221882, -6.65431, 0.4, 8.77812, 6.54569, 0.4, 8.77812, 6.54569, 0.4, -0.221882, -6.65431, 0.4, 8.77812, -6.65431, 0.4, 17.7781, 6.54569, 0.4, 17.7781, 6.54569, 0.4, 8.77812, 6.54569, 0.4, -9.22188, 6.54569, 0.4, -18.2219, -6.65431, 0.4, -18.2219, -6.65431, 0.4, -9.22188 )
-polygons = [ PoolIntArray( 2, 0, 1 ), PoolIntArray( 5, 3, 4 ), PoolIntArray( 8, 6, 7 ), PoolIntArray( 11, 9, 10 ), PoolIntArray( 16, 12, 15 ), PoolIntArray( 12, 14, 15 ), PoolIntArray( 12, 13, 14 ), PoolIntArray( 21, 17, 20 ), PoolIntArray( 17, 19, 20 ), PoolIntArray( 17, 18, 19 ), PoolIntArray( 25, 22, 24 ), PoolIntArray( 22, 23, 24 ), PoolIntArray( 29, 26, 28 ), PoolIntArray( 26, 27, 28 ), PoolIntArray( 33, 30, 32 ), PoolIntArray( 30, 31, 32 ), PoolIntArray( 37, 34, 36 ), PoolIntArray( 34, 35, 36 ) ]
-
-[sub_resource type="PlaneMesh" id=4]
-
-[sub_resource type="ConvexPolygonShape" id=5]
+[sub_resource type="ConvexPolygonShape" id=6]
 points = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, -1 )
 
-[node name="Level1" instance=ExtResource( 1 )]
+[sub_resource type="CubeMesh" id=3]
+
+[node name="Level1" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 path_story = "res://dialogs/level1/level_1.json"
 custom_environment = ExtResource( 3 )
 
-[node name="MeshInstance" type="MeshInstance" parent="ShadowRealm" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26, -2.25 )
-mesh = SubResource( 1 )
-material/0 = null
-
-[node name="RichardShadow" parent="ShadowRealm" index="1" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.92871, 1.00711, 0 )
+[node name="ShadowMachine" parent="RealWorld" index="1" groups=[
+"interactable",
+] instance=ExtResource( 4 )]
+transform = Transform( 4.359, 0, 0, 0, 4.359, 0, 0, 0, 1, 3.272, 18.956, 1 )
 collision_layer = 2
+collision_mask = 0
+sprite_path = NodePath("Sprite")
+outline_material = ExtResource( 5 )
+dialog_path = NodePath("Dialog")
 
-[node name="MeshInstance" type="MeshInstance" parent="RealWorld" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.9 )
-mesh = SubResource( 2 )
-material/0 = null
+[node name="Sprite3D" type="Sprite3D" parent="RealWorld" index="2"]
+transform = Transform( 1.3, 0, 0, 0, 2.06522, 0, 0, 0, 1, -1.56035, 18.6674, -0.287354 )
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 582.071, 14.4327, 695.972, 332.44 )
 
-[node name="Richard" parent="RealWorld" index="1" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1.5, 0, 0, 0, 1, 11.9686, 1.48217, 0 )
-collision_layer = 2
-
-[node name="ShadowMachine" parent="RealWorld" index="2" instance=ExtResource( 6 )]
-transform = Transform( 4.35937, 0, 0, 0, 4.35937, 0, 0, 0, 1, -8.86206, 3.31554, 0 )
-
-[node name="OneShotTriger" parent="RealWorld" index="3" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 3, 0, 0, 0, 3, -3.5485, 2.73466, 1.83831 )
+[node name="RealmChangeTrigger" parent="RealWorld" index="3" instance=ExtResource( 7 )]
+transform = Transform( 4.359, 0, 0, 0, 1.46936, 0, 0, 0, 1.49731, -1.07751, 18.9137, 0.731565 )
 
 [node name="Door" parent="RealWorld" index="4" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85615, 0.0613523, 0.589428 )
+transform = Transform( 4.359, 0, 0, 0, 1.5525, 0, 0, 0, 1.96554, -7.41, 15.3886, 0 )
 required_item = "Appartement's key"
 locked = true
 
-[node name="Key" parent="RealWorld/Door" index="5" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.08297, 0.193886, 4.47418 )
+[node name="Richard" parent="RealWorld" index="5" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1.5, 0, 0, 0, 1, -21.1944, 2.0846, 1.5 )
+
+[node name="Key" parent="RealWorld" index="6" groups=[
+"interactable",
+] instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.00024, 15.6701, 3.93108 )
+collision_layer = 2
+collision_mask = 0
+sprite_path = NodePath("Sprite")
+outline_material = ExtResource( 5 )
+dialog_path = NodePath("Dialog")
 description = "Key of the main door of your appartment"
 item_name = "Appartement's key"
 
-[node name="Player" parent="." index="2" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1.4, 0, 0, 0, 1, -12.8122, 1.73948, 0.930808 )
+[node name="WalkableArea" type="NavigationMeshInstance" parent="RealWorld" index="7"]
+navmesh = SubResource( 4 )
 
-[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="." index="4"]
-transform = Transform( 3.13397, 0, 0, 0, 1, 0, 0, 0, 0.15084, 0, 0, 0 )
-navmesh = SubResource( 3 )
-
-[node name="MeshInstance" type="MeshInstance" parent="NavigationMeshInstance" index="0"]
-transform = Transform( 7.2543, 0, 0, 0, 1, 0, 0, 0, 36.5219, 0, 0, 0 )
-mesh = SubResource( 4 )
+[node name="MeshInstance" type="MeshInstance" parent="RealWorld/WalkableArea" index="0"]
+transform = Transform( 7.58538, 0, 0, 0, 1, 0, 0, 0, 2.55828, -0.696843, 15.5813, 1.47739 )
+mesh = SubResource( 5 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="NavigationMeshInstance/MeshInstance" index="0"]
+[node name="StaticBody" type="StaticBody" parent="RealWorld/WalkableArea/MeshInstance" index="0"]
 
-[node name="CollisionShape" type="CollisionShape" parent="NavigationMeshInstance/MeshInstance/StaticBody" index="0"]
-shape = SubResource( 5 )
+[node name="CollisionShape" type="CollisionShape" parent="RealWorld/WalkableArea/MeshInstance/StaticBody" index="0"]
+shape = SubResource( 6 )
+
+[node name="Player" parent="." index="2" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1.4, 0, 0, 0, 1, 4.04079, 17.0164, 2 )
+dialog_path = NodePath("../Dialog")
+
+[node name="House" type="Spatial" parent="." index="4"]
+editor/display_folded = true
+
+[node name="Lift" parent="House" index="0" instance=ExtResource( 12 )]
+editor/display_folded = true
+transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 1, -9.76195, 0, 0 )
+
+[node name="DirectionalLight" type="OmniLight" parent="House/Lift" index="1"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.64188, -3.92676 )
+light_energy = 1.59
+light_indirect_energy = 2.33
+light_specular = 0.41
+omni_range = 11.9
+omni_attenuation = 1.46409
+omni_shadow_mode = 0
+
+[node name="Sprite3D" type="Sprite3D" parent="House/Lift" index="2"]
+transform = Transform( 2.83438, 0, 0, 0, 1.78202, 0, 0, 0, 1, 0, 3.67838, -2.79932 )
+texture = ExtResource( 13 )
+
+[node name="RDC" type="Spatial" parent="House" index="1"]
+editor/display_folded = true
+
+[node name="Living" parent="House/RDC" index="0" instance=ExtResource( 12 )]
+editor/display_folded = true
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="DirectionalLight2" type="OmniLight" parent="House/RDC/Living" index="1"]
+transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 1, -1.53915, 7.03926, 2.70044 )
+light_energy = 1.59
+light_indirect_energy = 2.33
+light_specular = 0.41
+omni_range = 11.9
+omni_attenuation = 1.46409
+omni_shadow_mode = 0
+
+[node name="DirectionalLight3" type="OmniLight" parent="House/RDC/Living" index="2"]
+transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 1, 1.52132, 7.03926, 2.70044 )
+light_energy = 1.59
+light_indirect_energy = 2.33
+light_specular = 0.41
+omni_range = 11.9
+omni_attenuation = 1.46409
+omni_shadow_mode = 0
+
+[node name="Sprite3D" type="Sprite3D" parent="House/RDC/Living" index="3"]
+transform = Transform( 1, 0, 0, 0, 2.42908, 0, 0, 0, 1, 0, 3.13718, -2.40015 )
+texture = ExtResource( 14 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 601.86, 246.06 )
+
+[node name="Kitchen" parent="House/RDC" index="1" instance=ExtResource( 12 )]
+editor/display_folded = true
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 1, 14.9564, 0, 0 )
+
+[node name="DirectionalLight4" type="OmniLight" parent="House/RDC/Kitchen" index="1"]
+transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 1, -1.59772, 7.03926, 2.70044 )
+light_energy = 1.59
+light_indirect_energy = 2.33
+light_specular = 0.41
+omni_range = 11.9
+omni_attenuation = 1.46409
+omni_shadow_mode = 0
+
+[node name="DirectionalLight5" type="OmniLight" parent="House/RDC/Kitchen" index="2"]
+transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 1, 1.46275, 7.03926, 2.70044 )
+light_energy = 1.59
+light_indirect_energy = 2.33
+light_specular = 0.41
+omni_range = 11.9
+omni_attenuation = 1.46409
+omni_shadow_mode = 0
+
+[node name="Notbryan" type="Sprite3D" parent="House/RDC/Kitchen" index="3"]
+transform = Transform( 1.09826, 0, 0, 0, 2.04163, 0, 0, 0, 1, -0.614807, 3.54669, -2.55835 )
+texture = ExtResource( 15 )
+
+[node name="Corridor" parent="House/RDC" index="2" instance=ExtResource( 12 )]
+transform = Transform( 2.5, 0, 0, 0, 1, 0, 0, 0, 1, -21.5307, 0.0124574, 0 )
+
+[node name="DirectionalLight2" type="OmniLight" parent="House/RDC/Corridor" index="1"]
+transform = Transform( 0.4, 0, 0, 0, 1, 0, 0, 0, 1, -2.10538, 7.0268, 2.70044 )
+light_energy = 1.59
+light_indirect_energy = 2.33
+light_specular = 0.41
+omni_range = 11.9
+omni_attenuation = 1.46409
+omni_shadow_mode = 0
+
+[node name="DirectionalLight3" type="OmniLight" parent="House/RDC/Corridor" index="2"]
+transform = Transform( 0.4, 0, 0, 0, 1, 0, 0, 0, 1, 1.32444, 7.0268, 2.70044 )
+light_energy = 1.59
+light_indirect_energy = 2.33
+light_specular = 0.41
+omni_range = 11.9
+omni_attenuation = 1.46409
+omni_shadow_mode = 0
+
+[node name="Sprite3D" type="Sprite3D" parent="House/RDC/Corridor" index="3"]
+transform = Transform( 1.34975, 0, 0, 0, 2.94032, 0, 0, 0, 1, 2.21219, 1.71767, -3.29785 )
+texture = ExtResource( 16 )
+region_enabled = true
+region_rect = Rect2( 402.42, 259.292, 98.3456, 92.1085 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="House/RDC/Corridor" index="4"]
+transform = Transform( 1.34975, 0, 0, 0, 2.94032, 0, 0, 0, 1, 1.00457, 1.71767, -3.29785 )
+texture = ExtResource( 16 )
+region_enabled = true
+region_rect = Rect2( 402.42, 259.292, 98.3456, 92.1085 )
+
+[node name="Sprite3D3" type="Sprite3D" parent="House/RDC/Corridor" index="5"]
+transform = Transform( 1, 0, 0, 0, 2.18771, 0, 0, 0, 1, -1.89072, 4.99927, -3.15649 )
+texture = ExtResource( 14 )
+region_enabled = true
+region_rect = Rect2( 371.062, -2.55463, 75.8128, 96.8071 )
+
+[node name="Sprite3D6" type="Sprite3D" parent="House/RDC/Corridor" index="6"]
+transform = Transform( 1, 0, 0, 0, 2.18771, 0, 0, 0, 1, 2.39754, 4.96985, -3.15649 )
+texture = ExtResource( 14 )
+region_enabled = true
+region_rect = Rect2( 371.062, -2.55463, 75.8128, 96.8071 )
+
+[node name="Sprite3D7" type="Sprite3D" parent="House/RDC/Corridor" index="7"]
+transform = Transform( 1, 0, 0, 0, 2.18771, 0, 0, 0, 1, -0.0346098, 4.48874, -3.15649 )
+texture = ExtResource( 14 )
+region_enabled = true
+region_rect = Rect2( 371.062, -2.55463, 75.8128, 96.8071 )
+
+[node name="Sprite3D4" type="Sprite3D" parent="House/RDC/Corridor" index="8"]
+transform = Transform( 1, 0, 0, 0, 3.14064, 0, 0, 0, 1, -2.36444, 1.04858, 3.58057 )
+texture = ExtResource( 17 )
+region_enabled = true
+region_rect = Rect2( 49.1023, 201.643, 80.6127, 63.0076 )
+
+[node name="Sprite3D5" type="Sprite3D" parent="House/RDC/Corridor" index="9"]
+transform = Transform( 0.428166, 0, 0, 0, 2.39896, 0, 0, 0, 1, -2.35324, 2.28983, 3.3916 )
+texture = ExtResource( 16 )
+region_enabled = true
+region_rect = Rect2( 320.337, 210.427, 122.257, 26.3085 )
+
+[node name="First_floor" type="Spatial" parent="House" index="2"]
+editor/display_folded = true
+
+[node name="Bedroom" parent="House/First_floor" index="0" instance=ExtResource( 12 )]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.50248, 0 )
+
+[node name="DirectionalLight4" type="OmniLight" parent="House/First_floor/Bedroom" index="1"]
+transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 1, -1.53915, 5.80271, 2.70044 )
+light_energy = 1.59
+light_indirect_energy = 2.33
+light_specular = 0.41
+omni_range = 11.9
+omni_attenuation = 1.46409
+omni_shadow_mode = 0
+
+[node name="DirectionalLight5" type="OmniLight" parent="House/First_floor/Bedroom" index="2"]
+transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 1, 1.52132, 5.80271, 2.70044 )
+light_energy = 1.59
+light_indirect_energy = 2.33
+light_specular = 0.41
+omni_range = 11.9
+omni_attenuation = 1.46409
+omni_shadow_mode = 0
+
+[node name="Sprite3D" type="Sprite3D" parent="House/First_floor/Bedroom" index="3"]
+transform = Transform( 1, 0, 0, 0, 3.05075, 0, 0, 0, 1, 0.200352, 3.53085, -2.29639 )
+texture = ExtResource( 17 )
+
+[node name="Bathroom" parent="House/First_floor" index="1" instance=ExtResource( 12 )]
+editor/display_folded = true
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 1, -19.5114, 7.50248, 0 )
+
+[node name="DirectionalLight6" type="OmniLight" parent="House/First_floor/Bathroom" index="1"]
+transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 1, -1.21819, 6.93172, 2.70044 )
+light_energy = 1.59
+light_indirect_energy = 2.33
+light_specular = 0.41
+omni_range = 11.9
+omni_attenuation = 1.46409
+omni_shadow_mode = 0
+
+[node name="DirectionalLight7" type="OmniLight" parent="House/First_floor/Bathroom" index="2"]
+transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 1, 1.84228, 6.93172, 2.70044 )
+light_energy = 1.59
+light_indirect_energy = 2.33
+light_specular = 0.41
+omni_range = 11.9
+omni_attenuation = 1.46409
+omni_shadow_mode = 0
+
+[node name="Sprite3D" type="Sprite3D" parent="House/First_floor/Bathroom" index="3"]
+transform = Transform( 1, 0, 0, 0, 2.15915, 0, 0, 0, 1, 0.344276, 3.55145, -2.41895 )
+texture = ExtResource( 16 )
+
+[node name="Last_floor" type="Spatial" parent="House" index="3"]
+
+[node name="Lab" parent="House/Last_floor" index="0" instance=ExtResource( 12 )]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.0035, 0 )
+
+[node name="DirectionalLight6" type="OmniLight" parent="House/Last_floor/Lab" index="1"]
+transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 1, -1.53915, 6.14464, 2.70044 )
+light_energy = 1.59
+light_indirect_energy = 2.33
+light_specular = 0.41
+omni_range = 11.9
+omni_attenuation = 1.46409
+omni_shadow_mode = 0
+
+[node name="DirectionalLight7" type="OmniLight" parent="House/Last_floor/Lab" index="2"]
+transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 1, 1.52132, 6.14464, 2.70044 )
+light_energy = 1.59
+light_indirect_energy = 2.33
+light_specular = 0.41
+omni_range = 11.9
+omni_attenuation = 1.46409
+omni_shadow_mode = 0
+
+[node name="walls" type="Spatial" parent="House" index="4"]
+
+[node name="MeshInstance" type="MeshInstance" parent="House/walls" index="0"]
+transform = Transform( 0.497121, 0, 0, 0, 3.28237, 0, 0, 0, 2.00484, -27.0082, 10.7834, 1.98359 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 18 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="House/walls" index="1"]
+transform = Transform( 0.497121, 0, 0, 0, 3.28237, 0, 0, 0, 2.00484, 7.50439, 10.7834, 1.98359 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 18 )
+
+[node name="MeshInstance12" type="MeshInstance" parent="House/walls" index="2"]
+transform = Transform( 0.497121, 0, 0, 0, 3.28237, 0, 0, 0, 2.00484, 22.4735, 3.65334, 1.98359 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 18 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="House/walls" index="3"]
+transform = Transform( 0.497121, 0, 0, 0, 3.28237, 0, 0, 0, 2.00484, 7.50439, 18.6902, 1.98359 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 18 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="House/walls" index="4"]
+transform = Transform( 0.497121, 0, 0, 0, 3.28237, 0, 0, 0, 2.00484, -12.0159, 18.6902, 1.98359 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 18 )
+
+[node name="MeshInstance7" type="MeshInstance" parent="House/walls" index="5"]
+transform = Transform( 0.497121, 0, 0, 0, 3.28237, 0, 0, 0, 2.00484, -12.0159, 18.6902, -1.99847 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 18 )
+
+[node name="MeshInstance8" type="MeshInstance" parent="House/walls" index="6"]
+transform = Transform( -2.17298e-08, 0, 2.00484, 0, 3.28237, 0, -0.497121, 0, -8.76344e-08, -9.79433, 18.6902, -3.53564 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 18 )
+
+[node name="MeshInstance9" type="MeshInstance" parent="House/walls" index="7"]
+transform = Transform( -2.17298e-08, 0, 2.00484, 0, 3.28237, 0, -0.497121, 0, -8.76344e-08, -9.79433, 12.1268, -3.53564 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 18 )
+
+[node name="MeshInstance10" type="MeshInstance" parent="House/walls" index="8"]
+transform = Transform( -2.17298e-08, 0, 2.00484, 0, 3.28237, 0, -0.497121, 0, -8.76344e-08, -9.79433, 5.56323, -3.53393 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 18 )
+
+[node name="MeshInstance11" type="MeshInstance" parent="House/walls" index="9"]
+transform = Transform( -2.17298e-08, 0, 2.00484, 0, 3.28237, 0, -0.497121, 0, -8.76344e-08, -9.79433, 3.21616, -3.52417 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 18 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="House/walls" index="10"]
+transform = Transform( -2.17298e-08, 3.28237, 0, -0.497121, -1.43477e-07, 0, 0, 0, 2.00484, -9.26858, 22.4595, 1.98359 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 18 )
+
+[node name="MeshInstance6" type="MeshInstance" parent="House/walls" index="11"]
+transform = Transform( -2.17298e-08, 3.28237, 0, -0.497121, -1.43477e-07, 0, 0, 0, 2.00484, -9.26858, 22.4595, -1.99183 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 18 )

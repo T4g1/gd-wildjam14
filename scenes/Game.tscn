@@ -1,16 +1,15 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/Game.gd" type="Script" id=1]
 [ext_resource path="res://levels/level0.tscn" type="PackedScene" id=2]
 [ext_resource path="res://levels/Level1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://nodes/UI/Inventory/Inventory.tscn" type="PackedScene" id=4]
 [ext_resource path="res://nodes/UI/TextDisplay/PopUp/PopUp.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/sounds/real_world.wav" type="AudioStream" id=6]
-[ext_resource path="res://assets/sounds/shadow_world.wav" type="AudioStream" id=7]
 
 [node name="Game" type="Spatial"]
 script = ExtResource( 1 )
 levels = [ ExtResource( 2 ), ExtResource( 3 ) ]
+start_level = 1
 
 [node name="Inventory" parent="." instance=ExtResource( 4 )]
 margin_left = -45.0
@@ -23,9 +22,3 @@ anchor_right = 0.5
 margin_top = -70.0
 margin_right = 0.0
 margin_bottom = -70.0
-
-[node name="RealWorldStream" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
-
-[node name="ShadowWorldStream" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
