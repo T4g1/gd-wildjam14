@@ -133,3 +133,17 @@ func use(node: Interactable):
 	Starts a dialog with the given character
 	"""
 	node._on_use()
+
+
+func move(name: String, identifier: String):
+	"""
+	Called to move a character to a given waypoint
+	"""
+	var waypoint = Utils.get_waypoint(identifier)
+	var character = Utils.get_character(name)
+	
+	if waypoint == null or character == null:
+		return
+	
+	character.move_to(waypoint.global_transform.position)
+

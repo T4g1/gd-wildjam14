@@ -41,6 +41,17 @@ func get_character(character_name: String):
 	return null
 
 
+func get_waypoint(identifier: String) -> Waypoint:
+	"""
+	Get a waypoint
+	"""
+	for waypoint in get_tree().get_nodes_in_group("waypoint"):
+		if waypoint.identifier == identifier:
+			return waypoint
+	
+	return null
+
+
 func zoom_on(targets):
 	"""
 	Retrieve the camera and zoom on the character whose names are in the given list

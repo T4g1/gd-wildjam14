@@ -24,6 +24,7 @@ func load_story(ink_story_path):
 	
 	story = Story.new(content)
 	story.bind_external_function("has", Utils.get_game().inventory, "has")
+	story.bind_external_function("move", Utils.get_game(), "move")
 
 
 func continue_story():
