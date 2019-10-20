@@ -8,16 +8,161 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Control",
+"class": "ActionButton",
+"language": "GDScript",
+"path": "res://nodes/UI/ActionButton/ActionButton.gd"
+}, {
+"base": "KinematicBody",
+"class": "Character",
+"language": "GDScript",
+"path": "res://nodes/Character/Character.gd"
+}, {
+"base": "Control",
+"class": "Choice",
+"language": "GDScript",
+"path": "res://nodes/UI/ChoiceBubble/Choice.gd"
+}, {
+"base": "Control",
+"class": "ChoiceBubble",
+"language": "GDScript",
+"path": "res://nodes/UI/ChoiceBubble/ChoiceBubble.gd"
+}, {
+"base": "Control",
+"class": "ContextMenu",
+"language": "GDScript",
+"path": "res://nodes/UI/ContextMenu/ContextMenu.gd"
+}, {
+"base": "Node",
+"class": "Dialog",
+"language": "GDScript",
+"path": "res://nodes/Dialog/Dialog.gd"
+}, {
+"base": "KinematicBody",
+"class": "Door",
+"language": "GDScript",
+"path": "res://entities/Door.gd"
+}, {
+"base": "Spatial",
+"class": "Game",
+"language": "GDScript",
+"path": "res://scenes/Game.gd"
+}, {
+"base": "KinematicBody",
+"class": "Interactable",
+"language": "GDScript",
+"path": "res://nodes/Interactable/Interactable.gd"
+}, {
+"base": "Control",
+"class": "Inventory",
+"language": "GDScript",
+"path": "res://nodes/UI/Inventory/Inventory.gd"
+}, {
+"base": "Control",
+"class": "InventoryItem",
+"language": "GDScript",
+"path": "res://nodes/UI/Inventory/InventoryItem.gd"
+}, {
+"base": "KinematicBody",
+"class": "Item",
+"language": "GDScript",
+"path": "res://nodes/Item/Item.gd"
+}, {
+"base": "Spatial",
+"class": "Level",
+"language": "GDScript",
+"path": "res://nodes/Level/Level.gd"
+}, {
+"base": "KinematicBody",
+"class": "Player",
+"language": "GDScript",
+"path": "res://nodes/Player/Player.gd"
+}, {
+"base": "Control",
+"class": "SpeechBubble",
+"language": "GDScript",
+"path": "res://nodes/UI/TextDisplay/SpeechBubble/SpeechBubble.gd"
+}, {
+"base": "Control",
+"class": "TextDisplay",
+"language": "GDScript",
+"path": "res://nodes/UI/TextDisplay/TextDisplay.gd"
+}, {
+"base": "Spatial",
+"class": "Title",
+"language": "GDScript",
+"path": "res://scenes/Title.gd"
+}, {
+"base": "Area",
+"class": "Trigger",
+"language": "GDScript",
+"path": "res://nodes/Trigger/Trigger.gd"
+} ]
 _global_script_class_icons={
-
+"ActionButton": "",
+"Character": "",
+"Choice": "",
+"ChoiceBubble": "",
+"ContextMenu": "",
+"Dialog": "",
+"Door": "",
+"Game": "",
+"Interactable": "",
+"Inventory": "",
+"InventoryItem": "",
+"Item": "",
+"Level": "",
+"Player": "",
+"SpeechBubble": "",
+"TextDisplay": "",
+"Title": "",
+"Trigger": ""
 }
 
 [application]
 
-config/name="gd-wildjam14"
+config/name="Shadow Realm"
+run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
 
-[rendering]
+[autoload]
 
-environment/default_environment="res://default_env.tres"
+__InkRuntime="*res://addons/inkgd/runtime/static/ink_runtime.gd"
+Utils="*res://scripts/Utils.gd"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "inkgd" )
+
+[input]
+
+ui_accept={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777221,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777222,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_select={
+"deadzone": 0.5,
+"events": [  ]
+}
+ui_context={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+ui_move={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+3d_physics/layer_1="general"
+3d_physics/layer_2="interactable"
+3d_physics/layer_3="player"
+3d_physics/layer_4="character"

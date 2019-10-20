@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://nodes/UI/TextDisplay/TextDisplay.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/MonospaceTypewriter_dynamicfont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/ui/dialog_continue.png" type="Texture" id=3]
+[ext_resource path="res://assets/ui/dialog_close.png" type="Texture" id=4]
+[ext_resource path="res://assets/sounds/text_continue.wav" type="AudioStream" id=5]
+
+
+[node name="TextDisplay" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1024.0
+margin_bottom = -600.0
+script = ExtResource( 1 )
+action_indicators_path = NodePath("Background/ActionArrows")
+close_sprite_path = NodePath("Background/ActionArrows/Close")
+continue_sprite_path = NodePath("Background/ActionArrows/Continue")
+label_path = NodePath("Background/Text")
+action_tween_path = NodePath("ActionTween")
+
+[node name="Background" type="NinePatchRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Text" type="Label" parent="Background"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "line 1aaaaaaaaaaaaaaaaaaaa
+line 2
+line 3
+line 4
+line 5"
+autowrap = true
+max_lines_visible = 5
+
+[node name="ActionArrows" type="Control" parent="Background"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Continue" type="TextureRect" parent="Background/ActionArrows"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -9.0
+margin_top = -9.0
+margin_right = 9.0
+margin_bottom = 9.0
+texture = ExtResource( 3 )
+
+[node name="Close" type="TextureRect" parent="Background/ActionArrows"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -10.0
+margin_top = -10.0
+margin_right = 10.0
+margin_bottom = 10.0
+texture = ExtResource( 4 )
+
+[node name="ActionTween" type="Tween" parent="."]
+repeat = true
+playback/repeat = true
+
+[node name="ConfirmSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -10.0

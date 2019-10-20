@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://nodes/UI/ActionButton/ActionButton.gd" type="Script" id=1]
+[ext_resource path="res://assets/shaders/invertcolor_shadermaterial.tres" type="Material" id=2]
+[ext_resource path="res://nodes/UI/ActionButton/action_hover.tres" type="StyleBox" id=3]
+[ext_resource path="res://nodes/UI/ActionButton/action_normal.tres" type="StyleBox" id=4]
+[ext_resource path="res://assets/fonts/MonospaceTypewriter_dynamicfont.tres" type="DynamicFont" id=5]
+
+
+
+
+[node name="ActionButton" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+mouse_filter = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+hover_material = ExtResource( 2 )
+action = "TEST"
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = -55.0
+margin_right = 40.0
+margin_bottom = 35.0
+hint_tooltip = "TEST"
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 4 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 20.0
+margin_bottom = 20.0
+mouse_filter = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Button/MarginContainer"]
+margin_right = 90.0
+margin_bottom = 90.0
+
+[node name="Sprite" type="TextureRect" parent="Button/MarginContainer/VBoxContainer"]
+margin_right = 90.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Button/MarginContainer/VBoxContainer"]
+visible = false
+margin_top = 54.0
+margin_right = 100.0
+margin_bottom = 75.0
+mouse_filter = 1
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_constants/shadow_as_outline = 0
+text = "TEST"
+align = 1
+valign = 1
+[connection signal="button_down" from="Button" to="." method="_on_button_down"]
+[connection signal="mouse_entered" from="Button" to="." method="_on_hover"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_iddle"]

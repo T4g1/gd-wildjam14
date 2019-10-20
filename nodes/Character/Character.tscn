@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://nodes/Interactable/Interactable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://nodes/Character/Character.gd" type="Script" id=2]
+[ext_resource path="res://nodes/UI/ChoiceBubble/ChoiceBubble.tscn" type="PackedScene" id=3]
+[ext_resource path="res://nodes/UI/TextDisplay/SpeechBubble/SpeechBubble.tscn" type="PackedScene" id=4]
+[ext_resource path="res://nodes/UI/ContextMenu/CharacterMenu.tscn" type="PackedScene" id=5]
+
+[node name="Character" groups=[
+"characters",
+] instance=ExtResource( 1 )]
+collision_layer = 10
+script = ExtResource( 2 )
+context_menu_path = NodePath("ContextMenu")
+firstname = "SET ME"
+
+[node name="UI" type="Control" parent="." index="3"]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 2
+
+[node name="ChoiceBubble" parent="UI" index="0" instance=ExtResource( 3 )]
+margin_left = 320.846
+margin_top = -58.4926
+margin_right = 320.846
+margin_bottom = -58.4926
+
+[node name="SpeechBubble" parent="UI" index="1" instance=ExtResource( 4 )]
+margin_left = 9.51603
+margin_top = -15.8193
+margin_right = -30.4839
+margin_bottom = -55.8193
+
+[node name="ContextMenu" parent="." index="4" instance=ExtResource( 5 )]
+[connection signal="choice_done" from="UI/ChoiceBubble" to="." method="_on_choice_done"]

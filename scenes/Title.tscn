@@ -1,0 +1,111 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://scenes/Title.gd" type="Script" id=1]
+[ext_resource path="res://environments/title_env.tres" type="Environment" id=2]
+[ext_resource path="res://assets/fonts/MonospaceTypewriter.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://nodes/UI/button_hover.tres" type="StyleBox" id=4]
+[ext_resource path="res://nodes/UI/button_normal.tres" type="StyleBox" id=5]
+[ext_resource path="res://assets/fonts/MonospaceTypewriter_dynamicfont.tres" type="DynamicFont" id=6]
+[ext_resource path="res://assets/sounds/title.wav" type="AudioStream" id=7]
+
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 3 )
+
+[sub_resource type="Gradient" id=2]
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+emission_shape = 2
+emission_box_extents = Vector3( 20, 1, 1 )
+gravity = Vector3( 0, 9.8, 0 )
+angular_velocity = 1.0
+scale = 0.1
+scale_random = 0.5
+color_ramp = SubResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.188235, 0.34902, 0.694118, 1 )
+metallic = 0.5
+
+[sub_resource type="SphereMesh" id=6]
+material = SubResource( 5 )
+
+[node name="Title" type="Spatial"]
+script = ExtResource( 1 )
+environment = ExtResource( 2 )
+
+[node name="UI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+
+[node name="Background" type="TextureRect" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="UI"]
+anchor_right = 1.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 1 )
+text = "Shadow's Realm"
+align = 2
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -52.0
+margin_bottom = 52.0
+
+[node name="Play" type="Button" parent="UI/VBoxContainer"]
+margin_right = 150.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 150, 50 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+text = "Play"
+
+[node name="Quit" type="Button" parent="UI/VBoxContainer"]
+margin_top = 54.0
+margin_right = 150.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 150, 50 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+text = "Quit"
+
+[node name="Particles" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0 )
+amount = 20
+lifetime = 2.0
+preprocess = 5.0
+speed_scale = 0.5
+process_material = SubResource( 4 )
+draw_pass_1 = SubResource( 6 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -10, 0 )
+spot_range = 18.1
+spot_angle = 60.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -15.0
+autoplay = true
+[connection signal="pressed" from="UI/VBoxContainer/Play" to="." method="_on_play"]
+[connection signal="pressed" from="UI/VBoxContainer/Quit" to="." method="_on_quit"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://nodes/Interactable/Interactable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://nodes/Item/Item.gd" type="Script" id=2]
+[ext_resource path="res://nodes/UI/ContextMenu/ItemMenu.tscn" type="PackedScene" id=3]
+
+[node name="Item" groups=[
+"item",
+] instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+context_menu_path = NodePath("ContextMenu")
+
+[node name="ContextMenu" parent="." index="3" instance=ExtResource( 3 )]
