@@ -16,7 +16,7 @@
 
 [sub_resource type="CubeMesh" id=3]
 
-[node name="Level1" instance=ExtResource( 1 )]
+[node name="Level1" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 path_story = "res://dialogs/level1/level_1.json"
 custom_environment = ExtResource( 3 )
@@ -24,12 +24,13 @@ custom_environment = ExtResource( 3 )
 [node name="Player" parent="." index="2" groups=[
 "interactable",
 ] instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1.4, 0, 0, 0, 1, -26.2529, 1.70675, 0.930808 )
+transform = Transform( 1, 0, 0, 0, 1.4, 0, 0, 0, 1, 3.77319, 17.1443, 0.930808 )
 sprite_path = NodePath("Sprite")
 outline_material = ExtResource( 5 )
 dialog_path = NodePath("../Dialog")
 
 [node name="House" type="Spatial" parent="." index="4"]
+editor/display_folded = true
 
 [node name="Lift" parent="House" index="0" instance=ExtResource( 6 )]
 editor/display_folded = true
