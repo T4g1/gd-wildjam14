@@ -30,6 +30,10 @@ func get_game():
 		return root.get_node("main/Game")
 
 
+func is_debug():
+	return get_tree().get_root().get_node("main").debug
+
+
 func get_character(character_name: String):
 	"""
 	Get a character from the protagonists list given
