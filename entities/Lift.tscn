@@ -38,7 +38,7 @@ mesh = SubResource( 3 )
 material/0 = SubResource( 4 )
 
 [node name="Spawn" type="Spatial" parent="." index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.566009, 0.234788 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.01794, 0.953678 )
 
 [node name="ContextMenu" parent="." index="4" instance=ExtResource( 5 )]
 full_size = 0.5
