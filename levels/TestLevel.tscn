@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://nodes/Level/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/TestLevel.gd" type="Script" id=2]
@@ -12,34 +12,53 @@
 [ext_resource path="res://assets/door.png" type="Texture" id=10]
 [ext_resource path="res://entities/Key.tscn" type="PackedScene" id=11]
 [ext_resource path="res://entities/Lift.tscn" type="PackedScene" id=12]
-[ext_resource path="res://entities/Fridge.tscn" type="PackedScene" id=13]
-[ext_resource path="res://nodes/Player/Player.tscn" type="PackedScene" id=14]
-[ext_resource path="res://nodes/Waypoint/Waypoint.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/textures/ascenseur color.png" type="Texture" id=13]
+[ext_resource path="res://entities/Fridge.tscn" type="PackedScene" id=14]
+[ext_resource path="res://entities/Plunger.tscn" type="PackedScene" id=15]
+[ext_resource path="res://nodes/Player/Player.tscn" type="PackedScene" id=16]
+[ext_resource path="res://nodes/Waypoint/Waypoint.tscn" type="PackedScene" id=17]
 
 [sub_resource type="CubeMesh" id=1]
 
 [sub_resource type="CapsuleMesh" id=2]
 
-[sub_resource type="ShaderMaterial" id=3]
+[sub_resource type="ShaderMaterial" id=9]
 shader = ExtResource( 9 )
 shader_param/intensity = 1
 shader_param/precision = 0.01
 shader_param/outline_color = Color( 1, 1, 1, 1 )
 shader_param/texturemap = ExtResource( 10 )
 
-[sub_resource type="NavigationMesh" id=4]
+[sub_resource type="ShaderMaterial" id=10]
+shader = ExtResource( 9 )
+shader_param/intensity = 1
+shader_param/precision = 0.01
+shader_param/outline_color = Color( 1, 1, 1, 1 )
+shader_param/texturemap = ExtResource( 13 )
+
+[sub_resource type="ShaderMaterial" id=11]
+shader = ExtResource( 9 )
+shader_param/intensity = 1
+shader_param/precision = 0.01
+shader_param/outline_color = Color( 1, 1, 1, 1 )
+shader_param/texturemap = ExtResource( 13 )
+
+[sub_resource type="NavigationMesh" id=6]
 vertices = PoolVector3Array( 6.54569, 0.4, -27.2219, 6.54569, 0.4, -35.9219, -0.0543056, 0.4, -35.9219, -0.0543056, 0.4, -35.9219, -6.65431, 0.4, -35.9219, -6.65431, 0.4, -27.2219, -6.65431, 0.4, 26.7781, -6.65431, 0.4, 35.7781, -0.0543056, 0.4, 35.7781, -0.0543056, 0.4, 35.7781, 6.54569, 0.4, 35.7781, 6.54569, 0.4, 26.7781, -6.65431, 0.4, 26.7781, -0.0543056, 0.4, 35.7781, 6.54569, 0.4, 26.7781, 6.54569, 0.4, 17.7781, -6.65431, 0.4, 17.7781, 6.54569, 0.4, -27.2219, -0.0543056, 0.4, -35.9219, -6.65431, 0.4, -27.2219, -6.65431, 0.4, -18.2219, 6.54569, 0.4, -18.2219, 6.54569, 0.4, -0.221882, 6.54569, 0.4, -9.22188, -6.65431, 0.4, -9.22188, -6.65431, 0.4, -0.221882, -6.65431, 0.4, -0.221882, -6.65431, 0.4, 8.77812, 6.54569, 0.4, 8.77812, 6.54569, 0.4, -0.221882, -6.65431, 0.4, 8.77812, -6.65431, 0.4, 17.7781, 6.54569, 0.4, 17.7781, 6.54569, 0.4, 8.77812, 6.54569, 0.4, -9.22188, 6.54569, 0.4, -18.2219, -6.65431, 0.4, -18.2219, -6.65431, 0.4, -9.22188 )
 polygons = [ PoolIntArray( 2, 0, 1 ), PoolIntArray( 5, 3, 4 ), PoolIntArray( 8, 6, 7 ), PoolIntArray( 11, 9, 10 ), PoolIntArray( 16, 12, 15 ), PoolIntArray( 12, 14, 15 ), PoolIntArray( 12, 13, 14 ), PoolIntArray( 21, 17, 20 ), PoolIntArray( 17, 19, 20 ), PoolIntArray( 17, 18, 19 ), PoolIntArray( 25, 22, 24 ), PoolIntArray( 22, 23, 24 ), PoolIntArray( 29, 26, 28 ), PoolIntArray( 26, 27, 28 ), PoolIntArray( 33, 30, 32 ), PoolIntArray( 30, 31, 32 ), PoolIntArray( 37, 34, 36 ), PoolIntArray( 34, 35, 36 ) ]
 
-[sub_resource type="PlaneMesh" id=5]
+[sub_resource type="PlaneMesh" id=7]
 
-[sub_resource type="ConvexPolygonShape" id=6]
+[sub_resource type="ConvexPolygonShape" id=8]
 points = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, -1 )
 
 [node name="TestLevel" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 path_story = "res://dialogs/empty.json"
 custom_environment = ExtResource( 3 )
+
+[node name="ShadowRealm" parent="." index="0"]
+editor/display_folded = true
 
 [node name="MeshInstance" type="MeshInstance" parent="ShadowRealm" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26, -2.25 )
@@ -68,8 +87,9 @@ transform = Transform( 4.35937, 0, 0, 0, 4.35937, 0, 0, 0, 1, -6.12228, 3.31554,
 transform = Transform( 1, 0, 0, 0, 3, 0, 0, 0, 3, -3.5485, 2.73466, 1.83831 )
 
 [node name="Door" parent="RealWorld" index="4" instance=ExtResource( 8 )]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.35717, 0.0613523, 0.589428 )
-outline_material = SubResource( 3 )
+outline_material = SubResource( 9 )
 required_item = "Appartement's key"
 locked = true
 
@@ -79,24 +99,29 @@ description = "Key of the main door of your appartment"
 item_name = "Appartement's key"
 
 [node name="Lift" parent="RealWorld" index="6" instance=ExtResource( 12 )]
-transform = Transform( 2, 0, 0, 0, 3.3, 0, 0, 0, 1, -15.8192, 3.60404, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8192, 3.60404, 0 )
+outline_material = SubResource( 10 )
 
 [node name="Lift2" parent="RealWorld" index="7" instance=ExtResource( 12 )]
-transform = Transform( 2, 0, 0, 0, 3.3, 0, 0, 0, 1, 5.88528, 3.30831, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.88528, 3.30831, 0 )
+outline_material = SubResource( 11 )
 
-[node name="Fridge" parent="RealWorld" index="8" instance=ExtResource( 13 )]
+[node name="Fridge" parent="RealWorld" index="8" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3908, 2.15929, 0 )
 
-[node name="Player" parent="." index="2" instance=ExtResource( 14 )]
+[node name="Plunger" parent="RealWorld" index="9" instance=ExtResource( 15 )]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 1, -14.173, 0.606693, 3.52236 )
+
+[node name="Player" parent="." index="2" instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1.4, 0, 0, 0, 1, -12.8122, 1.73948, 0.930808 )
 
 [node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="." index="4"]
 transform = Transform( 3.13397, 0, 0, 0, 1, 0, 0, 0, 0.15084, 0, 0, 0 )
-navmesh = SubResource( 4 )
+navmesh = SubResource( 6 )
 
 [node name="MeshInstance" type="MeshInstance" parent="NavigationMeshInstance" index="0"]
 transform = Transform( 7.2543, 0, 0, 0, 1, 0, 0, 0, 36.5219, 0, 0, 0 )
-mesh = SubResource( 5 )
+mesh = SubResource( 7 )
 material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="NavigationMeshInstance/MeshInstance" index="0"]
@@ -104,8 +129,8 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape" type="CollisionShape" parent="NavigationMeshInstance/MeshInstance/StaticBody" index="0"]
-shape = SubResource( 6 )
+shape = SubResource( 8 )
 
-[node name="nimporteou" parent="." index="6" instance=ExtResource( 15 )]
+[node name="nimporteou" parent="." index="6" instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.64318, 1.11329, 1.78886 )
 identifier = "nimporteou"
