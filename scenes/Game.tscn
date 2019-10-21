@@ -22,3 +22,10 @@ anchor_right = 0.5
 margin_top = -70.0
 margin_right = 0.0
 margin_bottom = -70.0
+
+[node name="Cursor" type="TextureRect" parent="."]
+margin_right = 50.0
+margin_bottom = 50.0
+mouse_filter = 2
+expand = true
+stretch_mode = 6

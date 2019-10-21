@@ -132,13 +132,13 @@ size = Vector3( 5, 0.5, 5 )
 [sub_resource type="ConvexPolygonShape" id=10]
 points = PoolVector3Array( -2.5, 0.25, 2.5, 2.5, 0.25, -2.5, 2.5, 0.25, 2.5, -2.5, 0.25, -2.5, -2.5, -0.25, 2.5, 2.5, -0.25, -2.5, 2.5, -0.25, 2.5, -2.5, -0.25, -2.5, 2.5, 0.25, 2.5, -2.5, 0.25, -2.5, 2.5, 0.25, -2.5, -2.5, 0.25, 2.5, 2.5, -0.25, 2.5, -2.5, -0.25, -2.5, 2.5, -0.25, -2.5, -2.5, -0.25, 2.5, 2.5, 0.25, 2.5, -2.5, -0.25, 2.5, -2.5, 0.25, 2.5, 2.5, -0.25, 2.5, 2.5, 0.25, -2.5, -2.5, -0.25, -2.5, -2.5, 0.25, -2.5, 2.5, -0.25, -2.5 )
 
-[node name="Level1" index="0" instance=ExtResource( 1 )]
+[node name="Level1" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 path_story = "res://dialogs/level1/level_1.json"
 custom_environment = ExtResource( 3 )
 
 [node name="RichardShadow" parent="ShadowRealm" index="1" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6592, 16.4701, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.53703, 1.51684, 0 )
 
 [node name="bathroom" type="Sprite3D" parent="ShadowRealm" index="2"]
 transform = Transform( 2, 0, 0, 0, 2.15915, 0, 0, 0, 1, -18.8228, 11.0539, -2.41895 )
@@ -206,9 +206,6 @@ texture = ExtResource( 9 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 601.86, 246.06 )
 
-[node name="RealWorld" parent="." index="1"]
-visible = false
-
 [node name="ShadowMachine" parent="RealWorld" index="1" instance=ExtResource( 10 )]
 transform = Transform( 4.359, 0, 0, 0, 4.359, 0, 0, 0, 1, 2.97923, 18.956, 1 )
 
@@ -269,7 +266,7 @@ required_item = "Front door key"
 locked = true
 
 [node name="Richard" parent="RealWorld" index="11" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1.5, 0, 0, 0, 1, -18.5059, 16.978, 1.5 )
+transform = Transform( 1, 0, 0, 0, 1.5, 0, 0, 0, 1, 5.75879, 2.11485, 1.5 )
 
 [node name="Key" parent="RealWorld" index="12" instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.00024, 15.6701, 3.93108 )
@@ -367,7 +364,7 @@ transform = Transform( 2, 0, 0, 0, 2.15915, 0, 0, 0, 1, -18.8228, 11.0539, -2.41
 texture = ExtResource( 27 )
 
 [node name="Player" parent="." index="2" instance=ExtResource( 30 )]
-transform = Transform( 1, 0, 0, 0, 1.4, 0, 0, 0, 1, -23.9709, 17.0118, 2 )
+transform = Transform( 1, 0, 0, 0, 1.4, 0, 0, 0, 1, 3.97055, 16.9759, 2 )
 
 [node name="House" type="NavigationMeshInstance" parent="." index="4"]
 navmesh = SubResource( 7 )

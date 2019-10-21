@@ -59,6 +59,7 @@ Customizable callbacks:
 * _on_examine: Must return true for the action to be performed
 * _on_use
 * _on_take: Must return true for the action to be performed
+* _on_combination: When an item from inventory is used on this. Return true to consume inventory item
 
 
 ### Item

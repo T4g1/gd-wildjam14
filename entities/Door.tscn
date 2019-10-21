@@ -7,7 +7,7 @@
 [ext_resource path="res://nodes/UI/ContextMenu/StaticMenu.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/sounds/door_open.wav" type="AudioStream" id=6]
 
-[sub_resource type="ShaderMaterial" id=1]
+[sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 4 )
 shader_param/intensity = 1
 shader_param/precision = 0.01
@@ -20,7 +20,7 @@ extents = Vector3( 0.1, 1, 2 )
 [sub_resource type="CubeMesh" id=3]
 size = Vector3( 0.1, 4, 2 )
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=5]
 flags_transparent = true
 albedo_texture = ExtResource( 3 )
 uv1_scale = Vector3( 3, 2, 1 )
@@ -29,15 +29,9 @@ uv1_scale = Vector3( 3, 2, 1 )
 collision_layer = 3
 script = ExtResource( 2 )
 texture = ExtResource( 3 )
-outline_material = SubResource( 1 )
+outline_material = SubResource( 4 )
 description = "Just a door, really"
 path_story = "res://dialogs/level1/Door.json"
-required_item = "Key"
-is_open = false
-locked = false
-closed_angle = 0.0
-open_angle = 120.0
-move_speed = 0.5
 
 [node name="CollisionShape" parent="." index="0"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.00491, 0.985705 )
@@ -46,7 +40,7 @@ shape = SubResource( 2 )
 [node name="Sprite" parent="." index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 1 )
 mesh = SubResource( 3 )
-material/0 = SubResource( 4 )
+material/0 = SubResource( 5 )
 
 [node name="ContextMenu" parent="." index="3" instance=ExtResource( 5 )]
 

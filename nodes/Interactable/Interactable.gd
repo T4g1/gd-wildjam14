@@ -65,11 +65,15 @@ func _on_event(_camera, event, _click_position, _click_normal, _shape_idx):
 	if interaction_disabled:
 		return
 	
-	if not Utils.get_game().user_has_control:
+	var game = Utils.get_game()
+	if not game.user_has_control:
 		return
 	
 	if event.is_action_released("ui_context"):
 		show_context_menu()
+	elif event.is_action_pressed("ui_move"):
+		game.handle_combination(self)
+		get_tree().set_input_as_handled()
 
 
 func show_context_menu():
@@ -113,3 +117,12 @@ func _on_talk():
 	Overide for custom behavior, returns true if the action can be performed
 	"""
 	return true
+
+
+func _on_combination(node):
+	"""
+	Called when an inventory item is used on this one
+	Return true if the inventory item is consumed by the operation
+	"""
+	print(node.get_path(), " used on ", get_path())
+	return false

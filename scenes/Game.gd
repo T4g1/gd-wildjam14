@@ -19,6 +19,9 @@ export (int) var start_level
 # warning-ignore:unused_class_variable
 onready var inventory = $Inventory
 onready var pop_up = $PopUp
+onready var cursor = $Cursor
+
+var selected_slot
 
 
 func _ready():
@@ -31,6 +34,10 @@ func _ready():
 		load_level(0)
 	else:
 		load_level(start_level)
+
+
+func _process(_delta):
+	cursor.rect_position = get_viewport().get_mouse_position()
 
 
 func on_next_level():
@@ -80,6 +87,32 @@ func on_dialog_end():
 	Utils.get_player().in_dialog = false
 	
 	user_has_control = true
+
+
+func select(slot: InventoryItem):
+	"""
+	Called when players want to use something from inventory
+	"""
+	selected_slot = slot
+	cursor.texture = slot.stored_item.texture
+
+
+func deselect():
+	selected_slot = null
+	cursor.texture = null
+
+
+func handle_combination(node: Interactable):
+	"""
+	Called when an inventory item is used on an interactable
+	"""
+	if selected_slot == null:
+		return
+	
+	if node._on_combination(selected_slot.stored_item):
+		selected_slot.pop()
+
+	deselect()
 
 
 func perform_action(node, action: String, in_inventory=false):

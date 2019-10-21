@@ -54,6 +54,18 @@ func _on_use():
 		toggle()
 
 
+func _on_combination(item: Item):
+	if required_item == item.item_name:
+		if locked:
+			locked = false
+			Utils.get_game().display_text("You unlocked that door with \"" + required_item + "\"")
+		else:
+			Utils.get_game().display_text("Taht door is already unlocked...")
+	else:
+		Utils.get_game().display_text("This do not seems to be the right place to use that...")
+	return false
+
+
 func toggle():
 	door_sound.play()
 	
