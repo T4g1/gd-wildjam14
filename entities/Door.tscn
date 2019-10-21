@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://nodes/Interactable/Interactable.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/Door.gd" type="Script" id=2]
 [ext_resource path="res://assets/door.png" type="Texture" id=3]
-[ext_resource path="res://nodes/UI/ContextMenu/StaticMenu.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/sounds/door_open.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/ui/action_button/action_hover.png" type="Texture" id=4]
+[ext_resource path="res://nodes/UI/ContextMenu/StaticMenu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/sounds/door_open.wav" type="AudioStream" id=6]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.1, 1, 2 )
@@ -14,7 +15,7 @@ size = Vector3( 0.1, 4, 2 )
 
 [sub_resource type="SpatialMaterial" id=3]
 flags_transparent = true
-albedo_texture = ExtResource( 3 )
+albedo_texture = ExtResource( 4 )
 uv1_scale = Vector3( 3, 2, 1 )
 
 [node name="Door" instance=ExtResource( 1 )]
@@ -33,8 +34,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 1 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
-[node name="ContextMenu" parent="." index="3" instance=ExtResource( 4 )]
+[node name="ContextMenu" parent="." index="3" instance=ExtResource( 5 )]
 
 [node name="DoorSound" type="AudioStreamPlayer" parent="." index="4"]
-stream = ExtResource( 5 )
+stream = ExtResource( 6 )
 volume_db = -10.0
+
+[node name="Tween" type="Tween" parent="." index="5"]

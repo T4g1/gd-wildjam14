@@ -1,3 +1,4 @@
+tool
 extends KinematicBody
 class_name Interactable
 """
@@ -31,7 +32,8 @@ func _ready():
 	outline_material = outline_material.duplicate()
 	outline_material.set_shader_param("texturemap", texture)
 	
-	normal_material = sprite.get_surface_material(0)
+	normal_material = sprite.get_surface_material(0).duplicate()
+	sprite.set_surface_material(0, normal_material)
 	normal_material.albedo_texture = texture
 	
 	if path_story != "":
@@ -39,7 +41,10 @@ func _ready():
 
 
 func _process(_delta):
-	Utils.spatial_to_control_position(self, context_menu)
+	if Engine.is_editor_hint():
+		get_node(sprite_path).get_surface_material(0).albedo_texture = texture
+	else:
+		Utils.spatial_to_control_position(self, context_menu)
 
 
 func _on_mouse_hover():

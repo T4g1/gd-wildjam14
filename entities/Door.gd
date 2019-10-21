@@ -1,3 +1,4 @@
+tool
 extends "res://nodes/Interactable/Interactable.gd"
 class_name Door
 """
@@ -7,8 +8,11 @@ Simple door requiring key or not to be opened
 export (String) var required_item = "Key"
 export (bool) var is_open = false
 export (bool) var locked = false
+export (float) var closed_angle = 0.0
+export (float) var open_angle = 120.0
 
 onready var door_sound = $DoorSound
+onready var door_movement = $Tween
 
 var inventory
 
@@ -22,12 +26,20 @@ func _ready():
 
 
 func open():
-	rotation.y = deg2rad(120.0)
+	door_movement.interpolate_property(self, "rotation", rotation, Vector3(0, deg2rad(open_angle), 0), 1.0, Tween.TRANS_LINEAR, 0)
+	door_movement.start()
+	print(open_angle)
+	yield(door_movement, "tween_all_completed")
+	
 	is_open = true
 
 
 func close():
-	rotation.y = 0
+	door_movement.interpolate_property(self, "rotation", rotation, Vector3(0, deg2rad(closed_angle), 0), 1.0, Tween.TRANS_LINEAR, 0)
+	door_movement.start()
+	
+	yield(door_movement, "tween_all_completed")
+	
 	is_open = false
 
 
