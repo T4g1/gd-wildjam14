@@ -63,12 +63,9 @@ func process_movement(delta):
 		var move_order = move_vector.normalized() * delta * speed
 		var effective_move = move_and_slide(move_order, Vector3(0, 1, 0))
 		if move_order.length() != effective_move.length() and effective_move.length() < BLOCKED_THRESHOLD:
-			print(effective_move.length())
-			for i in get_slide_count():
-			    var collision = get_slide_collision(i)
-			    print("Collided with: ", collision.collider.name)
 			# Character is blocked
-			clear_path()
+			#clear_path()
+			pass
 
 
 func clear_path():

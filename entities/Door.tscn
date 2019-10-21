@@ -32,6 +32,12 @@ texture = ExtResource( 3 )
 outline_material = SubResource( 1 )
 description = "Just a door, really"
 path_story = "res://dialogs/level1/Door.json"
+required_item = "Key"
+is_open = false
+locked = false
+closed_angle = 0.0
+open_angle = 120.0
+move_speed = 0.5
 
 [node name="CollisionShape" parent="." index="0"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.00491, 0.985705 )

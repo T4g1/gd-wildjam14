@@ -1,3 +1,4 @@
+tool
 extends "res://nodes/Interactable/Interactable.gd"
 class_name Lift
 """
