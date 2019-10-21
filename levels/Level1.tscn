@@ -143,10 +143,10 @@ transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 1, -15.3755, 8.61752, -2.6096
 outline_material = SubResource( 16 )
 
 [node name="FamilyFrame" parent="RealWorld" index="14" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66852, 1.33045, 0.0077734 )
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 1, 2.01203, 2.33979, -2.04111 )
 
 [node name="Player" parent="." index="2" instance=ExtResource( 20 )]
-transform = Transform( 1, 0, 0, 0, 1.4, 0, 0, 0, 1, 4.04079, 4.09531, 2 )
+transform = Transform( 1, 0, 0, 0, 1.4, 0, 0, 0, 1, 4.04079, 16.9619, 2 )
 
 [node name="House" type="NavigationMeshInstance" parent="." index="4"]
 navmesh = SubResource( 7 )
