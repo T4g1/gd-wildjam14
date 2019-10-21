@@ -54,24 +54,24 @@ func continue_story():
 			game.current_level.switch_realm()
 			yield(game.current_level, "realm_changed")
 		
-		if text == "":
-			continue
-		
 		character = get_character_from_story()
 		if character == null:
 			# For general text display
 			text_display = game.pop_up
 			
-			game.display_text(text)
+			if text != "":
+				game.display_text(text)
 		else:
 			# A character is talking
 			text_display = character.speech_bubble
 			
 			var mood = story.variables_state.get("character_mood")
-			if mood == "think":
-				character.think(text)
-			else:
-				character.say(text)
+			
+			if text != "":
+				if mood == "think":
+					character.think(text)
+				else:
+					character.say(text)
 			
 		# Check no choice are coming
 		if story.current_choices.size() <= 0:

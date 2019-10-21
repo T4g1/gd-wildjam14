@@ -15,11 +15,17 @@ Gosh, who closed that door?
 ~ who("Erwin")
 RICHARD!?
 
-~ pause_after()
-
 # Richard
 ~ who("Richard")
 YES SIR ? I'M RIGHT HERE
+
+~ pause_after()
+
+# Erwin
+
+~ who("Erwin")
+~ mood("think")
+Let's go and ask him for the keys
 
 -> content
 
