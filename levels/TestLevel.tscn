@@ -74,7 +74,7 @@ required_item = "Appartement's key"
 locked = true
 
 [node name="Key" parent="RealWorld/Door" index="5" instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.08297, 0.193886, 4.47418 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.8566, 1.92005, -0.232487 )
 description = "Key of the main door of your appartment"
 item_name = "Appartement's key"
 
