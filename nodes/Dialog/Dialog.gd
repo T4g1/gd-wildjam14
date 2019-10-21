@@ -54,6 +54,9 @@ func continue_story():
 			game.current_level.switch_realm()
 			yield(game.current_level, "realm_changed")
 		
+		if text == "":
+			continue
+		
 		character = get_character_from_story()
 		if character == null:
 			# For general text display

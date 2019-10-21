@@ -30,5 +30,6 @@ shape = SubResource( 1 )
 transform = Transform( -4.37114e-08, 0, 1, 0, 0.843178, 0, -1, 0, -4.37114e-08, -1.0203, -1.60432, 1.01113 )
 texture = ExtResource( 3 )
 outline_material = SubResource( 2 )
+path_story = "res://dialogs/empty.json"
 closed_angle = 90.0
 open_angle = 0.0

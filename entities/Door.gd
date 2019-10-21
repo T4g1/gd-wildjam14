@@ -29,7 +29,7 @@ func _ready():
 func open():
 	door_movement.interpolate_property(self, "rotation", rotation, Vector3(0, deg2rad(open_angle), 0), move_speed, Tween.TRANS_LINEAR, 0)
 	door_movement.start()
-	print(open_angle)
+	
 	yield(door_movement, "tween_all_completed")
 	
 	is_open = true
