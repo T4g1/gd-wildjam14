@@ -22,7 +22,7 @@ size = Vector2( 4, 7 )
 [sub_resource type="SpatialMaterial" id=4]
 albedo_texture = ExtResource( 3 )
 
-[node name="Lift" index="0" groups=[
+[node name="Lift" groups=[
 "lift",
 ] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
