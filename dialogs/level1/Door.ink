@@ -3,8 +3,9 @@ INCLUDE ../common.ink
 -> content
 === content ===
 
-{
-    - has("Appartment's key"):
+# Erwin
+
+{   has("Appartment's key"):
         -> end
 }
 
@@ -22,5 +23,9 @@ Try to pick-up that key over there
 -> content
 
 === end ===
+
+~ who("Erwin")
+~ mood("think")
+The door is open, now, let's take that lift and leave this house...
 
 -> END

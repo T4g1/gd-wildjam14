@@ -20,7 +20,7 @@
 
 [sub_resource type="CapsuleMesh" id=2]
 
-[sub_resource type="ShaderMaterial" id=7]
+[sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 9 )
 shader_param/intensity = 1
 shader_param/precision = 0.01
@@ -69,7 +69,7 @@ transform = Transform( 1, 0, 0, 0, 3, 0, 0, 0, 3, -3.5485, 2.73466, 1.83831 )
 
 [node name="Door" parent="RealWorld" index="4" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.35717, 0.0613523, 0.589428 )
-outline_material = SubResource( 7 )
+outline_material = SubResource( 3 )
 required_item = "Appartement's key"
 locked = true
 

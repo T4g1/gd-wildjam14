@@ -45,13 +45,14 @@ func close():
 
 
 func _on_use():
+	dialog.continue_story()
+	
 	if inventory.has(required_item):
 		locked = false
 	
-	if locked:
-		dialog.continue_story()
-	else:
+	if not locked:
 		toggle()
+
 
 func toggle():
 	door_sound.play()
