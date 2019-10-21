@@ -98,7 +98,7 @@ func _on_use():
 	"""
 	Overide for custom behavior
 	"""
-	pass
+	Utils.get_game().display_text("This does not seems to do anything...")
 
 
 func _on_examine():
