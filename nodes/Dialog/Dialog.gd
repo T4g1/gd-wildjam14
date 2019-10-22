@@ -28,8 +28,28 @@ func load_story(ink_story_path):
 	story.bind_external_function("unlock", Utils.get_player(), "unlock")
 
 
+func story_get(variable: String):
+	"""
+	Set a particular variable in the script
+	"""
+	return story.variables_state.get(variable)
+
+
+func story_set(variable: String):
+	"""
+	Set a particular variable in the script
+	"""
+	story.variables_state.set(variable, true)
+
+
+func story_unset(variable: String):
+	"""
+	Unset a particular variable in the script
+	"""
+	story.variables_state.set(variable, false)
+
+
 func continue_story():
-	print("emit_start")
 	emit_signal("dialog_start")
 	
 	story.variables_state.set("paused", 0)
@@ -88,7 +108,6 @@ func continue_story():
 		player.prompt(story.current_choices)
 		player.choice_bubble.connect("choice_done", self, "_choice_done")
 	else:
-		print("emit_end")
 		emit_signal("dialog_end")
 
 

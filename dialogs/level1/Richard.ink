@@ -1,5 +1,7 @@
 INCLUDE common.ink
 
+VAR has_chocolate = false
+
 -> start
 === start ===
 
@@ -88,21 +90,28 @@ You can now interact with the strange looking ripling on the walls. This will al
 
 # Richard
 ~ who("Richard")
-Oh monsieur c’est incroyable ! Vous avez disparu pendant un instant !
+Mister, that is incredible! You disapeared during a while!
 
 # Erwin
 ~ who("Erwin")
-Oui oui je sais je suis incroyable.
+Yes, yes, incredible I am
 
 # Erwin
 ~ who("Erwin")
 ~ mood("think")
-Bon comment faire en sorte qu’il se mette quelque part et ne bouge plus ?..
+Well, now how to make that dumbass sit somewhere and not move anymore?...
 
-Je vais devoir m’intéresser ce benêt.
+I probably should check him out first and learn a thing or two about him...
+
+VAR dislike = false
+VAR like = false
 
 -> quizz_richard
 === quizz_richard ===
+
+{ has_chocolate && like && dislike:
+    -> chocolate
+}
 
 # Erwin
 ~ who("Erwin")
@@ -115,12 +124,16 @@ Je vais devoir m’intéresser ce benêt.
     ~ who("Erwin")
     Non j’en avais aucune idée car j’en avais pas grand-chose à faire en fait.
 
+    ~ dislike = true
+
 + Qu’est-ce que vous ferait plaisir Richard ?
     # Richard
     ~ who("Richard")
     Oh c’est gentil de demander, eh bien j’adore le chocolat.
 
-+ Nothing
+    ~ like = true
+
++ { like && dislike } Nothing
     -> after_quizz
 
 - -> quizz_richard
@@ -134,5 +147,18 @@ Je vais devoir m’intéresser ce benêt.
 Vous en avez appris davantage sur Richard et donc sur son ombre, regardez son onglet personnalité
 
 -> quizz_richard
+
+
+
+
+=== chocolate ===
+
+~ pause_after()
+
+~ who("Erwin")
+~ mood("think")
+He is eating his chocolate, better not to disturb him. I know he hates cockroach so that mean his shadow probably loves them... Eeek
+
+-> chocolate
 
 -> END
