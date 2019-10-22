@@ -82,7 +82,7 @@ To merge a shadow with it's human alter ego, you must lead them to do the exact 
 I'll puke if this keeps hapenning but I believe I've found the trick
 
 ~ who("")
-TODO: Interact with shadow Appuyez sur *input* pour basculer d’un plan à l’autre
+Interact with shadow Appuyez sur XXXX pour basculer d’un plan à l’autre
 
 # Richard
 ~ who("Richard")
