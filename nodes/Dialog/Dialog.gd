@@ -30,9 +30,16 @@ func load_story(ink_story_path):
 
 func story_get(variable: String):
 	"""
-	Set a particular variable in the script
+	Return a particular variable in the script's value
 	"""
 	return story.variables_state.get(variable)
+
+
+func is_story_set(variable: String):
+	"""
+	Tells if a script value is set or not
+	"""
+	return story.variables_state.get(variable) == 1
 
 
 func story_set(variable: String):
@@ -59,7 +66,7 @@ func continue_story():
 	var character
 	var text_display
 	
-	while story.can_continue and story.variables_state.get("paused") == 0:
+	while story.can_continue and not is_story_set("paused"):
 		var text = story.continue()
 		
 		var zoom_targets = story.get_current_tags()
@@ -67,12 +74,12 @@ func continue_story():
 			Utils.zoom_on(zoom_targets)
 		
 		# Game over? (triggers next level)
-		if story.variables_state.get("game_is_over") == 1:
+		if is_story_set("game_is_over"):
 			return game.on_next_level()
 		
 		# Realm change triggered ?
-		if story.variables_state.get("trigger_switch_realm") == 1:
-			story.variables_state.set("trigger_switch_realm", 0)
+		if is_story_set("trigger_switch_realm"):
+			story_unset("trigger_switch_realm")
 			game.current_level.switch_realm()
 			yield(game.current_level, "realm_changed")
 		
@@ -91,7 +98,7 @@ func continue_story():
 			if text == "":
 				continue
 			
-			var mood = story.variables_state.get("character_mood")
+			var mood = story_get("character_mood")
 			
 			if mood == "think":
 				character.think(text)
@@ -132,5 +139,5 @@ func move(character_name: String, waypoint_name: String):
 
 
 func get_character_from_story():
-	var character_name = story.variables_state.get("character_name")
+	var character_name = story_get("character_name")
 	return Utils.get_character(character_name)

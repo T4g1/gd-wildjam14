@@ -6,7 +6,7 @@
 [ext_resource path="res://nodes/UI/TextDisplay/SpeechBubble/SpeechBubble.tscn" type="PackedScene" id=4]
 [ext_resource path="res://nodes/UI/ContextMenu/CharacterMenu.tscn" type="PackedScene" id=5]
 
-[node name="Character" index="0" groups=[
+[node name="Character" groups=[
 "characters",
 ] instance=ExtResource( 1 )]
 collision_layer = 18
