@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://nodes/Character/Character.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/characters/Richard.png" type="Texture" id=2]
+[ext_resource path="res://entities/characters/Richard.gd" type="Script" id=2]
+[ext_resource path="res://assets/characters/Richard.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.668553
@@ -11,13 +12,14 @@ height = 0.630013
 
 [sub_resource type="SpatialMaterial" id=3]
 flags_transparent = true
-albedo_texture = ExtResource( 2 )
+albedo_texture = ExtResource( 3 )
 
 [node name="Richard" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0 )
-texture = ExtResource( 2 )
+script = ExtResource( 2 )
+texture = ExtResource( 3 )
 description = "Richard is the main butler of this respected household"
-path_story = "res://dialogs/Richard.json"
+path_story = "res://dialogs/level1/Richard.json"
 firstname = "Richard"
 
 [node name="CollisionShape" parent="." index="0"]

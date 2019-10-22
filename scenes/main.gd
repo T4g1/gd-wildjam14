@@ -34,6 +34,7 @@ func clear_game():
 	Remove game node
 	"""
 	if game:
+		yield(get_tree(), "idle_frame")
 		remove_child(game)
 		game = null
 

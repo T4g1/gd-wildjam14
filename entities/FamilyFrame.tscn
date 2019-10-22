@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://nodes/Item/Item.tscn" type="PackedScene" id=1]
+[ext_resource path="res://entities/FamilyFrame.gd" type="Script" id=2]
+[ext_resource path="res://assets/items/picture_frame.png" type="Texture" id=3]
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.803801, 0.159105, 0.878836 )
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+albedo_texture = ExtResource( 3 )
+
+[node name="FamilyFrame" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+texture = ExtResource( 3 )
+description = "A picture of a time long forgotten with Erwin and his loving family"
+path_story = "res://dialogs/level1/family_frame.json"
+item_name = "Family picture"
+
+[node name="CollisionShape" parent="." index="0"]
+shape = SubResource( 3 )
+
+[node name="Sprite" parent="." index="1"]
+material/0 = SubResource( 2 )

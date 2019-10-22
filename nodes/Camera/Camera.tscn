@@ -8,6 +8,7 @@
 ]]
 current = true
 script = ExtResource( 1 )
+speed = 25.0
 
 [node name="Shutter" type="TextureRect" parent="."]
 anchor_right = 1.0

@@ -124,8 +124,6 @@ func has(name: String) -> bool:
 	Wether or not the given name is the name of an item in the inventory
 	"""
 	for slot in container.get_children():
-		if not slot.is_free():
-			print(slot.stored_item.item_name)
 		if not slot.is_free() and slot.stored_item.item_name == name:
 			return true
 	

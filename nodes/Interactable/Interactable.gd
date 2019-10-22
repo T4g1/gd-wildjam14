@@ -1,3 +1,4 @@
+tool
 extends KinematicBody
 class_name Interactable
 """
@@ -31,7 +32,8 @@ func _ready():
 	outline_material = outline_material.duplicate()
 	outline_material.set_shader_param("texturemap", texture)
 	
-	normal_material = sprite.get_surface_material(0)
+	normal_material = sprite.get_surface_material(0).duplicate()
+	sprite.set_surface_material(0, normal_material)
 	normal_material.albedo_texture = texture
 	
 	if path_story != "":
@@ -39,7 +41,10 @@ func _ready():
 
 
 func _process(_delta):
-	Utils.spatial_to_control_position(self, context_menu)
+	if Engine.is_editor_hint():
+		get_node(sprite_path).get_surface_material(0).albedo_texture = texture
+	else:
+		Utils.spatial_to_control_position(self, context_menu)
 
 
 func _on_mouse_hover():
@@ -60,11 +65,15 @@ func _on_event(_camera, event, _click_position, _click_normal, _shape_idx):
 	if interaction_disabled:
 		return
 	
-	if not Utils.get_game().user_has_control:
+	var game = Utils.get_game()
+	if not game.user_has_control:
 		return
 	
 	if event.is_action_released("ui_context"):
 		show_context_menu()
+	elif event.is_action_pressed("ui_move"):
+		game.handle_combination(self)
+		get_tree().set_input_as_handled()
 
 
 func show_context_menu():
@@ -93,7 +102,7 @@ func _on_use():
 	"""
 	Overide for custom behavior
 	"""
-	pass
+	Utils.get_game().display_text("This does not seems to do anything...")
 
 
 func _on_examine():
@@ -108,3 +117,12 @@ func _on_talk():
 	Overide for custom behavior, returns true if the action can be performed
 	"""
 	return true
+
+
+func _on_combination(node):
+	"""
+	Called when an inventory item is used on this one
+	Return true if the inventory item is consumed by the operation
+	"""
+	print(node.get_path(), " used on ", get_path())
+	return false

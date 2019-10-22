@@ -1,3 +1,4 @@
+tool
 extends "res://nodes/Interactable/Interactable.gd"
 class_name Lift
 """
@@ -17,7 +18,6 @@ func _on_use():
 	"""
 	Teleport target to next lift
 	"""
-	print("whololo")
 	var lifts = get_tree().get_nodes_in_group("lift")
 	var index = lifts.find(self)
 	var player = Utils.get_player()

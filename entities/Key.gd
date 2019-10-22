@@ -1,3 +1,4 @@
+tool
 extends "res://nodes/Item/Item.gd"
 
 onready var take_sound = $TakeSound

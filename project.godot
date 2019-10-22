@@ -84,6 +84,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://nodes/Player/Player.gd"
 }, {
+"base": "KinematicBody",
+"class": "RealmSwitch",
+"language": "GDScript",
+"path": "res://entities/RealmSwitch.gd"
+}, {
+"base": "KinematicBody",
+"class": "Richard",
+"language": "GDScript",
+"path": "res://entities/characters/Richard.gd"
+}, {
 "base": "Control",
 "class": "SpeechBubble",
 "language": "GDScript",
@@ -125,6 +135,8 @@ _global_script_class_icons={
 "Level": "",
 "Lift": "",
 "Player": "",
+"RealmSwitch": "",
+"Richard": "",
 "SpeechBubble": "",
 "TextDisplay": "",
 "Title": "",

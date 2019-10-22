@@ -16,7 +16,12 @@ func _ready():
 
 func _on_context_action(action):
 	if not is_free():
-		Utils.get_game().perform_action(stored_item, action, true)
+		var game = Utils.get_game()
+		
+		if action == "Use":
+			game.select(self)
+		else:
+			game.perform_action(stored_item, action, true)
 	
 	context_menu.hide()
 
@@ -39,6 +44,7 @@ func pop():
 	"""
 	var item = stored_item
 	stored_item = null
+	sprite.texture = null
 	
 	return item
 
