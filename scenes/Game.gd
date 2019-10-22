@@ -76,7 +76,7 @@ func on_dialog_start():
 	Utils.get_player().in_dialog = true
 	
 	user_has_control = false
-	
+	print("dialog_start")
 	get_tree().call_group("context_menu", "hide")
 
 
@@ -85,7 +85,7 @@ func on_dialog_end():
 	Can be called to re-enable player's interactions
 	"""
 	Utils.get_player().in_dialog = false
-	
+	print("dialog_end")
 	user_has_control = true
 
 

@@ -28,6 +28,7 @@ func load_story(ink_story_path):
 
 
 func continue_story():
+	print("emit_start")
 	emit_signal("dialog_start")
 	
 	story.variables_state.set("paused", 0)
@@ -59,19 +60,22 @@ func continue_story():
 			# For general text display
 			text_display = game.pop_up
 			
-			if text != "":
-				game.display_text(text)
+			if text == "":
+				continue
+			
+			game.display_text(text)
 		else:
 			# A character is talking
 			text_display = character.speech_bubble
+			if text == "":
+				continue
 			
 			var mood = story.variables_state.get("character_mood")
 			
-			if text != "":
-				if mood == "think":
-					character.think(text)
-				else:
-					character.say(text)
+			if mood == "think":
+				character.think(text)
+			else:
+				character.say(text)
 			
 		# Check no choice are coming
 		if story.current_choices.size() <= 0:
@@ -83,6 +87,7 @@ func continue_story():
 		player.prompt(story.current_choices)
 		player.choice_bubble.connect("choice_done", self, "_choice_done")
 	else:
+		print("emit_end")
 		emit_signal("dialog_end")
 
 

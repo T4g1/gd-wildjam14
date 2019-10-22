@@ -4,6 +4,8 @@ class_name Player
 onready var interaction_area = $InteractionArea
 onready var move_order_sound = $MoveOrderSound
 
+export (float) var fixed_z = 2.0
+
 
 func is_in_range(node: Interactable):
 	"""
@@ -18,6 +20,8 @@ func _ready():
 
 
 func move_to(target: Vector3):
+	target.z = fixed_z
+	
 	.move_to(target)
 	
 	move_order_sound.play()
