@@ -44,7 +44,7 @@ func pop():
 	"""
 	var item = stored_item
 	stored_item = null
-	sprite.texture = ""
+	sprite.texture = null
 	
 	return item
 

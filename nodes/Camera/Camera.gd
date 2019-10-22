@@ -26,6 +26,9 @@ func _unhandled_input(event):
 	
 	if event.is_action_pressed("ui_move"):
 		if game.selected_slot:
+			# Dereferenced call otherwise input gets consumed before the actual combination happens
+			# see Interactable._on_event
+			yield(get_tree(), "idle_frame")
 			Utils.get_game().deselect()
 			return
 		
