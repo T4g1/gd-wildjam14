@@ -14,14 +14,13 @@ height = 0.630013
 flags_transparent = true
 albedo_texture = ExtResource( 3 )
 
-[node name="Richard" index="0" instance=ExtResource( 1 )]
+[node name="Richard" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0 )
 script = ExtResource( 2 )
 texture = ExtResource( 3 )
 description = "Richard is the main butler of this respected household"
 path_story = "res://dialogs/level1/Richard.json"
 firstname = "Richard"
-speed = 5.0
 
 [node name="CollisionShape" parent="." index="0"]
 shape = SubResource( 1 )

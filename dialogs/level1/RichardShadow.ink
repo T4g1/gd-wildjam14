@@ -1,4 +1,4 @@
-INCLUDE common.ink
+INCLUDE ../common.ink
 
 # Richard's Shadow # Erwin
 

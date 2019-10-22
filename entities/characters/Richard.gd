@@ -3,7 +3,7 @@ class_name Richard
 
 
 func _on_combination(item):
-	if item.item_name == "Chocolate" and dialog.is_story_set("like") and dialog.is_story_set("dislike"):
+	if item.item_name == "Chocolate":
 		dialog.story_set("has_chocolate")
 		dialog.continue_story()
 		return true

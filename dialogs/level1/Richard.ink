@@ -1,4 +1,4 @@
-INCLUDE common.ink
+INCLUDE ../common.ink
 
 VAR has_chocolate = false
 
@@ -110,26 +110,26 @@ VAR like = false
 === quizz_richard ===
 
 { has_chocolate && like && dislike:
-    -> chocolate
+    -> move_sofa
 }
 
 # Erwin
 ~ who("Erwin")
-+ Qu’est-ce qui vous insupporte Richard ?
++ What do you hate?
     # Richard
     ~ who("Richard")
-    Eh bien, sans vous manquez de respect, vous savez bien que je déteste le désordre et les cafards non ?
+    You do know that I dislike cockroach, disorder and mess, don't you?
 
     # Erwin
     ~ who("Erwin")
-    Non j’en avais aucune idée car j’en avais pas grand-chose à faire en fait.
+    I didn't because I wasn't interested in fact...
 
     ~ dislike = true
 
-+ Qu’est-ce que vous ferait plaisir Richard ?
++ What do you love ?
     # Richard
     ~ who("Richard")
-    Oh c’est gentil de demander, eh bien j’adore le chocolat.
+    Kind to ask sir, I do love chocolate
 
     ~ like = true
 
@@ -144,13 +144,20 @@ VAR like = false
 ~ pause_after()
 
 ~ who("")
-Vous en avez appris davantage sur Richard et donc sur son ombre, regardez son onglet personnalité
+You know more about Richard and his shadow now, chocolate and cockroach, try to use that information
 
 -> quizz_richard
 
 
+=== move_sofa ===
 
+# Richard
+~ who("Richard")
+Thank you sir! I'll go eat that in the sofa
 
+~ move("Richard", "sofa")
+
+-> chocolate
 === chocolate ===
 
 ~ pause_after()
