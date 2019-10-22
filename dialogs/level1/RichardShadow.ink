@@ -37,4 +37,20 @@ Can you stop those pesky magical back and forth in my room? You are not at home 
 
 -
 
+{ knows("shadow_sofa"):
+    -> complete
+}
+
 -> start
+
+
+=== complete ===
+
+~ pause_after()
+
+# Erwin
+~ who("Erwin")
+~ mood("think")
+I should leave him with his cockroaches...
+
+-> complete
