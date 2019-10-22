@@ -6,81 +6,83 @@ INCLUDE common.ink
 # Richard
 ~ who("Richard")
 
-Monsieur que se passe-t-il ? Il y a eu un tremblement et un personnage noir est parti avec vos clefs en fermant derrière lui.
+What is hapening mister? There was some ground shaking and a mysterious black figure went out with your keys and closed the door behind him
 
 # Erwin
 ~ who("Erwin")
-Mais il m’a enfermé en plus ce … ? Bon donnez-moi vos clefs alors.
+He locked me inside that son... !? Well, give me your keys then
 
 # Richard
 ~ who("Richard")
-Je… Je ne sais pas où elles sont.
+Er... I don't know where they are...
 
 # Erwin
 ~ who("Erwin")
-Quoi ? Mais vous n’oubliez mais ne perdez jamais rien d’habitude.
+What? But you don't forget anything usualy
 
 # Richard
 ~ who("Richard")
-Je ne sais pas monsieur. Depuis le tremblement de terre je ne me sens pas bien et j’ai pleins de trou de mémoire monsieur.
+I dont know mister, since the ground shaking, I dont feel well at all and I experience loads of memory losses
 
 ~ switch_realm()
 
 # Erwin
 ~ who("Erwin")
 ~ mood("think")
-Wow encore ? Mais ? C’est mon ombre ça ?
+Wow, again? Wait, is that my shadow?
 
 # Richard's Shadow
 ~ who("Richard's Shadow")
-T’es qui toi ? Qu’est-ce que tu fiches ici dans le manoir de cet abruti d’Erwin ?
+Who are you? What are you doing in this stupid Erwin's house?
 
 # Erwin
 ~ who("Erwin")
-* Bah peut-être car Erwin c’est moi ? Et puis un peu de politesse merde !
-    # Richard's Shadow
-    ~ who("Richard's Shadow")
-    ça m’étonnerait beaucoup, vous lui ressemblez un peu mais vous ne semblez pas être un aussi gros nul que lui.
+* [I'm Erwin]
+    Maybe I'm here because I am Erwin and maybe you should be more polite?
 
-* C’est toi Richard ?
     # Richard's Shadow
     ~ who("Richard's Shadow")
-    Comment tu sais comment je m’appelle ? Tu as l’air moins abruti que celui pour qui je travaille.
+    Well, that would surprise me a lot, you do look like him but a bit less winy if you ask me
+
+* Is that you Richard?
+    # Richard's Shadow
+    ~ who("Richard's Shadow")
+    How do you know my name? You look less dumb than my boss
 
 -
 
 # Erwin
 ~ who("Erwin")
 ~ mood("think")
-D’accord, ça doit être l’ombre de Richard mais il semble avoir le caractère opposé, comme ma propre ombre.  Ça explique pourquoi il est exécrable.
+Seems like it is Richard's Shadow but it looks like he got the exact opposite characteristics, like my own shadow. It may explain why he is so execrable
 
 ~ who("")
-Dans le monde des ombres, les personnages ont un comportement opposé à leur alter ego humain, servez-vous en pour identifier à l’ombre de qui vous parlez via le menu de personnalités
+In the Shadow Realm, the characters have a behavior opposite to their human alter ego, use that to identify them
 
 # Erwin
 ~ who("Erwin")
-Oubliez tout ça. Vous ne savez pas où sont les clefs de l’entrée ?
+Forget that, do you know where is the front door key?
 
 # Richard's Shadow
 ~ who("Richard's Shadow")
-Non je les trouve plus, de toute façon je perds toujours tout. Puis je vois pas pourquoi je vous les donnerais en fait.
+I'm afraid not, I don't find those. Anyway, I loose everything and I don't see a reason to give it to you
 
 # Erwin
 ~ who("Erwin")
 ~ mood("think")
-Peut-être qu’ils perdent des morceaux de souvenir dans la séparation. Je devrais essayer de les réunir. Peut-être qu’en superposant les plans ?...
+Maybe they loose memory when they are sperated. I should try to re-unite them. Maybe if I can manage to superimpose them on both plan ?...
 
 ~ who("")
-Pour réunir un individu et son ombre vous devez faire en sorte que les deux fassent exactement la même chose au même moment sur les deux plans
+To merge a shadow with it's human alter ego, you must lead them to do the exact same thing at the exact same time on both the real world and the shadow realm
 
 ~ switch_realm()
 
 # Erwin
 ~ who("Erwin")
-Je vais gerber si ça continue, mais je crois que j’ai compris le principe.
+I'll puke if this keeps hapenning but I believe I've found the trick
 
 ~ who("")
-Appuyez sur *input* pour basculer d’un plan à l’autre
+TODO: Interact with shadow Appuyez sur *input* pour basculer d’un plan à l’autre
 
 # Richard
 ~ who("Richard")
