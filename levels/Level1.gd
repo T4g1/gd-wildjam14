@@ -3,6 +3,9 @@ extends "res://nodes/Level/Level.gd"
 First level: Tutorial
 """
 
+export (float) var hidden_key_position = -4.3
+export (float) var shown_key_position = -1.7
+
 
 onready var master_key = $RealWorld/MasterKey
 
@@ -20,5 +23,7 @@ func _process(_delta):
 		if not player.knows("Richard_is_complete"):
 			merge("Richard", "Richard's Shadow")
 	
-	if not master_key.visible and player.knows("master_key_location"):
-		master_key.visible = true
+	if player.knows("master_key_location"):
+		master_key.global_transform.origin.z = shown_key_position
+	else:
+		master_key.global_transform.origin.z = hidden_key_position

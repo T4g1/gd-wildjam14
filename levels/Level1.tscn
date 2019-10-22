@@ -395,8 +395,7 @@ transform = Transform( 2, 0, 0, 0, 2.15915, 0, 0, 0, 1, -18.8228, 11.0539, -2.41
 texture = ExtResource( 29 )
 
 [node name="MasterKey" parent="RealWorld" index="32" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93708, 10.1447, -1.70544 )
-visible = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.937, 10.145, -4.3 )
 description = "Key for the front door"
 path_story = "res://dialogs/empty.json"
 item_name = "Front door key"
