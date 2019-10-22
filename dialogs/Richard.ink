@@ -81,8 +81,10 @@ To merge a shadow with it's human alter ego, you must lead them to do the exact 
 ~ who("Erwin")
 I'll puke if this keeps hapenning but I believe I've found the trick
 
+~ unlock("shadow_switching")
+
 ~ who("")
-Interact with shadow Appuyez sur XXXX pour basculer d’un plan à l’autre
+You can now interact with the strange looking ripling on the walls. This will allow you to travel to the Shadow Realm and back.
 
 # Richard
 ~ who("Richard")

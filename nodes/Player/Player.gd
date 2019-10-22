@@ -6,6 +6,10 @@ onready var move_order_sound = $MoveOrderSound
 
 export (float) var fixed_z = 2.0
 
+export (Dictionary) var abilities = {
+	"shadow_switching": false
+}
+
 
 func is_in_range(node: Interactable):
 	"""
@@ -25,3 +29,21 @@ func move_to(target: Vector3):
 	.move_to(target)
 	
 	move_order_sound.play()
+
+
+func unlock(ability: String):
+	"""
+	Unlock the given ability
+	"""
+	if ability in abilities:
+		abilities[ability] = true
+
+
+func can(ability: String):
+	"""
+	Tell if the ability is unlocked or not
+	"""
+	if not ability in abilities:
+		return false
+	
+	return abilities[ability]

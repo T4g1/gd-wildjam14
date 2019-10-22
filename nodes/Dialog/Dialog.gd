@@ -25,6 +25,7 @@ func load_story(ink_story_path):
 	story = Story.new(content)
 	story.bind_external_function("has", Utils.get_game().inventory, "has")
 	story.bind_external_function("move", self, "move")
+	story.bind_external_function("unlock", Utils.get_player(), "unlock")
 
 
 func continue_story():
