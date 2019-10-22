@@ -31,7 +31,7 @@ Can you stop those pesky magical back and forth in my room? You are not at home 
     ~ mood("think")
     perfect!
 
-+ [Nothing]
++ Nothing
     ~ pause_after()
     I should probably continue to look for clues...
 

@@ -4,7 +4,7 @@ First level: Tutorial
 """
 
 
-onready var master_key = $MasterKey
+onready var master_key = $RealWorld/MasterKey
 
 
 func _on_start():

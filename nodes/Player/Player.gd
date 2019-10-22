@@ -61,4 +61,5 @@ func learn(fact: String):
 	"""
 	Called when the player learns something
 	"""
+	print("learned ", fact)
 	facts[fact] = true

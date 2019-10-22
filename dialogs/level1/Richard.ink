@@ -131,6 +131,8 @@ VAR like = false
     ~ who("Richard")
     Kind to ask sir, I do love chocolate
 
+    ~ learn("richard_love_chocolate")
+
     ~ like = true
 
 + { like && dislike } Nothing
@@ -162,8 +164,7 @@ Thank you sir! I'll go eat that in the sofa
 -> chocolate
 === chocolate ===
 
-{
-    knows("Richard_is_complete"):
+{ knows("Richard_is_complete"):
         -> complete
 }
 
@@ -180,12 +181,12 @@ He is eating his chocolate, better not to disturb him. I know he hates cockroach
 # Richard
 ~ who("Richard")
 
-Woaw ! Je ne sais pas ce qui s’est passé monsieur mais je me sens à nouveau complet. Les clefs de secours sont sous l’escalier en fait. D’ailleurs je crois me souvenir que la forme noire qui est passé à marmonné quelque chose comme "J’arrive ma nouvelle famille !"
+Wow! Don't know what hapenned but I feel whole again mister! I remember now that I left the keys in the chamber and the shadow that went by earlier said something like: "Wait for me my new family!"
 
 ~ learn("master_key_location")
 
 # Erwin
 ~ who("Erwin")
-Oh me dis pas qu’il est retourné à la maison familial celui-là...
+Oh no, dont tell me he went to the familial house!
 
 -> END
