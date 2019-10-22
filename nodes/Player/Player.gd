@@ -8,7 +8,8 @@ export (float) var fixed_z = 2.0
 
 export (Dictionary) var facts = {}
 export (Dictionary) var abilities = {
-	"shadow_switching": false
+	"shadow_switching": false,
+	"walk": false
 }
 
 
@@ -26,6 +27,9 @@ func _ready():
 
 func move_to(target: Vector3):
 	target.z = fixed_z
+	
+	if not can("walk"):
+		return
 	
 	.move_to(target)
 	
