@@ -115,7 +115,7 @@ func continue_story():
 	if story.current_choices.size() > 0:
 		text_display.set_close_action(false)
 		player.prompt(story.current_choices)
-		player.choice_bubble.connect("choice_done", self, "_choice_done")
+		player.choice_bubble.connect("choice_done", self, "_choice_done", [], CONNECT_ONESHOT)
 	else:
 		emit_signal("dialog_end")
 

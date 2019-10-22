@@ -151,7 +151,7 @@ shader_param/precision = 0.01
 shader_param/outline_color = Color( 1, 1, 1, 1 )
 shader_param/texturemap = ExtResource( 36 )
 
-[node name="Level1" instance=ExtResource( 1 )]
+[node name="Level1" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 path_story = "res://dialogs/level1/level_1.json"
 custom_environment = ExtResource( 3 )
@@ -404,14 +404,13 @@ item_name = "Front door key"
 [node name="Player" parent="." index="2" groups=[
 "interactable",
 ] instance=ExtResource( 32 )]
-transform = Transform( 1, 0, 0, 0, 1.4, 0, 0, 0, 1, 3.97055, 1.89075, 2 )
+transform = Transform( 1, 0, 0, 0, 1.4, 0, 0, 0, 1, 3.97055, 2.15541, 2 )
 outline_material = ExtResource( 5 )
 abilities = {
 "shadow_switching": false
 }
 
 [node name="House" type="NavigationMeshInstance" parent="." index="4"]
-editor/display_folded = true
 navmesh = SubResource( 13 )
 
 [node name="Lift" parent="House" index="0" instance=ExtResource( 33 )]
@@ -610,7 +609,6 @@ omni_attenuation = 1.46409
 omni_shadow_mode = 0
 
 [node name="walls" type="Spatial" parent="House" index="6"]
-editor/display_folded = true
 
 [node name="MeshInstance" type="MeshInstance" parent="House/walls" index="0"]
 transform = Transform( 0.497121, 0, 0, 0, 3.28237, 0, 0, 0, 2.00484, -27.0082, 10.7834, 1.98359 )
