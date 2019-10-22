@@ -125,3 +125,14 @@ func fade_realm(realm):
 	
 	Utils.get_game().user_has_control= true
 	emit_signal("realm_changed")
+
+
+func merge(name: String, shadow_name: String):
+	"""
+	Merge two characters
+	"""
+	var shadow = Utils.get_character(shadow_name)
+	shadow.queue_free()
+	
+	Utils.get_game().display_text(shadow_name + " was merged with " + name + "!")
+	Utils.get_player().learn(name + "_is_complete")

@@ -162,6 +162,11 @@ Thank you sir! I'll go eat that in the sofa
 -> chocolate
 === chocolate ===
 
+{
+    knows("Richard_is_complete"):
+        -> complete
+}
+
 ~ pause_after()
 
 ~ who("Erwin")
@@ -169,5 +174,18 @@ Thank you sir! I'll go eat that in the sofa
 He is eating his chocolate, better not to disturb him. I know he hates cockroach so that mean his shadow probably loves them... Eeek
 
 -> chocolate
+
+=== complete ===
+
+# Richard
+~ who("Richard")
+
+Woaw ! Je ne sais pas ce qui s’est passé monsieur mais je me sens à nouveau complet. Les clefs de secours sont sous l’escalier en fait. D’ailleurs je crois me souvenir que la forme noire qui est passé à marmonné quelque chose comme "J’arrive ma nouvelle famille !"
+
+~ learn("master_key_location")
+
+# Erwin
+~ who("Erwin")
+Oh me dis pas qu’il est retourné à la maison familial celui-là...
 
 -> END

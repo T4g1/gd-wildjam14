@@ -23,6 +23,8 @@ Can you stop those pesky magical back and forth in my room? You are not at home 
 
     ~ move("Richard's Shadow", "sofa")
 
+    ~ learn("shadow_sofa")
+
     ~ pause_after()
 
     ~ who("Erwin")
