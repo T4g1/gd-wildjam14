@@ -7,6 +7,8 @@ VAR game_is_over = 0
 EXTERNAL has(name)
 EXTERNAL unlock(ability)
 EXTERNAL move(name, where)
+EXTERNAL learn(fact)
+EXTERNAL knows(fact)
 
 === function who(value) ===
     ~ character_mood = "normal"

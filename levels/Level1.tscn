@@ -4,12 +4,12 @@
 [ext_resource path="res://levels/Level1.gd" type="Script" id=2]
 [ext_resource path="res://environments/level1_env.tres" type="Environment" id=3]
 [ext_resource path="res://entities/characters/RichardShadow.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/shaders/outline_shadermaterial.tres" type="Material" id=5]
-[ext_resource path="res://assets/textures/sdb shadow.png" type="Texture" id=6]
-[ext_resource path="res://assets/textures/labo shadow.png" type="Texture" id=7]
-[ext_resource path="res://assets/textures/chambre shadow.png" type="Texture" id=8]
-[ext_resource path="res://assets/textures/cuisine shadow.png" type="Texture" id=9]
-[ext_resource path="res://assets/textures/salon shadow.png" type="Texture" id=10]
+[ext_resource path="res://assets/textures/sdb shadow.png" type="Texture" id=5]
+[ext_resource path="res://assets/textures/labo shadow.png" type="Texture" id=6]
+[ext_resource path="res://assets/textures/chambre shadow.png" type="Texture" id=7]
+[ext_resource path="res://assets/textures/cuisine shadow.png" type="Texture" id=8]
+[ext_resource path="res://assets/textures/salon shadow.png" type="Texture" id=9]
+[ext_resource path="res://entities/Sofa.tscn" type="PackedScene" id=10]
 [ext_resource path="res://entities/ShadowMachine.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/textures/labo color.png" type="Texture" id=12]
 [ext_resource path="res://nodes/Trigger/OneShotTriger.tscn" type="PackedScene" id=13]
@@ -148,81 +148,85 @@ script = ExtResource( 2 )
 path_story = "res://dialogs/level1/level_1.json"
 custom_environment = ExtResource( 3 )
 
-[node name="RichardShadow" parent="ShadowRealm" index="1" groups=[
-"interactable",
-] instance=ExtResource( 4 )]
+[node name="ShadowRealm" parent="." index="0"]
+editor/display_folded = true
+
+[node name="RichardShadow" parent="ShadowRealm" index="1" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.53703, 1.51684, 0 )
-outline_material = ExtResource( 5 )
 path_story = "res://dialogs/level1/RichardShadow.json"
 
 [node name="bathroom" type="Sprite3D" parent="ShadowRealm" index="2"]
 transform = Transform( 2, 0, 0, 0, 2.15915, 0, 0, 0, 1, -18.8228, 11.0539, -2.41895 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 
 [node name="lab" type="Sprite3D" parent="ShadowRealm" index="3"]
 transform = Transform( 1.3, 0, 0, 0, 2.06522, 0, 0, 0, 1, -18.3177, 18.6674, -0.287354 )
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 region_enabled = true
 region_rect = Rect2( 582.071, 14.4327, 695.972, 332.44 )
 
 [node name="chamber" type="Sprite3D" parent="ShadowRealm" index="4"]
 transform = Transform( 1.37654, 0, 0, 0, 2.09974, 0, 0, 0, 1, 0.400704, 11.0333, -2.29639 )
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 
 [node name="kitchen2" type="Sprite3D" parent="ShadowRealm" index="5"]
 transform = Transform( 2.19652, 0, 0, 0, 2.04163, 0, 0, 0, 1, 13.7268, 3.54669, -2.55835 )
-texture = ExtResource( 9 )
+texture = ExtResource( 8 )
 
 [node name="heater3" type="Sprite3D" parent="ShadowRealm" index="6"]
 transform = Transform( 3.37438, 0, 0, 0, 2.94032, 0, 0, 0, 1, -16.0002, 1.73013, -3.29785 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 402.42, 259.292, 98.3456, 92.1085 )
 
 [node name="heater4" type="Sprite3D" parent="ShadowRealm" index="7"]
 transform = Transform( 3.37438, 0, 0, 0, 2.94032, 0, 0, 0, 1, -19.0193, 1.73013, -3.29785 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 402.42, 259.292, 98.3456, 92.1085 )
 
 [node name="painting4" type="Sprite3D" parent="ShadowRealm" index="8"]
 transform = Transform( 2.5, 0, 0, 0, 2.18771, 0, 0, 0, 1, -26.2575, 5.01173, -3.15649 )
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 region_enabled = true
 region_rect = Rect2( 371.062, -2.55463, 75.8128, 96.8071 )
 
 [node name="painting6" type="Sprite3D" parent="ShadowRealm" index="9"]
 transform = Transform( 2.5, 0, 0, 0, 2.18771, 0, 0, 0, 1, -15.5368, 4.98231, -3.15649 )
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 region_enabled = true
 region_rect = Rect2( 371.062, -2.55463, 75.8128, 96.8071 )
 
 [node name="painting5" type="Sprite3D" parent="ShadowRealm" index="10"]
 transform = Transform( 2.5, 0, 0, 0, 2.18771, 0, 0, 0, 1, -21.6172, 4.5012, -3.15649 )
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 region_enabled = true
 region_rect = Rect2( 371.062, -2.55463, 75.8128, 96.8071 )
 
 [node name="corridor_shelf2" type="Sprite3D" parent="ShadowRealm" index="11"]
 transform = Transform( 2.5, 0, 0, 0, 3.14064, 0, 0, 0, 1, -27.4418, 1.06104, 3.58057 )
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 region_enabled = true
 region_rect = Rect2( 63.5953, 212.609, 120.134, 57.1512 )
 
 [node name="corridor_deco2" type="Sprite3D" parent="ShadowRealm" index="12"]
 transform = Transform( 1.07042, 0, 0, 0, 2.39896, 0, 0, 0, 1, -27.4138, 2.30229, 3.3916 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 320.337, 210.427, 122.257, 26.3085 )
 
 [node name="salon2" type="Sprite3D" parent="ShadowRealm" index="13"]
 transform = Transform( 2, 0, 0, 0, 2.42908, 0, 0, 0, 1, 0, 3.13718, -2.40015 )
-texture = ExtResource( 10 )
+visible = false
+texture = ExtResource( 9 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 601.86, 246.06 )
 
+[node name="Sofa" parent="ShadowRealm" index="14" instance=ExtResource( 10 )]
+transform = Transform( 2.04828, 0, 0, 0, 2.04828, 0, 0, 0, 1, 0, 2.60241, -1.51416 )
+
 [node name="RealWorld" parent="." index="1"]
-visible = false
+editor/display_folded = true
 
 [node name="ShadowMachine" parent="RealWorld" index="1" instance=ExtResource( 11 )]
 transform = Transform( 4.359, 0, 0, 0, 4.359, 0, 0, 0, 1, 2.97923, 18.956, 1 )
@@ -283,11 +287,8 @@ path_story = "res://dialogs/level1/FrontDoor.json"
 required_item = "Front door key"
 locked = true
 
-[node name="Richard" parent="RealWorld" index="11" groups=[
-"interactable",
-] instance=ExtResource( 17 )]
+[node name="Richard" parent="RealWorld" index="11" instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1.5, 0, 0, 0, 1, 5.75879, 2.11485, 1.5 )
-outline_material = ExtResource( 5 )
 
 [node name="Key" parent="RealWorld" index="12" instance=ExtResource( 18 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.00024, 15.6701, 3.93108 )
@@ -384,11 +385,8 @@ texture = ExtResource( 30 )
 transform = Transform( 2, 0, 0, 0, 2.15915, 0, 0, 0, 1, -18.8228, 11.0539, -2.41895 )
 texture = ExtResource( 28 )
 
-[node name="Player" parent="." index="2" groups=[
-"interactable",
-] instance=ExtResource( 31 )]
-transform = Transform( 1, 0, 0, 0, 1.4, 0, 0, 0, 1, 3.97055, 2.17213, 2 )
-outline_material = ExtResource( 5 )
+[node name="Player" parent="." index="2" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1.4, 0, 0, 0, 1, 3.97055, 16.8254, 2 )
 abilities = {
 "shadow_switching": false
 }
@@ -634,12 +632,15 @@ shape = SubResource( 16 )
 
 [node name="RealmSwitch" parent="." index="6" instance=ExtResource( 34 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.1083, 0 )
+visible = false
 outline_material = SubResource( 17 )
 
 [node name="RealmSwitch2" parent="." index="7" instance=ExtResource( 34 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.02503, 0 )
+visible = false
 outline_material = SubResource( 17 )
 
 [node name="SofaPosition" parent="." index="8" instance=ExtResource( 36 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.40452, 0.259145, -2.9796 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.40452, 0.859956, -0.813197 )
+visible = false
 identifier = "sofa"

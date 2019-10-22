@@ -6,6 +6,7 @@ onready var move_order_sound = $MoveOrderSound
 
 export (float) var fixed_z = 2.0
 
+export (Dictionary) var facts = {}
 export (Dictionary) var abilities = {
 	"shadow_switching": false
 }
@@ -47,3 +48,17 @@ func can(ability: String):
 		return false
 	
 	return abilities[ability]
+
+
+func knows(fact: String):
+	"""
+	Test wether or not the player knows something
+	"""
+	return facts.get(fact, false)
+
+
+func learn(fact: String):
+	"""
+	Called when the player learns something
+	"""
+	facts[fact] = true

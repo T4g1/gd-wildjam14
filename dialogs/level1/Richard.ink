@@ -157,6 +157,8 @@ Thank you sir! I'll go eat that in the sofa
 
 ~ move("Richard", "sofa")
 
+~ learn("richard_sofa")
+
 -> chocolate
 === chocolate ===
 
